@@ -8,6 +8,6 @@
 </script>
 
 <a class="docs-skip-link" href="#main-content">Zum Hauptinhalt springen</a>
-<DocsShell pathname={page.url.pathname}>
+<DocsShell routeId={page.route.id} componentSlug={page.params.slug}>
   {@render children()}
 </DocsShell>

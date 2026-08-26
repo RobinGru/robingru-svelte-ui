@@ -25,10 +25,11 @@
   import { componentCatalog } from '../catalog.js';
 
   type Props = {
-    pathname: string;
+    routeId: string | null;
+    componentSlug?: string;
     children: Snippet;
   };
-  let { pathname, children }: Props = $props();
+  let { routeId, componentSlug, children }: Props = $props();
 
   let mobileOpen = $state(false);
   let searchOpen = $state(false);
@@ -36,11 +37,10 @@
   let sidebarCollapsed = $state(false);
   let mounted = $state(false);
   const href = (path: string) => `${base}${path}`;
-  const routePath = $derived(base && pathname.startsWith(base) ? pathname.slice(base.length) || '/' : pathname);
   const markdownPath = $derived(
-    routePath === '/' ? '/index.md'
-      : routePath.startsWith('/components/') ? `${routePath}/index.md`
-      : ['/installation', '/why-robingru', '/components', '/patterns', '/dashboard', '/blog', '/data', '/tokens', '/accessibility', '/workbench'].includes(routePath) ? `${routePath}/index.md`
+    routeId === '/' ? '/index.md'
+      : routeId === '/components/[slug]' && componentSlug ? `/components/${componentSlug}/index.md`
+      : ['/installation', '/why-robingru', '/components', '/patterns', '/dashboard', '/blog', '/data', '/tokens', '/accessibility', '/workbench'].includes(routeId ?? '') ? `${routeId}/index.md`
       : undefined
   );
 
@@ -82,8 +82,8 @@
   }));
 
   function active(href: string) {
-    if (href === '/') return routePath === '/';
-    return routePath === href || routePath.startsWith(`${href}/`);
+    if (href === '/') return routeId === '/';
+    return routeId === href || routeId?.startsWith(`${href}/`);
   }
 
   function applyDensity(next: boolean) {
