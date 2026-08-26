@@ -76,7 +76,7 @@
       <InlineCode>robin</InlineCode>
     </header>
     <div class="docs-hero-workbench-body">
-      <div class="docs-mini-sidebar"><span></span><span></span><span></span><span></span></div>
+      <div class="docs-mini-sidebar"><span>Übersicht</span><span>Projekte</span><span>Analysen</span><span>Einstellungen</span></div>
       <div class="docs-mini-content">
         <div class="docs-mini-kpis">
           <div class="docs-mini-kpi"><span>Umsatz</span><strong>84 Tsd. €</strong></div>
@@ -84,11 +84,18 @@
           <div class="docs-mini-kpi"><span>Conversion</span><strong>6,8 %</strong></div>
         </div>
         <div class="docs-mini-chart">
-          {#each [38, 52, 45, 68, 61, 78, 72, 91] as height}
-            <i style={`--h:${height}%`}></i>
-          {/each}
+          <header><span>Aktivität</span><strong>+8,2 %</strong></header>
+          <div class="docs-mini-bars" aria-hidden="true">
+            {#each [38, 52, 45, 68, 61, 78, 72, 91] as height}
+              <i style={`--h:${height}%`}></i>
+            {/each}
+          </div>
         </div>
-        <div class="docs-mini-table"><span></span><span></span><span></span></div>
+        <div class="docs-mini-table" aria-label="Projektstatus">
+          <div><span>Projekt</span><span>Status</span></div>
+          <div><strong>Workspace</strong><span>Aktiv</span></div>
+          <div><strong>Analytics</strong><span>Prüfung</span></div>
+        </div>
       </div>
     </div>
   </div>
