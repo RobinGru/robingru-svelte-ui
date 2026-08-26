@@ -29,16 +29,17 @@
   --rg-slate-900: oklch(20.4% 0.019 247);
   --rg-slate-950: oklch(15.2% 0.017 247);
 
-  --rg-bg: var(--rg-slate-25);
+  /* Neutral canvas: blue communicates interaction, not every background. */
+  --rg-bg: oklch(98.8% 0.001 95);
   --rg-surface: var(--rg-slate-0);
   --rg-surface-raised: var(--rg-slate-0);
-  --rg-surface-muted: var(--rg-blue-25);
-  --rg-surface-sunken: var(--rg-slate-50);
+  --rg-surface-muted: oklch(97.3% 0.002 95);
+  --rg-surface-sunken: oklch(95.8% 0.003 95);
   --rg-fg: var(--rg-slate-900);
   --rg-fg-muted: var(--rg-slate-600);
   --rg-fg-subtle: var(--rg-slate-500);
-  --rg-border: color-mix(in oklab, var(--rg-blue-200) 58%, var(--rg-slate-200));
-  --rg-border-strong: color-mix(in oklab, var(--rg-blue-300) 52%, var(--rg-slate-300));
+  --rg-border: color-mix(in oklab, var(--rg-slate-200) 84%, var(--rg-blue-200));
+  --rg-border-strong: color-mix(in oklab, var(--rg-slate-300) 82%, var(--rg-blue-300));
   --rg-primary: var(--rg-blue-600);
   --rg-primary-hover: var(--rg-blue-700);
   --rg-primary-active: var(--rg-blue-800);
@@ -50,6 +51,8 @@
   --rg-success: oklch(55% 0.14 154);
   --rg-warning: oklch(69% 0.15 74);
   --rg-danger: oklch(56% 0.2 26);
+  --rg-violet: oklch(55% 0.15 300);
+  --rg-violet-soft: oklch(95% 0.035 300);
   /* Text colours for semantic surfaces stay legible at small component sizes. */
   --rg-info-fg: oklch(47% 0.14 241);
   --rg-success-fg: oklch(43% 0.11 154);
@@ -106,16 +109,16 @@
 
 [data-theme='robin-dark'] {
   color-scheme: dark;
-  --rg-bg: oklch(17.6% 0.018 247);
-  --rg-surface: oklch(20.8% 0.021 247);
-  --rg-surface-raised: oklch(23.5% 0.023 247);
-  --rg-surface-muted: oklch(24.5% 0.035 242);
-  --rg-surface-sunken: oklch(15.8% 0.016 247);
+  --rg-bg: oklch(17.6% 0.008 260);
+  --rg-surface: oklch(20.8% 0.01 260);
+  --rg-surface-raised: oklch(23.5% 0.011 260);
+  --rg-surface-muted: oklch(24.5% 0.012 260);
+  --rg-surface-sunken: oklch(15.8% 0.007 260);
   --rg-fg: oklch(95.5% 0.006 247);
   --rg-fg-muted: oklch(78% 0.018 247);
   --rg-fg-subtle: oklch(70% 0.022 247);
-  --rg-border: oklch(39% 0.03 244);
-  --rg-border-strong: oklch(49% 0.05 242);
+  --rg-border: oklch(39% 0.015 260);
+  --rg-border-strong: oklch(49% 0.025 260);
   --rg-primary: oklch(72% 0.135 238);
   --rg-primary-hover: oklch(78% 0.11 236);
   --rg-primary-active: oklch(66% 0.15 241);
@@ -127,6 +130,8 @@
   --rg-success: oklch(70% 0.13 154);
   --rg-warning: oklch(78% 0.14 78);
   --rg-danger: oklch(70% 0.17 27);
+  --rg-violet: oklch(74% 0.13 300);
+  --rg-violet-soft: oklch(29% 0.06 300);
   --rg-info-fg: var(--rg-info);
   --rg-success-fg: var(--rg-success);
   --rg-warning-fg: var(--rg-warning);
@@ -162,7 +167,7 @@
   --rg-article-wide: 70rem;
   --rg-dashboard-max: 96rem;
   --rg-chart-1: var(--rg-primary);
-  --rg-chart-2: var(--rg-info);
+  --rg-chart-2: var(--rg-violet);
   --rg-chart-3: var(--rg-success);
   --rg-chart-4: var(--rg-warning);
   --rg-chart-5: var(--rg-danger);

@@ -1,16 +1,19 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte';
   import type { HTMLAttributes } from 'svelte/elements';
   import { ArrowUpRight } from '@lucide/svelte';
   import { cn } from '../../internal/cn.js';
   import ReadingTime from './ReadingTime.svelte';
   import TagList from './TagList.svelte';
 
-  type Props = HTMLAttributes<HTMLElement> & {
+  type Props = Omit<HTMLAttributes<HTMLElement>, 'children'> & {
     title: string;
     href: string;
     excerpt?: string;
     image?: string;
     imageAlt?: string;
+    media?: Snippet;
+    children?: Snippet;
     eyebrow?: string;
     date?: string;
     dateTime?: string;
@@ -28,6 +31,7 @@
     excerpt,
     image,
     imageAlt = '',
+    media,
     eyebrow,
     date,
     dateTime,
@@ -43,9 +47,13 @@
 </script>
 
 <article {...rest} class={cn('rg-post-card', className)} data-orientation={orientation} data-featured={featured}>
-  {#if image}
+  {#if media || image}
     <a class="rg-post-media" href={href} aria-label={title}>
-      <img src={image} alt={imageAlt} {loading} />
+      {#if media}
+        {@render media()}
+      {:else if image}
+        <img src={image} alt={imageAlt} {loading} />
+      {/if}
     </a>
   {/if}
   <div class="rg-post-body">

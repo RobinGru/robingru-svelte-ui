@@ -15,6 +15,7 @@ RobinGru trennt die redaktionelle Hierarchie von Dashboard-Kompositionen:
 - `Blockquote` für hervorgehobene Zitate oder Leitprinzipien
 - `CodeBlock` mit Dateiname, Sprache, Copy-Button, Zeilennummern und Highlights
 - `Figure` für Bild/Media, Caption und Credit
+- `PostCard` für Beitragsvorschauen mit Bild oder einer eigenen `media`-Snippet-Vorschau
 - `TagList` für Taxonomie
 - `ReadingTime` aus Minuten oder Wortzahl
 

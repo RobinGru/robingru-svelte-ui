@@ -91,7 +91,18 @@
     <div class="docs-section-heading"><div><h2>Aktuelle Beiträge</h2><p>Featured Story und normale Beitragskarten verwenden dieselbe redaktionelle Hierarchie.</p></div><Badge tone="primary">17 Content-Komponenten</Badge></div>
     <PostGrid minItemWidth="18rem">
       {#each posts as post}
-        <PostCard {...post} />
+        {#if post.featured}
+          <PostCard {...post}>
+            {#snippet media()}
+              <div class="docs-post-visual" aria-hidden="true">
+                <div class="docs-post-visual-copy"><span>Editorial</span><strong>Inhalt<br />und Produkt</strong><i></i></div>
+                <div class="docs-post-visual-ui"><b></b><b></b><b></b><div><span></span><span></span><span></span></div></div>
+              </div>
+            {/snippet}
+          </PostCard>
+        {:else}
+          <PostCard {...post} />
+        {/if}
       {/each}
     </PostGrid>
   </section>
