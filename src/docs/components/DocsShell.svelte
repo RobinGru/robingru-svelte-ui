@@ -36,6 +36,13 @@
   let sidebarCollapsed = $state(false);
   let mounted = $state(false);
   const href = (path: string) => `${base}${path}`;
+  const routePath = $derived(base && pathname.startsWith(base) ? pathname.slice(base.length) || '/' : pathname);
+  const markdownPath = $derived(
+    routePath === '/' ? '/index.md'
+      : routePath.startsWith('/components/') ? `${routePath}/index.md`
+      : ['/installation', '/why-robingru', '/components', '/patterns', '/dashboard', '/blog', '/data', '/tokens', '/accessibility', '/workbench'].includes(routePath) ? `${routePath}/index.md`
+      : undefined
+  );
 
   const mainLinks = [
     { href: '/', label: 'Übersicht', icon: Gauge },
@@ -75,8 +82,8 @@
   }));
 
   function active(href: string) {
-    if (href === '/') return pathname === '/';
-    return pathname === href || pathname.startsWith(`${href}/`);
+    if (href === '/') return routePath === '/';
+    return routePath === href || routePath.startsWith(`${href}/`);
   }
 
   function applyDensity(next: boolean) {
@@ -110,6 +117,7 @@
 
 <svelte:head>
   <meta name="theme-color" content="#f8fafc" />
+  {#if markdownPath}<link rel="alternate" href={href(markdownPath)} type="text/markdown" />{/if}
 </svelte:head>
 
 <div class:docs-sidebar-is-collapsed={sidebarCollapsed} class="docs-shell">

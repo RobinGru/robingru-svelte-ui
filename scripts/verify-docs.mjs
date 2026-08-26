@@ -1,6 +1,6 @@
 import { createRequire } from 'node:module';
 import { readFile, readdir, stat, writeFile } from 'node:fs/promises';
-import { dirname, join, relative, resolve } from 'node:path';
+import { basename, dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const require = createRequire(import.meta.url);
@@ -84,7 +84,7 @@ const previewComponent = await readFile(previewComponentPath, 'utf8');
 const namesBlock = catalog.split('const names:', 2)[1]?.split('const descriptions:', 1)[0] ?? '';
 const catalogNames = [...namesBlock.matchAll(/'([A-Z][A-Za-z0-9]+)'/g)].map((match) => match[1]);
 const componentFiles = (await walk(componentRoot)).filter((file) => file.endsWith('.svelte')).sort();
-const componentNames = componentFiles.map((file) => file.split('/').at(-1).replace('.svelte', ''));
+const componentNames = componentFiles.map((file) => basename(file, '.svelte'));
 const caseNames = [...preview.matchAll(/case '([^']+)'/g)].map((match) => match[1]);
 const specialNames = ['Tabs', 'List', 'CommandPalette', 'ToastViewport'];
 const previews = previewProps(preview);
@@ -113,7 +113,7 @@ for (const name of catalogNames) {
 }
 
 for (const file of componentFiles) {
-  const name = file.split('/').at(-1).replace('.svelte', '');
+  const name = basename(file, '.svelte');
   if (specialNames.includes(name)) continue;
   const required = requiredProps(file, await readFile(file, 'utf8'));
   const config = previews.get(name);
@@ -124,6 +124,8 @@ for (const file of componentFiles) {
 
 const requiredRoutes = [
   'src/routes/+page.svelte',
+  'src/routes/installation/+page.svelte',
+  'src/routes/why-robingru/+page.svelte',
   'src/routes/components/+page.svelte',
   'src/routes/components/[slug]/+page.svelte',
   'src/routes/components/[slug]/+page.ts',
