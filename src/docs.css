@@ -225,6 +225,17 @@ body { overflow-x: hidden; }
 .docs-blog-header h1 { margin: 0; font-size: clamp(2rem, 5vw, 4rem); letter-spacing: -.045em; line-height: 1.02; }
 .docs-blog-header p { margin: 1rem 0 0; color: var(--rg-fg-muted); font-size: 1.08rem; line-height: 1.65; }
 .docs-article-demo { padding-top: 2rem; border-top: 1px solid var(--rg-border); }
+.docs-editorial-bridge { display: grid; height: 100%; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 1rem; padding: 1.25rem; background: var(--rg-surface-sunken); }
+.docs-bridge-story { display: grid; align-content: start; gap: .55rem; padding: 1rem; border: 1px solid var(--rg-border); border-radius: var(--rg-radius-md); background: var(--rg-surface); }
+.docs-bridge-story > span { color: var(--rg-primary); font-size: var(--rg-text-xs); font-weight: 780; letter-spacing: .07em; text-transform: uppercase; }
+.docs-bridge-story strong { font-size: var(--rg-text-lg); line-height: 1.25; }
+.docs-bridge-story p, .docs-bridge-story small { margin: 0; color: var(--rg-fg-muted); font-size: var(--rg-text-sm); line-height: 1.55; }
+.docs-bridge-story small { color: var(--rg-fg-subtle); font-size: var(--rg-text-xs); }
+.docs-bridge-dashboard { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .55rem; }
+.docs-bridge-dashboard > div { display: grid; align-content: start; gap: .3rem; padding: .85rem; border: 1px solid var(--rg-border); border-radius: var(--rg-radius-md); background: var(--rg-surface); }
+.docs-bridge-dashboard > div:nth-child(2) { background: var(--rg-primary-soft); }
+.docs-bridge-dashboard span, .docs-bridge-dashboard small { color: var(--rg-fg-muted); font-size: var(--rg-text-xs); line-height: 1.4; }
+.docs-bridge-dashboard strong { margin-top: .25rem; font-size: clamp(1.25rem, 2.8vw, 1.8rem); letter-spacing: -.03em; }
 
 .docs-token-section { margin-top: 2.5rem; }
 .docs-token-section h2 { margin: 0 0 .4rem; font-size: 1.3rem; }
@@ -376,6 +387,7 @@ body { overflow-x: hidden; }
 
 @media (max-width: 48rem) {
   .docs-data-toolbar, .docs-token-preview-header { align-items: flex-start; flex-direction: column; }
+  .docs-editorial-bridge { grid-template-columns: 1fr; }
   .docs-data-toolbar > div:last-child { flex-wrap: wrap; }
   .docs-color-scale-blue, .docs-color-scale-slate { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .docs-spacing-token { grid-template-columns: 1fr; }

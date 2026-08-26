@@ -127,9 +127,18 @@
 
         <Figure caption="Dieselben Tokens können operative und redaktionelle Oberflächen verbinden, ohne sie gleichzumachen." credit="RobinGru Svelte UI" aspect="16 / 7">
           {#snippet media()}
-            <div style="height:100%;display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:1rem;padding:1.25rem;background:var(--rg-surface-sunken)">
-              <div style="display:grid;gap:.55rem;padding:.8rem;border:1px solid var(--rg-border);border-radius:var(--rg-radius-md);background:var(--rg-surface)"><span class="rg-skeleton" style="height:.65rem;width:55%"></span><span class="rg-skeleton" style="height:2rem;width:78%"></span><span class="rg-skeleton" style="height:.65rem"></span><span class="rg-skeleton" style="height:.65rem;width:86%"></span></div>
-              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem"><div class="rg-card"></div><div class="rg-card" style="background:var(--rg-primary-soft)"></div><div class="rg-card"></div></div>
+            <div class="docs-editorial-bridge">
+              <div class="docs-bridge-story">
+                <span>Editorial</span>
+                <strong>Eine gemeinsame Sprache</strong>
+                <p>Typografie und Rhythmus geben dem Inhalt Raum.</p>
+                <small>7 Min. Lesezeit · Design-System</small>
+              </div>
+              <div class="docs-bridge-dashboard" aria-label="Beispielhafte Dashboard-Kennzahlen">
+                <div><span>Aktive Projekte</span><strong>24</strong><small>+3 diese Woche</small></div>
+                <div><span>Bearbeitet</span><strong>84 %</strong><small>im Zielbereich</small></div>
+                <div><span>Offene Punkte</span><strong>12</strong><small>priorisiert</small></div>
+              </div>
             </div>
           {/snippet}
         </Figure>
