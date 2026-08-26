@@ -14,6 +14,7 @@ Important notes:
 ## Documentation
 
 - [Overview](./index.md): Primary entry point and documentation map.
+- [Start here](./start/index.md): The shortest path to installation, styles and a first component.
 - [Installation](./installation/index.md): GitHub installation, styles and first component.
 - [Why RG Svelte UI?](./why-robingru/index.md): Positioning, strengths and intentional limits.
 - [Component catalog](./components/index.md): All 116 public components and their Markdown references.

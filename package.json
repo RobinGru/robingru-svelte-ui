@@ -47,6 +47,9 @@
     "prepare": "svelte-kit sync && svelte-package",
     "package:source": "node scripts/build-source-package.mjs",
     "test": "vitest run",
+    "test:visual": "playwright test",
+    "test:visual:update": "playwright test --update-snapshots",
+    "audit:lighthouse": "bun run build:static && lhci autorun",
     "verify:static": "node scripts/static-verify.mjs",
     "verify:catalog": "node scripts/verify-components.mjs",
     "verify": "npm run verify:static && npm run verify:scripts && npm run verify:docs && npm run verify:llms && npm run check && npm run test && npm run build && npm run package && npm run verify:catalog && npm run verify:dist",
@@ -93,6 +96,8 @@
     }
   },
   "devDependencies": {
+    "@lhci/cli": "^0.15.1",
+    "@playwright/test": "^1.62.1",
     "@skeletonlabs/skeleton": "5.0.1",
     "@sveltejs/adapter-auto": "7.0.1",
     "@sveltejs/adapter-static": "^3.0.10",

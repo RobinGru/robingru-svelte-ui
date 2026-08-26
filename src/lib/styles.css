@@ -21,7 +21,7 @@
 
   .rg-button { --_h: var(--rg-control-h-md); display: inline-flex; align-items: center; justify-content: center; gap: .5rem; height: var(--_h); padding: 0 .9rem; border: 1px solid transparent; border-radius: var(--rg-radius-sm); font-weight: 650; font-size: var(--rg-text-sm); line-height: 1; text-decoration: none; cursor: pointer; user-select: none; white-space: nowrap; transition: background-color var(--rg-duration-fast) var(--rg-ease), border-color var(--rg-duration-fast) var(--rg-ease), color var(--rg-duration-fast) var(--rg-ease), transform var(--rg-duration-fast) var(--rg-ease), box-shadow var(--rg-duration-fast) var(--rg-ease); }
   .rg-button:active:not(:disabled) { transform: translateY(1px); }
-  .rg-button:disabled, .rg-disabled { opacity: .52; cursor: not-allowed; }
+  .rg-button:disabled, .rg-disabled { opacity: .62; cursor: not-allowed; }
   .rg-button[data-size='xs'] { --_h: var(--rg-control-h-xs); padding-inline: .65rem; font-size: var(--rg-text-xs); }
   .rg-button[data-size='sm'] { --_h: var(--rg-control-h-sm); padding-inline: .75rem; }
   .rg-button[data-size='lg'] { --_h: var(--rg-control-h-lg); padding-inline: 1.1rem; font-size: var(--rg-text-md); }

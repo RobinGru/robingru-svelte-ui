@@ -11,3 +11,6 @@ static/index.md
 static/*/index.md
 static/components/*/index.md
 *.log
+/.lighthouseci/
+/playwright-report/
+/test-results/

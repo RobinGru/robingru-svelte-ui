@@ -251,6 +251,19 @@ npm run verify
 
 Sie umfasst statische Prüfung, `svelte-check`, Vitest, SvelteKit-Build, Svelte-Package, Katalog- und Distributionsprüfung.
 
+Lokale visuelle Referenzen prüfen Blog und DataTable in Desktop, Kompakt, Dark und Mobil. Beim ersten Lauf werden die Baselines bewusst explizit erzeugt:
+
+```bash
+bun run test:visual:update
+bun run test:visual
+```
+
+Lighthouse ist ebenfalls nur lokal vorgesehen und nicht Teil des GitHub-Pages-Workflows:
+
+```bash
+bun run audit:lighthouse
+```
+
 Die mitgelieferten Source- und Distributionsdateien lassen sich auch ohne Registry-Zugriff prüfen:
 
 ```bash

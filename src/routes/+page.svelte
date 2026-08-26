@@ -57,8 +57,8 @@
     <h1>Ruhige Svelte-Oberflächen, vollständig live dokumentiert.</h1>
     <p>App-Komponenten, Dashboards, normale bis mittelgroße Datentabellen und redaktionelle Inhalte teilen eine ruhige visuelle Sprache – ohne Effekt-Überladung und redundante UI-Schichten.</p>
     <div class="docs-home-actions">
-      <Button onclick={() => window.location.href = `${base}/components`}>Komponenten ansehen <ArrowRight size={16} /></Button>
-      <Button variant="outline" tone="neutral" onclick={() => window.location.href = `${base}/installation`}>Installation</Button>
+      <Button onclick={() => window.location.href = `${base}/start`}>Starte hier <ArrowRight size={16} /></Button>
+      <Button variant="outline" tone="neutral" onclick={() => window.location.href = `${base}/components`}>Komponenten ansehen</Button>
       <Button variant="outline" tone="neutral" onclick={() => window.location.href = `${base}/patterns`}>Patterns öffnen</Button>
     </div>
     <div class="docs-home-meta">

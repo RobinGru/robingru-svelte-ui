@@ -6,6 +6,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const staticRoot = join(root, 'static');
 const requiredPages = [
   'index.md',
+  'start/index.md',
   'installation/index.md',
   'why-robingru/index.md',
   'components/index.md',

@@ -46,6 +46,7 @@ RobinGru Svelte UI umfasst 116 öffentliche Komponenten. Es unterstützt die The
 ## Weiterführende Dokumentation
 
 - [Installation](./installation/index.md): GitHub-Installation, Styles und erster Komponentenimport.
+- [Starte hier](./start/index.md): Der kürzeste Weg zur ersten Komponente.
 - [Warum RG Svelte UI?](./why-robingru/index.md): Stärken, Einsatzbereich und bewusste Grenzen.
 - [Komponentenkatalog](./components/index.md): Alle öffentlichen Komponenten nach Kategorie.
 - [Design Tokens](./tokens/index.md): Themes, Dichte, Farben, Abstände und weitere Tokens.`,
@@ -78,6 +79,33 @@ npm install github:RobinGru/robingru-svelte-ui
 \`\`\`
 
 Für bestehende Skeleton-5- und Tailwind-4-Projekte kann stattdessen \`@robingru/svelte-ui/skeleton.css\` importiert werden.`,
+  'start/index.md': `# Starte hier
+
+> Der kürzeste Einstieg in drei Schritten: installieren, Styles einbinden und die erste Komponente verwenden.
+
+## 1. Aus GitHub installieren
+
+\`\`\`sh
+bun add github:RobinGru/robingru-svelte-ui
+\`\`\`
+
+## 2. Styles einbinden
+
+\`\`\`css
+@import '@robingru/svelte-ui/styles.css';
+\`\`\`
+
+## 3. Erste Komponente
+
+\`\`\`svelte
+<script lang="ts">
+  import { Button } from '@robingru/svelte-ui';
+</script>
+
+<Button>Projekt anlegen</Button>
+\`\`\`
+
+Danach stehen der [Komponentenkatalog](../components/index.md), [Design Tokens](../tokens/index.md) und die [Gesamt-Workbench](../workbench/index.md) für die Vertiefung bereit.`,
   'why-robingru/index.md': `# Warum RG Svelte UI?
 
 > RG steht für RobinGru. Das System ist für ruhige, konsistente Svelte-Oberflächen gedacht, die Produkt, Daten und Inhalte verbinden.

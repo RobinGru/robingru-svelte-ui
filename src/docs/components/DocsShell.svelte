@@ -40,12 +40,13 @@
   const markdownPath = $derived(
     routeId === '/' ? '/index.md'
       : routeId === '/components/[slug]' && componentSlug ? `/components/${componentSlug}/index.md`
-      : ['/installation', '/why-robingru', '/components', '/patterns', '/dashboard', '/blog', '/data', '/tokens', '/accessibility', '/workbench'].includes(routeId ?? '') ? `${routeId}/index.md`
+      : ['/start', '/installation', '/why-robingru', '/components', '/patterns', '/dashboard', '/blog', '/data', '/tokens', '/accessibility', '/workbench'].includes(routeId ?? '') ? `${routeId}/index.md`
       : undefined
   );
 
   const mainLinks = [
     { href: '/', label: 'Übersicht', icon: Gauge },
+    { href: '/start', label: 'Starte hier', icon: Download },
     { href: '/installation', label: 'Installation', icon: Download },
     { href: '/why-robingru', label: 'Warum RG Svelte UI?', icon: Scale },
     { href: '/components', label: 'Komponenten', icon: Component, count: componentCatalog.length },

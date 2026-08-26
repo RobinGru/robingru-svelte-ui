@@ -106,10 +106,10 @@
   --rg-surface-muted: oklch(24.5% 0.035 242);
   --rg-surface-sunken: oklch(15.8% 0.016 247);
   --rg-fg: oklch(95.5% 0.006 247);
-  --rg-fg-muted: oklch(76% 0.018 247);
-  --rg-fg-subtle: oklch(65% 0.022 247);
-  --rg-border: oklch(34% 0.03 244);
-  --rg-border-strong: oklch(43% 0.05 242);
+  --rg-fg-muted: oklch(78% 0.018 247);
+  --rg-fg-subtle: oklch(70% 0.022 247);
+  --rg-border: oklch(39% 0.03 244);
+  --rg-border-strong: oklch(49% 0.05 242);
   --rg-primary: oklch(72% 0.135 238);
   --rg-primary-hover: oklch(78% 0.11 236);
   --rg-primary-active: oklch(66% 0.15 241);
