@@ -15,7 +15,7 @@
 
 <article class="docs-component-card" id={item.slug}>
   <div class="docs-component-preview" data-height={config.height ?? 'default'} class:docs-preview-unpadded={config.padded === false}>
-    <div data-theme="robin" class="docs-component-preview-canvas">
+    <div class="docs-component-preview-canvas">
       <ComponentPreview name={item.name} />
     </div>
   </div>

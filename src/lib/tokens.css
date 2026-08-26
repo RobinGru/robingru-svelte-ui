@@ -42,6 +42,7 @@
   --rg-primary: var(--rg-blue-600);
   --rg-primary-hover: var(--rg-blue-700);
   --rg-primary-active: var(--rg-blue-800);
+  --rg-primary-text: var(--rg-blue-700);
   --rg-primary-soft: var(--rg-blue-100);
   --rg-primary-fg: white;
   --rg-focus: var(--rg-blue-500);
@@ -49,6 +50,11 @@
   --rg-success: oklch(55% 0.14 154);
   --rg-warning: oklch(69% 0.15 74);
   --rg-danger: oklch(56% 0.2 26);
+  /* Text colours for semantic surfaces stay legible at small component sizes. */
+  --rg-info-fg: oklch(47% 0.14 241);
+  --rg-success-fg: oklch(43% 0.11 154);
+  --rg-warning-fg: oklch(47% 0.11 74);
+  --rg-danger-fg: oklch(47% 0.16 26);
   --rg-overlay: oklch(18% 0.02 245 / 0.46);
 
   --rg-font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -113,6 +119,7 @@
   --rg-primary: oklch(72% 0.135 238);
   --rg-primary-hover: oklch(78% 0.11 236);
   --rg-primary-active: oklch(66% 0.15 241);
+  --rg-primary-text: var(--rg-primary);
   --rg-primary-soft: oklch(29% 0.07 243);
   --rg-primary-fg: oklch(18% 0.025 247);
   --rg-focus: oklch(75% 0.13 238);
@@ -120,6 +127,10 @@
   --rg-success: oklch(70% 0.13 154);
   --rg-warning: oklch(78% 0.14 78);
   --rg-danger: oklch(70% 0.17 27);
+  --rg-info-fg: var(--rg-info);
+  --rg-success-fg: var(--rg-success);
+  --rg-warning-fg: var(--rg-warning);
+  --rg-danger-fg: var(--rg-danger);
   --rg-overlay: oklch(8% 0.01 245 / 0.68);
   --rg-shadow-xs: 0 1px 2px oklch(5% 0.01 245 / 0.28);
   --rg-shadow-sm: 0 8px 20px -10px oklch(5% 0.02 245 / 0.55), 0 1px 3px oklch(5% 0.01 245 / 0.30);

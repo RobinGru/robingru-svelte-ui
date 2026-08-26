@@ -16,7 +16,7 @@ test.beforeEach(async ({ page }, testInfo) => {
   }, state);
 });
 
-for (const route of ['/blog', '/data']) {
+for (const route of ['/blog', '/data', '/components']) {
   test(`${route} remains visually stable`, async ({ page }) => {
     await page.goto(route, { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(200);

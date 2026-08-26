@@ -9,10 +9,13 @@
     <script>
       try {
         const root = document.documentElement;
-        if (localStorage.getItem('rg-docs-density') === 'compact') root.dataset.density = 'compact';
+        const audit = new URLSearchParams(window.location.search);
+        const auditDensity = audit.get('rg-audit-density');
+        const auditTheme = audit.get('rg-audit-theme');
+        if (auditDensity === 'compact' || (!auditDensity && localStorage.getItem('rg-docs-density') === 'compact')) root.dataset.density = 'compact';
         const theme = localStorage.getItem('rg-docs-theme');
-        if (theme === 'dark') root.dataset.theme = 'robin-dark';
-        if (theme === 'light') root.dataset.theme = 'robin';
+        if (auditTheme === 'dark' || (!auditTheme && theme === 'dark')) root.dataset.theme = 'robin-dark';
+        if (auditTheme === 'light' || (!auditTheme && theme === 'light')) root.dataset.theme = 'robin';
       } catch {}
     </script>
     %sveltekit.head%

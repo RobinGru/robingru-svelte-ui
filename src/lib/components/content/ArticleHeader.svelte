@@ -12,6 +12,7 @@
     actions?: Snippet;
     children?: Snippet;
     align?: 'start' | 'center';
+    headingLevel?: 1 | 2 | 3 | 4 | 5 | 6;
   };
 
   let {
@@ -23,6 +24,7 @@
     actions,
     children,
     align = 'start',
+    headingLevel = 1,
     class: className,
     ...rest
   }: Props = $props();
@@ -31,7 +33,7 @@
 <header {...rest} class={cn('rg-article-header', className)} data-align={align}>
   {#if breadcrumbs}<div class="rg-article-breadcrumbs">{@render breadcrumbs()}</div>{/if}
   {#if eyebrow}<div class="rg-article-eyebrow">{eyebrow}</div>{/if}
-  <h1 class="rg-article-title">{title}</h1>
+  <svelte:element this={`h${headingLevel}`} class="rg-article-title">{title}</svelte:element>
   {#if description}<p class="rg-article-deck">{description}</p>{/if}
   {#if meta}<div class="rg-article-meta-slot">{@render meta()}</div>{/if}
   {#if actions}<div class="rg-article-actions">{@render actions()}</div>{/if}
