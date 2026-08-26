@@ -20,7 +20,7 @@
   import CodePanel from '$docs/components/CodePanel.svelte';
   import ComponentCard from '$docs/components/ComponentCard.svelte';
 
-  const installation = `npm install @robingru/svelte-ui\n\n# optional für Skeleton/Tailwind-Integration\nnpm install -D @skeletonlabs/skeleton tailwindcss`;
+  const installation = `bun add github:RobinGru/robingru-svelte-ui\n\n# optional für Skeleton/Tailwind-Integration\nbun add -d @skeletonlabs/skeleton tailwindcss`;
   const setup = `/* src/app.css */\n@import '@robingru/svelte-ui/styles.css';`;
 
   const featureCards = [
