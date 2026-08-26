@@ -65,6 +65,8 @@ body { overflow-x: hidden; }
 .docs-topbar-start > a { color: var(--rg-fg-muted); font-size: var(--rg-text-sm); font-weight: 680; text-decoration: none; }
 .docs-density-toggle { min-height: 2rem; padding: 0 .65rem; border: 1px solid var(--rg-border); border-radius: var(--rg-radius-sm); background: var(--rg-surface); color: var(--rg-fg-muted); font-size: var(--rg-text-xs); font-weight: 650; cursor: pointer; }
 .docs-density-toggle:hover { color: var(--rg-fg); border-color: var(--rg-border-strong); }
+.docs-theme-toggle.rg-button { --_h: 2rem; width: 2rem; padding: 0; border-color: var(--rg-border); background: var(--rg-surface); color: var(--rg-fg-muted); }
+.docs-theme-toggle.rg-button:hover { border-color: var(--rg-border-strong); background: var(--rg-surface-muted); color: var(--rg-fg); }
 .docs-content { width: min(100%, var(--docs-content)); margin-inline: auto; padding: clamp(1.25rem, 2.8vw, 2.75rem); }
 
 .docs-section-intro { display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--rg-border); }

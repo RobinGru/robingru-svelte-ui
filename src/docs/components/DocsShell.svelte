@@ -186,7 +186,7 @@
       </div>
       <div class="docs-topbar-actions">
         <button class="docs-density-toggle" type="button" aria-pressed={mounted ? compact : false} onclick={() => applyDensity(!compact)}>{mounted && compact ? 'Kompakt' : 'Normal'}</button>
-        <ThemeToggle storageKey="rg-docs-theme" />
+        <ThemeToggle class="docs-theme-toggle" storageKey="rg-docs-theme" />
       </div>
     </header>
     <main class="docs-content" id="main-content">
