@@ -22,7 +22,7 @@ body { overflow-x: hidden; }
 }
 .docs-brand-row { display: flex; align-items: center; justify-content: space-between; min-height: var(--docs-topbar); padding: .65rem .9rem; border-bottom: 1px solid var(--rg-border); }
 .docs-brand { display: inline-flex; align-items: center; gap: .7rem; color: var(--rg-fg); text-decoration: none; }
-.docs-brand-mark { display: grid; width: 2rem; height: 2rem; place-items: center; border-radius: var(--rg-radius-sm); background: var(--rg-primary); color: var(--rg-primary-fg); font-size: .88rem; font-weight: 820; box-shadow: var(--rg-shadow-xs); }
+.docs-brand-mark { display: grid; width: 2rem; height: 2rem; place-items: center; border-radius: var(--rg-radius-sm); background: var(--rg-primary); color: var(--rg-primary-fg); font-size: .88rem; font-weight: 820; }
 .docs-brand > span:last-child { display: grid; line-height: 1.08; }
 .docs-brand strong { font-size: var(--rg-text-sm); letter-spacing: -.01em; }
 .docs-brand small { color: var(--rg-fg-subtle); font-size: .68rem; font-weight: 600; }
@@ -142,7 +142,7 @@ body { overflow-x: hidden; }
 .docs-route-card p { margin: 0; color: var(--rg-fg-muted); font-size: var(--rg-text-sm); line-height: 1.55; }
 .docs-route-card footer { display: flex; align-items: center; justify-content: space-between; margin-top: 1.25rem; color: var(--rg-fg-subtle); font-size: var(--rg-text-xs); }
 
-.docs-catalog-toolbar { position: sticky; top: calc(var(--docs-topbar) + .75rem); z-index: 15; display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: 1.25rem; padding: .65rem; border: 1px solid var(--rg-border); border-radius: var(--rg-radius-lg); background: color-mix(in oklab, var(--rg-surface) 94%, transparent); box-shadow: var(--rg-shadow-xs);  }
+.docs-catalog-toolbar { position: sticky; top: calc(var(--docs-topbar) + .75rem); z-index: 15; display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: 1.25rem; padding: .65rem; border: 1px solid var(--rg-border); border-radius: var(--rg-radius-lg); background: color-mix(in oklab, var(--rg-surface) 94%, transparent); }
 .docs-catalog-search { position: relative; flex: 1; max-width: 28rem; }
 .docs-catalog-search svg { position: absolute; top: 50%; left: .75rem; transform: translateY(-50%); color: var(--rg-fg-subtle); pointer-events: none; }
 .docs-catalog-search input { padding-left: 2.25rem; }
@@ -155,7 +155,7 @@ body { overflow-x: hidden; }
 .docs-catalog-section h2 { margin: 0; font-size: 1.35rem; }
 .docs-catalog-section header p { max-width: 44rem; margin: .3rem 0 0; color: var(--rg-fg-muted); font-size: var(--rg-text-sm); }
 .docs-component-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-.docs-component-card { min-width: 0; overflow: hidden; border: 1px solid var(--rg-border); border-radius: var(--rg-radius-lg); background: var(--rg-surface); box-shadow: var(--rg-shadow-xs); }
+.docs-component-card { min-width: 0; overflow: hidden; border: 1px solid var(--rg-border); border-radius: var(--rg-radius-lg); background: var(--rg-surface); }
 .docs-component-preview { display: grid; min-height: 14rem; place-items: center; overflow: auto; padding: 1.2rem; border-bottom: 1px solid var(--rg-border); background: var(--rg-surface-sunken); }
 .docs-component-preview[data-height='compact'] { min-height: 8.75rem; }
 .docs-component-preview[data-height='tall'] { min-height: 20rem; }
@@ -172,7 +172,7 @@ body { overflow-x: hidden; }
 .docs-card-link:hover { background: var(--rg-primary-soft); color: var(--rg-primary); }
 .docs-catalog-empty { padding: 3rem 1rem; border: 1px dashed var(--rg-border-strong); border-radius: var(--rg-radius-lg); text-align: center; color: var(--rg-fg-muted); }
 
-.docs-demo-frame { overflow: hidden; border: 1px solid var(--rg-border); border-radius: var(--rg-radius-xl); background: var(--rg-surface); box-shadow: var(--rg-shadow-xs); }
+.docs-demo-frame { overflow: hidden; border: 1px solid var(--rg-border); border-radius: var(--rg-radius-xl); background: var(--rg-surface); }
 .docs-demo-toolbar { display: flex; min-height: 3.25rem; align-items: center; justify-content: space-between; gap: .75rem; padding: .55rem .7rem .55rem 1rem; border-bottom: 1px solid var(--rg-border); background: var(--rg-surface-sunken); }
 .docs-demo-heading { display: grid; gap: .1rem; min-width: 0; }
 .docs-demo-heading strong { font-size: var(--rg-text-sm); }
