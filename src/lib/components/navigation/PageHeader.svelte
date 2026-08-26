@@ -1,0 +1,5 @@
+<script lang="ts">
+  import type { Snippet } from 'svelte'; import type { HTMLAttributes } from 'svelte/elements'; import { cn } from '../../internal/cn.js';
+  type Props=Omit<HTMLAttributes<HTMLElement>,'children'>&{title:string;description?:string;eyebrow?:string;breadcrumbs?:Snippet;actions?:Snippet;children?:Snippet}; let {title,description,eyebrow,breadcrumbs,actions,children,class:className,...rest}:Props=$props();
+</script>
+<header {...rest} class={cn('rg-page-header',className)}><div>{#if breadcrumbs}<div style="margin-bottom:.65rem">{@render breadcrumbs()}</div>{/if}{#if eyebrow}<div style="color:var(--rg-primary);font-size:var(--rg-text-xs);font-weight:780;letter-spacing:.07em;text-transform:uppercase;margin-bottom:.25rem">{eyebrow}</div>{/if}<h1 class="rg-page-title">{title}</h1>{#if description}<p class="rg-page-description">{description}</p>{/if}{#if children}<div style="margin-top:.75rem">{@render children()}</div>{/if}</div>{#if actions}<div class="rg-cluster">{@render actions()}</div>{/if}</header>

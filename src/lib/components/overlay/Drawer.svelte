@@ -1,0 +1,6 @@
+<script lang="ts">
+  import type { Snippet } from 'svelte'; import { Dialog as BitsDialog } from 'bits-ui'; import { X } from '@lucide/svelte'; import { cn } from '../../internal/cn.js';
+  type Props={open?:boolean;title:string;description?:string;trigger?:Snippet;children:Snippet;footer?:Snippet;width?:string;class?:string};
+  let {open=$bindable(false),title,description,trigger,children,footer,width='28rem',class:className}:Props=$props();
+</script>
+<BitsDialog.Root bind:open>{#if trigger}<BitsDialog.Trigger class="rg-button" data-variant="outline" data-tone="neutral">{@render trigger()}</BitsDialog.Trigger>{/if}<BitsDialog.Portal><BitsDialog.Overlay class="rg-overlay"/><BitsDialog.Content class={cn('rg-drawer',className)} style={`--drawer-width:${width}`}><div class="rg-dialog-header"><BitsDialog.Title class="rg-dialog-title">{title}</BitsDialog.Title>{#if description}<BitsDialog.Description class="rg-dialog-description">{description}</BitsDialog.Description>{/if}</div><div class="rg-dialog-body">{@render children()}</div>{#if footer}<div class="rg-dialog-footer">{@render footer()}</div>{/if}<BitsDialog.Close class="rg-button rg-icon-button rg-dialog-close" data-variant="ghost" data-size="sm" aria-label="Schließen"><X size={17}/></BitsDialog.Close></BitsDialog.Content></BitsDialog.Portal></BitsDialog.Root>

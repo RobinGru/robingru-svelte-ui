@@ -1,0 +1,17 @@
+@import 'tailwindcss';
+@import '@skeletonlabs/skeleton';
+@import './styles.css';
+
+@source './components/**/*.{svelte,ts}';
+
+@theme inline {
+  --color-rg-bg: var(--rg-bg);
+  --color-rg-surface: var(--rg-surface);
+  --color-rg-muted: var(--rg-surface-muted);
+  --color-rg-fg: var(--rg-fg);
+  --color-rg-fg-muted: var(--rg-fg-muted);
+  --color-rg-border: var(--rg-border);
+  --color-rg-primary: var(--rg-primary);
+  --font-sans: var(--rg-font-sans);
+  --radius-rg: var(--rg-radius-md);
+}

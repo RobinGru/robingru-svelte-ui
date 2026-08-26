@@ -1,0 +1,108 @@
+{
+  "name": "@robingru/svelte-ui",
+  "version": "0.3.1",
+  "description": "A calm, light-blue Svelte 5 design system for applications, dashboards, editorial content and integrated live documentation.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobinGru/robingru-svelte-ui.git"
+  },
+  "homepage": "https://github.com/RobinGru/robingru-svelte-ui",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist",
+    "docs",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "!docs/*.log",
+    "!docs/*.exit"
+  ],
+  "svelte": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./skeleton.css": "./dist/skeleton.css",
+    "./tokens.css": "./dist/tokens.css",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "dev": "svelte-kit sync && vite dev",
+    "build": "svelte-kit sync && vite build",
+    "build:static": "svelte-kit sync && vite build",
+    "preview": "svelte-kit sync && vite build && vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "package": "svelte-kit sync && svelte-package",
+    "prepare": "svelte-kit sync && svelte-package",
+    "package:source": "node scripts/build-source-package.mjs",
+    "test": "vitest run",
+    "verify:static": "node scripts/static-verify.mjs",
+    "verify:catalog": "node scripts/verify-components.mjs",
+    "verify": "npm run verify:static && npm run verify:scripts && npm run verify:docs && npm run check && npm run test && npm run build && npm run package && npm run verify:catalog && npm run verify:dist",
+    "versions": "node scripts/version-report.mjs",
+    "prepublishOnly": "npm run verify",
+    "verify:dist": "node scripts/verify-dist.mjs",
+    "verify:offline": "npm run verify:static && npm run verify:scripts && npm run verify:docs && npm run verify:catalog && npm run verify:dist",
+    "verify:source": "npm run verify:static && npm run verify:scripts && npm run verify:docs && npm run verify:catalog && npm run package:source && npm run verify:dist",
+    "docs": "svelte-kit sync && vite dev",
+    "docs:build": "svelte-kit sync && vite build",
+    "verify:scripts": "node scripts/verify-svelte-scripts.mjs",
+    "verify:docs": "node scripts/verify-docs.mjs",
+    "docs:preview": "svelte-kit sync && vite build && vite preview"
+  },
+  "keywords": [
+    "svelte",
+    "sveltekit",
+    "components",
+    "design-system",
+    "dashboard",
+    "blog",
+    "bits-ui",
+    "skeleton",
+    "ui"
+  ],
+  "engines": {
+    "node": ">=20.19"
+  },
+  "dependencies": {
+    "@lucide/svelte": "1.33.0",
+    "bits-ui": "2.19.0"
+  },
+  "peerDependencies": {
+    "@skeletonlabs/skeleton": "^5.0.1",
+    "svelte": "^5.56.10",
+    "tailwindcss": "^4.3.3"
+  },
+  "peerDependenciesMeta": {
+    "@skeletonlabs/skeleton": {
+      "optional": true
+    },
+    "tailwindcss": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@skeletonlabs/skeleton": "5.0.1",
+    "@sveltejs/adapter-auto": "7.0.1",
+    "@sveltejs/adapter-static": "^3.0.10",
+    "@sveltejs/kit": "2.70.3",
+    "@sveltejs/package": "2.5.8",
+    "@sveltejs/vite-plugin-svelte": "6.2.4",
+    "@tailwindcss/vite": "4.3.3",
+    "svelte": "5.56.10",
+    "svelte-check": "4.7.6",
+    "tailwindcss": "4.3.3",
+    "typescript": "6.0.3",
+    "vite": "7.3.6",
+    "vitest": "4.1.11"
+  }
+}

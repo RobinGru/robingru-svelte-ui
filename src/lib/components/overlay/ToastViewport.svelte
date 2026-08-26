@@ -1,0 +1,5 @@
+<script lang="ts">
+  import { X } from '@lucide/svelte'; import { toast as defaultToast, type Toaster } from '../../toast.js';
+  type Props={toaster?:Toaster;label?:string}; let {toaster=defaultToast,label='Benachrichtigungen'}:Props=$props();
+</script>
+<div class="rg-toast-viewport" role="region" aria-label={label} aria-live="polite">{#each $toaster as item (item.id)}<article class="rg-toast" data-tone={item.tone}><span aria-hidden="true" style={`width:.55rem;height:.55rem;margin-top:.45rem;border-radius:50%;background:var(--rg-${item.tone==='neutral'?'primary':item.tone})`}></span><div><div class="rg-toast-title">{item.title}</div>{#if item.description}<div class="rg-toast-description">{item.description}</div>{/if}{#if item.action}<button class="rg-link" type="button" style="padding:0;border:0;background:transparent;margin-top:.35rem;cursor:pointer" onclick={item.action.callback}>{item.action.label}</button>{/if}</div><button class="rg-input-action" style="position:static" type="button" aria-label="Benachrichtigung schließen" onclick={()=>toaster.dismiss(item.id)}><X size={15}/></button></article>{/each}</div>

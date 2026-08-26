@@ -1,0 +1,170 @@
+<script lang="ts">
+  import { base } from '$app/paths';
+  import {
+    Article,
+    ArticleHeader,
+    ArticleMeta,
+    ArticleNavigation,
+    AuthorCard,
+    Badge,
+    Blockquote,
+    Breadcrumbs,
+    Button,
+    CodeBlock,
+    Figure,
+    NewsletterCard,
+    PostCard,
+    PostGrid,
+    Prose,
+    RelatedPosts,
+    ShareButtons,
+    TableOfContents,
+    TagList,
+    toast,
+    type PostSummary
+  } from '$lib';
+  import SectionIntro from '$docs/components/SectionIntro.svelte';
+
+  let newsletterEmail = $state('');
+
+  const posts: PostSummary[] = [
+    {
+      title: 'Ein Svelte-UI-Kit muss Inhalt und Anwendung zusammenhalten',
+      href: '#article',
+      excerpt: 'RobinGru verbindet Arbeitsoberflächen, Daten und Editorial Content über gemeinsame Tokens – nicht über identische Cards für alles.',
+      eyebrow: 'Design-System',
+      date: '26. August 2026',
+      dateTime: '2026-08-26',
+      author: 'Robin Gru',
+      minutes: 7,
+      tags: ['SvelteKit', 'Design-System'],
+      featured: true
+    },
+    {
+      title: 'Dichte ohne Enge: Tabellen für echte Arbeitsabläufe',
+      href: `${base}/data`,
+      excerpt: 'Wie Spaltensteuerung, Filter und klare Zustände zusammenarbeiten, ohne eine Enterprise-Grid-Engine einzubauen.',
+      eyebrow: 'Data UI',
+      date: '22. August 2026',
+      dateTime: '2026-08-22',
+      author: 'RobinGru',
+      minutes: 6,
+      tags: ['DataTable', 'UX']
+    },
+    {
+      title: 'Dashboard-Karten, die Entscheidungen unterstützen',
+      href: `${base}/dashboard`,
+      excerpt: 'KPIs, Trends und kleine Diagramme werden als zusammenhängende Informationshierarchie gestaltet.',
+      eyebrow: 'Dashboard',
+      date: '18. August 2026',
+      dateTime: '2026-08-18',
+      author: 'RobinGru',
+      minutes: 5,
+      tags: ['KPI', 'Charts']
+    }
+  ];
+
+  const relatedPosts = posts.slice(1);
+  const tocItems = [
+    { label: 'Eine gemeinsame Sprache', href: '#common-language', level: 2 as const, active: true },
+    { label: 'Dashboard und Editorial', href: '#dashboard-editorial', level: 2 as const },
+    { label: 'Weniger Abhängigkeiten', href: '#fewer-dependencies', level: 2 as const },
+    { label: 'Praktische Konsequenz', href: '#practical-result', level: 2 as const }
+  ];
+  const exampleCode = `<script lang="ts">\n  import { Article, Prose, TableOfContents } from '@robingru/svelte-ui';\n<\/script>\n\n<Article>\n  {#snippet aside()}<TableOfContents {items} />{/snippet}\n  <Prose>Dein Inhalt bleibt der Mittelpunkt.</Prose>\n</Article>`;
+
+  function subscribe(email: string) {
+    toast.push({ title: 'Newsletter-Demo gespeichert', description: `${email} wurde nur lokal verarbeitet.`, tone: 'success' });
+    newsletterEmail = '';
+  }
+</script>
+
+<svelte:head>
+  <title>Blog & Editorial Demo · RobinGru Svelte UI</title>
+  <meta name="description" content="Vollständige RobinGru Blog- und Artikeldemo mit Prose, Inhaltsverzeichnis, Code, Autor und verwandten Beiträgen." />
+</svelte:head>
+
+<SectionIntro eyebrow="Editorial Showcase" title="Ein Blog, der nicht wie ein Dashboard verkleidet ist." description="Typografie, Metadaten und Navigation geben dem Inhalt Ruhe. Gleichzeitig bleiben Farben, Radien, Fokuszustände und Abstände klar als RobinGru erkennbar." />
+
+<div class="docs-blog-index">
+  <section>
+    <div class="docs-section-heading"><div><h2>Aktuelle Beiträge</h2><p>Featured Story und normale Beitragskarten verwenden dieselbe redaktionelle Hierarchie.</p></div><Badge tone="primary">17 Content-Komponenten</Badge></div>
+    <PostGrid minItemWidth="18rem">
+      {#each posts as post}
+        <PostCard {...post} />
+      {/each}
+    </PostGrid>
+  </section>
+
+  <section id="article" class="docs-article-demo">
+    <Article size="lg">
+      {#snippet aside()}<TableOfContents items={tocItems} />{/snippet}
+
+      <ArticleHeader
+        eyebrow="Design-System"
+        title="Ein Svelte-UI-Kit muss Inhalt und Anwendung zusammenhalten"
+        description="RobinGru verbindet Arbeitsoberflächen, Daten und Editorial Content über gemeinsame Tokens – nicht über identische Karten für alles."
+      >
+        {#snippet breadcrumbs()}<Breadcrumbs items={[{ label: 'Blog', href: `${base}/blog` }, { label: 'Design-System', current: true }]} />{/snippet}
+        {#snippet meta()}
+          <ArticleMeta author="Robin Gru" published="26. August 2026" publishedDatetime="2026-08-26" minutes={7} category="SvelteKit" />
+        {/snippet}
+        <TagList tags={[{ label: 'Svelte 5', tone: 'primary' }, 'Design-System', { label: 'Accessibility', tone: 'info' }]} />
+      </ArticleHeader>
+
+      <Prose>
+        <p>Ein gutes Design-System macht nicht jede Oberfläche gleich. Es sorgt dafür, dass sich Buttons, Formulare, Tabellen und redaktionelle Seiten <strong>verwandt</strong> anfühlen, während jeder Bereich seine eigene Aufgabe ernst nimmt.</p>
+
+        <h2 id="common-language">Eine gemeinsame Sprache</h2>
+        <p>Robin Blue markiert Fokus, Auswahl und wichtige Aktionen. Flächen bleiben überwiegend neutral, damit Kennzahlen, Tabelleninhalte und Texte nicht um Aufmerksamkeit konkurrieren.</p>
+
+        <Blockquote source="RobinGru Designprinzip" tone="primary">
+          <p>Farbe soll Bedeutung tragen. Sie darf nicht die fehlende Informationshierarchie ersetzen.</p>
+        </Blockquote>
+
+        <h2 id="dashboard-editorial">Dashboard und Editorial</h2>
+        <p>Im Dashboard zählt Vergleichbarkeit. Im Artikel zählen Rhythmus und Lesefluss. Beide verwenden dennoch dieselben Radien, Fokuszustände, Abstände und semantischen Farben.</p>
+
+        <Figure caption="Dieselben Tokens können operative und redaktionelle Oberflächen verbinden, ohne sie gleichzumachen." credit="RobinGru Svelte UI" aspect="16 / 7">
+          {#snippet media()}
+            <div style="height:100%;display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:1rem;padding:1.25rem;background:var(--rg-surface-sunken)">
+              <div style="display:grid;gap:.55rem;padding:.8rem;border:1px solid var(--rg-border);border-radius:var(--rg-radius-md);background:var(--rg-surface)"><span class="rg-skeleton" style="height:.65rem;width:55%"></span><span class="rg-skeleton" style="height:2rem;width:78%"></span><span class="rg-skeleton" style="height:.65rem"></span><span class="rg-skeleton" style="height:.65rem;width:86%"></span></div>
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem"><div class="rg-card"></div><div class="rg-card" style="background:var(--rg-primary-soft)"></div><div class="rg-card"></div></div>
+            </div>
+          {/snippet}
+        </Figure>
+
+        <CodeBlock code={exampleCode} language="svelte" filename="+page.svelte" lineNumbers highlightLines={[2, 6]} />
+
+        <h2 id="fewer-dependencies">Weniger Abhängigkeiten</h2>
+        <p>Komplexes Fokusmanagement kommt aus Bits UI. Das optionale Skeleton-Stylesheet integriert Tailwind und Skeleton. RobinGru führt daneben keine zweite Toast-, Tabellen- oder Komponentenbibliothek ein.</p>
+
+        <table>
+          <thead><tr><th>Bereich</th><th>Priorität</th><th>RobinGru-Bausteine</th></tr></thead>
+          <tbody>
+            <tr><td>Blog</td><td>Lesefluss</td><td>Article, Prose, TOC, CodeBlock</td></tr>
+            <tr><td>Dashboard</td><td>Vergleich</td><td>KpiCard, ChartCard, StatusSummary</td></tr>
+            <tr><td>Backoffice</td><td>Bearbeitung</td><td>DataTable, FilterBar, Dialog</td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="practical-result">Praktische Konsequenz</h2>
+        <p>Eine Produktseite kann eine Tabelle, einen erklärenden Artikel und eine Einstellungsoberfläche enthalten, ohne drei voneinander unabhängige Designsprachen zu benötigen.</p>
+      </Prose>
+
+      <ShareButtons url="https://example.com/robingru-design-system" title="RobinGru Design System" />
+
+      <AuthorCard name="Robin Gru" role="Maintainer von RobinGru Svelte UI" bio="Entwickelt ein ruhiges, Svelte-natives Komponenten-System für produktive Anwendungen und redaktionelle Inhalte.">
+        {#snippet actions()}<Button size="sm" variant="outline" tone="neutral">Profil öffnen</Button>{/snippet}
+      </AuthorCard>
+
+      <NewsletterCard bind:email={newsletterEmail} title="Release-Notizen statt Marketing-Dauerfeuer" description="Neue Komponenten, Migrationshinweise und relevante Designentscheidungen." privacyText="Demo: Es werden keine Daten übertragen." onsubmit={subscribe} />
+
+      <ArticleNavigation previous={{ title: 'Datentabellen mit klaren Zuständen', href: `${base}/data` }} next={{ title: 'Dashboard-Komponenten sinnvoll kombinieren', href: `${base}/dashboard` }} />
+    </Article>
+  </section>
+
+  <RelatedPosts posts={relatedPosts} title="Weitere RobinGru-Muster" description="Blog-Karten verwenden dieselben Tokens, aber eine eigenständige Editorial-Hierarchie." />
+</div>
+
+<footer class="docs-footer"><div><span>Editorial Content bleibt semantisches HTML.</span><a href={`${base}/tokens`}>Typografie- und Farb-Tokens ansehen</a></div></footer>

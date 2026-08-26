@@ -1,0 +1,187 @@
+import { createRawSnippet, type Snippet } from 'svelte';
+import { base } from '$app/paths';
+
+const path = (value: string) => `${base}${value}`;
+
+export type PreviewConfig = {
+  props: Record<string, unknown>;
+  code: string;
+  height?: 'compact' | 'default' | 'tall';
+  padded?: boolean;
+};
+
+const raw = (html: string, singleRoot = false): Snippet => createRawSnippet(() => ({ render: () => singleRoot ? html : `<span style="display:contents">${html}</span>` }));
+const noop = () => undefined;
+
+const options = [
+  { value: 'overview', label: 'Übersicht' },
+  { value: 'details', label: 'Details' },
+  { value: 'history', label: 'Verlauf' }
+];
+const chartData = [
+  { label: 'Direkt', value: 48, tone: 'primary' },
+  { label: 'Organisch', value: 31, tone: 'info' },
+  { label: 'Referral', value: 21, tone: 'success' }
+];
+const tableColumns = [
+  { key: 'name', label: 'Name', sortable: true, minWidth: '9rem' },
+  { key: 'status', label: 'Status', sortable: true, width: '7rem' },
+  { key: 'value', label: 'Wert', sortable: true, align: 'end', width: '6rem' }
+];
+const tableRows = [
+  { id: 1, name: 'Workspace', status: 'Aktiv', value: 84 },
+  { id: 2, name: 'Analytics', status: 'Prüfung', value: 67 },
+  { id: 3, name: 'Portal', status: 'Aktiv', value: 92 }
+];
+const posts = [
+  {
+    title: 'Ein ruhiges Design-System für echte Anwendungen',
+    href: path('/components'),
+    excerpt: 'Komponenten, Daten und Editorial Content folgen derselben Sprache.',
+    eyebrow: 'Design-System',
+    date: '26. August 2026',
+    author: 'RobinGru',
+    minutes: 6,
+    tags: ['Svelte', 'UI']
+  },
+  {
+    title: 'Daten verständlich statt dekorativ visualisieren',
+    href: path('/components'),
+    excerpt: 'Kleine Charts und klare Kennzahlen unterstützen Entscheidungen.',
+    eyebrow: 'Dashboard',
+    date: '22. August 2026',
+    author: 'RobinGru',
+    minutes: 5,
+    tags: ['Data', 'UX']
+  }
+];
+
+const importCode = (name: string, usage: string) =>
+  `<script lang="ts">\n  import { ${name} } from '@robingru/svelte-ui';\n<\/script>\n\n${usage}`;
+
+export function previewFor(name: string): PreviewConfig {
+  switch (name) {
+    case 'Alert': return { props: { title: 'Änderungen gespeichert', description: 'Die neue Konfiguration ist aktiv.', tone: 'success' }, code: importCode(name, '<Alert title="Änderungen gespeichert" tone="success" />') };
+    case 'Avatar': return { props: { name: 'Robin Gru', initials: 'RG', size: 'lg' }, code: importCode(name, '<Avatar name="Robin Gru" initials="RG" size="lg" />'), height: 'compact' };
+    case 'AvatarGroup': return { props: { label: 'Projektteam', children: raw('<span class="rg-avatar" data-size="sm">RG</span><span class="rg-avatar" data-size="sm">MK</span><span class="rg-avatar" data-size="sm">JW</span>') }, code: importCode(name, '<AvatarGroup>…</AvatarGroup>'), height: 'compact' };
+    case 'Badge': return { props: { tone: 'success', dot: true, children: raw('Aktiv') }, code: importCode(name, '<Badge tone="success" dot>Aktiv</Badge>'), height: 'compact' };
+    case 'Button': return { props: { children: raw('Speichern'), variant: 'solid', tone: 'primary' }, code: importCode(name, '<Button>Speichern</Button>'), height: 'compact' };
+    case 'ButtonGroup': return { props: { children: raw('<button class="rg-button" data-variant="outline">Tag</button><button class="rg-button" data-variant="outline">Woche</button><button class="rg-button" data-variant="outline">Monat</button>') }, code: importCode(name, '<ButtonGroup>…</ButtonGroup>'), height: 'compact' };
+    case 'Callout': return { props: { title: 'Gestaltungsprinzip', tone: 'primary', children: raw('Blau markiert Auswahl und Fokus – nicht jede Oberfläche.') }, code: importCode(name, '<Callout title="Gestaltungsprinzip">…</Callout>') };
+    case 'Card': return { props: { interactive: true, children: raw('<div class="rg-card-header"><div><h3 class="rg-card-title">Projektstatus</h3><p class="rg-card-description">Alle Systeme laufen stabil.</p></div></div><div class="rg-card-content">Letzte Prüfung vor 4 Minuten.</div>') }, code: importCode(name, '<Card interactive>…</Card>') };
+    case 'CardContent': return { props: { children: raw('Inhalte erhalten immer dieselben Innenabstände und Textfarben.') }, code: importCode(name, '<CardContent>Inhalt</CardContent>') };
+    case 'CardFooter': return { props: { children: raw('<button class="rg-button" data-size="sm">Übernehmen</button><button class="rg-button" data-size="sm" data-variant="ghost">Abbrechen</button>') }, code: importCode(name, '<CardFooter>…</CardFooter>'), height: 'compact' };
+    case 'CardHeader': return { props: { title: 'Team Workspace', description: '12 aktive Mitglieder', action: raw('<button class="rg-button" data-size="sm" data-variant="outline">Verwalten</button>') }, code: importCode(name, '<CardHeader title="Team Workspace" />') };
+    case 'Chip': return { props: { tone: 'primary', removable: true, onremove: noop, children: raw('Svelte 5') }, code: importCode(name, '<Chip removable>Svelte 5</Chip>'), height: 'compact' };
+    case 'ColorSwatch': return { props: { color: 'var(--rg-primary)', label: 'Primary', showValue: true }, code: importCode(name, '<ColorSwatch color="var(--rg-primary)" label="Primary" />'), height: 'compact' };
+    case 'CopyButton': return { props: { value: 'npm install @robingru/svelte-ui' }, code: importCode(name, '<CopyButton value="npm install @robingru/svelte-ui" />'), height: 'compact' };
+    case 'Divider': return { props: {}, code: importCode(name, '<Divider />'), height: 'compact' };
+    case 'EmptyState': return { props: { title: 'Noch keine Projekte', description: 'Lege dein erstes Projekt an.', actions: raw('<button class="rg-button" data-size="sm">Projekt anlegen</button>') }, code: importCode(name, '<EmptyState title="Noch keine Projekte" />'), height: 'tall' };
+    case 'ErrorState': return { props: { title: 'Daten konnten nicht geladen werden', description: 'Prüfe die Verbindung und versuche es erneut.', actions: raw('<button class="rg-button" data-size="sm" data-variant="outline">Erneut versuchen</button>') }, code: importCode(name, '<ErrorState title="Daten konnten nicht geladen werden" />'), height: 'tall' };
+    case 'IconButton': return { props: { label: 'Einstellungen öffnen', variant: 'outline', children: raw('⚙') }, code: importCode(name, '<IconButton label="Einstellungen öffnen">…</IconButton>'), height: 'compact' };
+    case 'InlineCode': return { props: { children: raw('data-theme="robin"') }, code: importCode(name, '<InlineCode>data-theme="robin"</InlineCode>'), height: 'compact' };
+    case 'Kbd': return { props: { children: raw('⌘ K') }, code: importCode(name, '<Kbd>⌘ K</Kbd>'), height: 'compact' };
+    case 'Link': return { props: { href: `${base}/components`, children: raw('Zur Dokumentation') }, code: importCode(name, '<Link href="/docs">Zur Dokumentation</Link>'), height: 'compact' };
+    case 'LoadingState': return { props: { label: 'Dashboard wird geladen', description: 'Kennzahlen werden vorbereitet.' }, code: importCode(name, '<LoadingState label="Dashboard wird geladen" />'), height: 'tall' };
+    case 'Meter': return { props: { value: 72, min: 0, max: 100, label: 'Qualität 72 von 100' }, code: importCode(name, '<Meter value={72} max={100} />'), height: 'compact' };
+    case 'Progress': return { props: { value: 64, max: 100, label: 'Importfortschritt' }, code: importCode(name, '<Progress value={64} />'), height: 'compact' };
+    case 'Rating': return { props: { value: 4, label: 'Bewertung' }, code: importCode(name, '<Rating value={4} />'), height: 'compact' };
+    case 'Skeleton': return { props: { width: '82%', height: '1rem' }, code: importCode(name, '<Skeleton width="82%" />'), height: 'compact' };
+    case 'Spinner': return { props: { label: 'Speichert', size: '1.5rem' }, code: importCode(name, '<Spinner label="Speichert" />'), height: 'compact' };
+    case 'Stat': return { props: { label: 'Aktive Nutzer', value: '8.420', detail: '+8,2 % im Vergleich' }, code: importCode(name, '<Stat label="Aktive Nutzer" value="8.420" />') };
+    case 'StatGroup': return { props: { children: raw('<div class="rg-stat"><span class="rg-stat-label">Umsatz</span><strong class="rg-stat-value">84 Tsd. €</strong></div><div class="rg-stat"><span class="rg-stat-label">Conversion</span><strong class="rg-stat-value">6,8 %</strong></div>') }, code: importCode(name, '<StatGroup>…</StatGroup>') };
+    case 'Tag': return { props: { tone: 'info', children: raw('Editorial') }, code: importCode(name, '<Tag tone="info">Editorial</Tag>'), height: 'compact' };
+
+    case 'Checkbox': return { props: { checked: true, description: 'Wichtige Produktupdates erhalten', children: raw('E-Mail-Benachrichtigungen') }, code: importCode(name, '<Checkbox checked>E-Mail-Benachrichtigungen</Checkbox>') };
+    case 'DateInput': return { props: { value: '2026-08-26', 'aria-label': 'Veröffentlichungsdatum' }, code: importCode(name, '<DateInput value="2026-08-26" />'), height: 'compact' };
+    case 'Dropzone': return { props: { label: 'Dateien hier ablegen', hint: 'PNG, JPG oder PDF bis 10 MB' }, code: importCode(name, '<Dropzone label="Dateien hier ablegen" />') };
+    case 'Fieldset': return { props: { legend: 'Sichtbarkeit', description: 'Wer darf dieses Projekt sehen?', children: raw('<label class="rg-check"><input type="radio" checked name="visibility" /> <span>Nur mein Team</span></label><label class="rg-check"><input type="radio" name="visibility" /> <span>Organisation</span></label>') }, code: importCode(name, '<Fieldset legend="Sichtbarkeit">…</Fieldset>') };
+    case 'FileUpload': return { props: { label: 'Datei auswählen', hint: 'Maximal 10 MB' }, code: importCode(name, '<FileUpload label="Datei auswählen" />') };
+    case 'FormField': return { props: { label: 'Projektname', for: 'demo-project', hint: 'Kann später geändert werden.', required: true, children: raw('<input id="demo-project" class="rg-input" value="RobinGru Docs" />') }, code: importCode(name, '<FormField label="Projektname" required>\n  <Input />\n</FormField>') };
+    case 'Input': return { props: { value: 'RobinGru Workspace', placeholder: 'Projektname', 'aria-label': 'Projektname' }, code: importCode(name, '<Input bind:value placeholder="Projektname" />'), height: 'compact' };
+    case 'Label': return { props: { for: 'label-preview', required: true, children: raw('E-Mail-Adresse') }, code: importCode(name, '<Label for="email" required>E-Mail-Adresse</Label>'), height: 'compact' };
+    case 'NumberInput': return { props: { value: 12, min: 1, max: 50, label: 'Sitzplätze' }, code: importCode(name, '<NumberInput value={12} label="Sitzplätze" />'), height: 'compact' };
+    case 'PasswordInput': return { props: { value: 'sicheres-passwort', label: 'Passwort' }, code: importCode(name, '<PasswordInput bind:value />'), height: 'compact' };
+    case 'PinInput': return { props: { value: '2608', length: 4, label: 'Bestätigungscode' }, code: importCode(name, '<PinInput length={4} />'), height: 'compact' };
+    case 'RadioGroup': return { props: { value: 'team', name: 'plan-preview', label: 'Tarif', options: [{ value: 'solo', label: 'Solo' }, { value: 'team', label: 'Team', description: 'Für Zusammenarbeit' }, { value: 'pro', label: 'Pro' }] }, code: importCode(name, '<RadioGroup name="plan" {options} />') };
+    case 'RangeSlider': return { props: { minValue: 25, maxValue: 75, min: 0, max: 100, label: 'Preisbereich' }, code: importCode(name, '<RangeSlider minValue={25} maxValue={75} />') };
+    case 'SearchInput': return { props: { value: 'Dashboard', label: 'Komponenten suchen', clearable: true }, code: importCode(name, '<SearchInput bind:value label="Suchen" />'), height: 'compact' };
+    case 'SegmentedControl': return { props: { value: 'month', label: 'Zeitraum', options: [{ value: 'week', label: 'Woche' }, { value: 'month', label: 'Monat' }, { value: 'year', label: 'Jahr' }] }, code: importCode(name, '<SegmentedControl value="month" {options} />'), height: 'compact' };
+    case 'Select': return { props: { value: 'team', options: [{ value: 'solo', label: 'Solo' }, { value: 'team', label: 'Team' }, { value: 'pro', label: 'Pro' }], 'aria-label': 'Tarif auswählen' }, code: importCode(name, '<Select bind:value {options} />'), height: 'compact' };
+    case 'Slider': return { props: { value: 68, min: 0, max: 100, label: 'Deckkraft', showValue: true }, code: importCode(name, '<Slider value={68} showValue />'), height: 'compact' };
+    case 'Switch': return { props: { checked: true, description: 'Automatisch dem System folgen', children: raw('Dark Mode') }, code: importCode(name, '<Switch checked>Dark Mode</Switch>') };
+    case 'Textarea': return { props: { value: 'Eine ruhige, verständliche Beschreibung.', rows: 3, 'aria-label': 'Beschreibung' }, code: importCode(name, '<Textarea bind:value rows={3} />') };
+    case 'TimeInput': return { props: { value: '09:30', 'aria-label': 'Startzeit' }, code: importCode(name, '<TimeInput value="09:30" />'), height: 'compact' };
+    case 'Toggle': return { props: { pressed: true, label: 'Raster anzeigen', children: raw('Raster') }, code: importCode(name, '<Toggle pressed>Raster</Toggle>'), height: 'compact' };
+    case 'ToggleGroup': return { props: { value: ['bold', 'link'], label: 'Formatierung', options: [{ value: 'bold', label: 'Fett' }, { value: 'italic', label: 'Kursiv' }, { value: 'link', label: 'Link' }] }, code: importCode(name, '<ToggleGroup value={[\'bold\']} {options} />'), height: 'compact' };
+
+    case 'AppShell': return { props: { contained: false, sidebar: raw('<aside class="rg-sidebar" style="--sidebar-width:7rem;min-height:12rem"><nav class="rg-sidebar-content"><a class="rg-nav-item" data-active="true">Start</a><a class="rg-nav-item">Projekte</a></nav></aside>'), header: raw('<header class="rg-navbar"><strong>Workspace</strong></header>'), children: raw('<div style="padding:1rem"><strong>Hauptinhalt</strong><p style="color:var(--rg-fg-muted)">Ein klares Shell-Raster.</p></div>') }, code: importCode(name, '<AppShell {sidebar} {header}>…</AppShell>'), height: 'tall', padded: false };
+    case 'Breadcrumbs': return { props: { items: [{ label: 'Projekte', href: path('/dashboard') }, { label: 'RobinGru', href: path('/components') }, { label: 'Einstellungen', current: true }] }, code: importCode(name, '<Breadcrumbs {items} />'), height: 'compact' };
+    case 'MenuBar': return { props: { items: [{ label: 'Datei' }, { label: 'Bearbeiten' }, { label: 'Ansicht' }, { label: 'Hilfe' }] }, code: importCode(name, '<MenuBar {items} />'), height: 'compact' };
+    case 'Navbar': return { props: { start: raw('<strong>RobinGru</strong>'), center: raw(`<nav class="rg-cluster"><a href="${base}/components">Übersicht</a><a href="${base}/dashboard">Dashboard</a></nav>`), end: raw('<button class="rg-button" data-size="sm">Neu</button>') }, code: importCode(name, '<Navbar {start} {center} {end} />'), padded: false };
+    case 'PageHeader': return { props: { eyebrow: 'Workspace', title: 'Projektübersicht', description: 'Status, Aktivitäten und nächste Schritte an einem Ort.', actions: raw('<button class="rg-button">Projekt anlegen</button>') }, code: importCode(name, '<PageHeader title="Projektübersicht" />') };
+    case 'Pagination': return { props: { page: 8, total: 24 }, code: importCode(name, '<Pagination page={8} total={24} />'), height: 'compact' };
+    case 'Sidebar': return { props: { width: '13rem', collapsible: true, header: raw('<strong>RobinGru</strong>'), collapsedHeader: raw('<strong aria-hidden="true">R</strong>'), children: raw('<a class="rg-nav-item" data-active="true">Übersicht</a><a class="rg-nav-item">Komponenten</a><a class="rg-nav-item">Tokens</a>'), collapsedChildren: raw('<a class="rg-nav-item" aria-label="Übersicht" title="Übersicht">⌂</a><a class="rg-nav-item" aria-label="Komponenten" title="Komponenten">□</a><a class="rg-nav-item" aria-label="Tokens" title="Tokens">◌</a>'), footer: raw('<small style="color:var(--rg-fg-muted)">v0.3.1</small>') }, code: importCode(name, '<Sidebar collapsible {header} {collapsedHeader}>…</Sidebar>'), height: 'tall', padded: false };
+    case 'Stepper': return { props: { current: 2, steps: [{ label: 'Konto' }, { label: 'Workspace' }, { label: 'Einladen' }, { label: 'Fertig' }] }, code: importCode(name, '<Stepper current={2} {steps} />') };
+    case 'ThemeToggle': return { props: { storageKey: 'rg-docs-preview-theme' }, code: importCode(name, '<ThemeToggle />'), height: 'compact' };
+    case 'Toolbar': return { props: { label: 'Textwerkzeuge', children: raw('<button class="rg-button" data-size="sm" data-variant="ghost">Fett</button><button class="rg-button" data-size="sm" data-variant="ghost">Kursiv</button><button class="rg-button" data-size="sm" data-variant="ghost">Link</button>') }, code: importCode(name, '<Toolbar>…</Toolbar>'), height: 'compact' };
+    case 'UserMenu': return { props: { name: 'Robin Gru', detail: 'Admin' }, code: importCode(name, '<UserMenu name="Robin Gru" detail="Admin" />'), height: 'compact' };
+
+    case 'Accordion': return { props: { value: ['design'], items: [{ value: 'design', title: 'Design-System', content: 'Gemeinsame Tokens und klare Zustände.' }, { value: 'accessibility', title: 'Accessibility', content: 'Fokus, Tastatur und Semantik von Anfang an.' }] }, code: importCode(name, '<Accordion {items} />') };
+    case 'AlertDialog': return { props: { title: 'Projekt löschen?', description: 'Diese Aktion kann nicht rückgängig gemacht werden.', confirmLabel: 'Löschen', tone: 'danger', trigger: raw('Projekt löschen') }, code: importCode(name, '<AlertDialog title="Projekt löschen?" description="…" />'), height: 'compact' };
+    case 'Collapsible': return { props: { open: true, title: 'Technische Details', children: raw('<p style="margin:0;color:var(--rg-fg-muted)">Svelte 5, Bits UI und ein gemeinsames Token-System.</p>') }, code: importCode(name, '<Collapsible title="Technische Details">…</Collapsible>') };
+    case 'ContextMenu': return { props: { label: 'Projektkarte', children: raw('<div class="rg-card" style="padding:1rem;min-width:14rem"><strong>Rechtsklick öffnen</strong><p style="margin:.25rem 0 0;color:var(--rg-fg-muted)">Kontextbezogene Aktionen</p></div>'), items: [{ label: 'Öffnen' }, { label: 'Duplizieren' }, { label: 'Löschen', tone: 'danger', separatorBefore: true }] }, code: importCode(name, '<ContextMenu {items}>…</ContextMenu>') };
+    case 'Dialog': return { props: { title: 'Projekt bearbeiten', description: 'Passe Name und Sichtbarkeit an.', trigger: raw('Dialog öffnen'), children: raw('<label class="rg-field"><span class="rg-label">Projektname</span><input class="rg-input" value="RobinGru Docs" /></label>'), footer: raw('<button class="rg-button">Speichern</button>') }, code: importCode(name, '<Dialog title="Projekt bearbeiten" {trigger}>…</Dialog>'), height: 'compact' };
+    case 'Drawer': return { props: { title: 'Einstellungen', description: 'Konfiguration der aktuellen Ansicht.', trigger: raw('Drawer öffnen'), children: raw('<label class="rg-check"><input type="checkbox" checked /><span>Kompakte Dichte</span></label>') }, code: importCode(name, '<Drawer title="Einstellungen" {trigger}>…</Drawer>'), height: 'compact' };
+    case 'DropdownMenu': return { props: { trigger: raw('Aktionen'), items: [{ label: 'Bearbeiten', shortcut: 'E' }, { label: 'Duplizieren', shortcut: 'D' }, { label: 'Löschen', tone: 'danger', separatorBefore: true }] }, code: importCode(name, '<DropdownMenu {trigger} {items} />'), height: 'compact' };
+    case 'Popover': return { props: { trigger: raw('Details'), children: raw('<strong>Letzte Synchronisierung</strong><p style="margin:.35rem 0 0;color:var(--rg-fg-muted)">Heute um 10:24 Uhr.</p>') }, code: importCode(name, '<Popover {trigger}>…</Popover>'), height: 'compact' };
+    case 'Tooltip': return { props: { content: 'Einstellungen öffnen', children: raw('⚙') }, code: importCode(name, '<Tooltip content="Einstellungen öffnen">…</Tooltip>'), height: 'compact' };
+
+    case 'ActivityFeed': return { props: { items: [{ name: 'Mara Klein', detail: 'hat das Dashboard aktualisiert', time: 'vor 4 Min.' }, { name: 'Jonas Weber', detail: 'hat einen Kommentar ergänzt', time: 'vor 18 Min.' }, { name: 'Studio Nord', detail: 'hat eine Freigabe erteilt', time: 'vor 1 Std.' }] }, code: importCode(name, '<ActivityFeed {items} />') };
+    case 'DataGrid': return { props: { minItemWidth: '8rem', children: raw('<div class="rg-card" style="padding:1rem"><strong>84</strong><small style="display:block;color:var(--rg-fg-muted)">Projekte</small></div><div class="rg-card" style="padding:1rem"><strong>12</strong><small style="display:block;color:var(--rg-fg-muted)">Teams</small></div>') }, code: importCode(name, '<DataGrid>…</DataGrid>') };
+    case 'DataTable': return { props: { columns: tableColumns, rows: tableRows, pageSize: 3, pageSizeOptions: [3, 10], selectable: true, searchable: true, caption: 'Produktübersicht', showPageSize: false }, code: importCode(name, '<DataTable {columns} {rows} selectable />'), height: 'tall', padded: false };
+    case 'DescriptionList': return { props: { items: [{ term: 'Version', description: '0.3.1' }, { term: 'Framework', description: 'Svelte 5' }, { term: 'Theme', description: 'Robin' }] }, code: importCode(name, '<DescriptionList {items} />') };
+    case 'KpiCard': return { props: { label: 'Monatsumsatz', value: '84.230 €', trend: '+8,2 %', direction: 'up', detail: 'gegenüber Juli', visual: raw('<svg viewBox="0 0 120 34" style="width:100%;height:2.2rem"><polyline points="0,29 18,24 36,26 54,17 72,19 90,9 120,4" fill="none" stroke="var(--rg-primary)" stroke-width="3" /></svg>') }, code: importCode(name, '<KpiCard label="Monatsumsatz" value="84.230 €" trend="+8,2 %" />') };
+    case 'NotificationItem': return { props: { title: 'Neue Freigabe', description: 'Mara hat Version 3 des Reports freigegeben.', time: 'vor 4 Min.', unread: true, actions: raw('<button class="rg-button" data-size="sm" data-variant="ghost">Öffnen</button>') }, code: importCode(name, '<NotificationItem title="Neue Freigabe" unread />') };
+    case 'PricingCard': return { props: { name: 'Team', description: 'Für produktive Zusammenarbeit.', price: '29 €', features: ['Unbegrenzte Projekte', '12 Teammitglieder', 'Analytics'], featured: true, badge: 'Empfohlen' }, code: importCode(name, '<PricingCard name="Team" price="29 €" {features} />'), height: 'tall' };
+    case 'Table': return { props: { caption: 'Aktuelle Projekte', header: raw('<thead><tr><th>Projekt</th><th>Status</th><th style="text-align:right">Fortschritt</th></tr></thead>', true), children: raw('<tbody><tr><td>Workspace</td><td>Aktiv</td><td style="text-align:right">84 %</td></tr><tr><td>Analytics</td><td>Prüfung</td><td style="text-align:right">67 %</td></tr></tbody>', true) }, code: importCode(name, '<Table caption="Aktuelle Projekte">…</Table>'), padded: false };
+    case 'Timeline': return { props: { items: [{ title: 'Konzept bestätigt', meta: '20. August', body: 'Designrichtung und Tokens freigegeben.', tone: 'success' }, { title: 'Komponenten ergänzt', meta: '24. August', body: 'Dashboard und Editorial sind integriert.', tone: 'primary' }, { title: 'Docs veröffentlicht', meta: '26. August', body: 'Live-Showcase und Katalog sind verfügbar.', tone: 'info' }] }, code: importCode(name, '<Timeline {items} />') };
+
+    case 'ChartCard': return { props: { title: 'Aktive Nutzer', description: 'Letzte sechs Monate', value: '8.420', delta: '+8,2 %', direction: 'up', chart: raw('<svg viewBox="0 0 240 80" style="width:100%;height:8rem"><path d="M0 70 L40 58 L80 62 L120 38 L160 44 L200 19 L240 10" fill="none" stroke="var(--rg-primary)" stroke-width="3" vector-effect="non-scaling-stroke" /></svg>') }, code: importCode(name, '<ChartCard title="Aktive Nutzer" {chart} />') };
+    case 'ChartLegend': return { props: { items: chartData, showValues: true }, code: importCode(name, '<ChartLegend items={data} />'), height: 'compact' };
+    case 'DashboardGrid': return { props: { columns: 3, children: raw('<div class="rg-kpi-card"><span class="rg-kpi-label">Umsatz</span><strong class="rg-kpi-value">84 Tsd. €</strong></div><div class="rg-kpi-card"><span class="rg-kpi-label">Nutzer</span><strong class="rg-kpi-value">8.420</strong></div><div class="rg-kpi-card"><span class="rg-kpi-label">Conversion</span><strong class="rg-kpi-value">6,8 %</strong></div>') }, code: importCode(name, '<DashboardGrid columns={3}>…</DashboardGrid>') };
+    case 'DashboardSection': return { props: { title: 'Performance', description: 'Die wichtigsten Signale auf einen Blick.', action: raw('<button class="rg-button" data-size="sm" data-variant="outline">Exportieren</button>'), children: raw('<div class="rg-card" style="padding:1rem">Diagramm- oder Tabelleninhalt</div>') }, code: importCode(name, '<DashboardSection title="Performance">…</DashboardSection>') };
+    case 'DateRangePicker': return { props: { from: '2026-08-01', to: '2026-08-26', presets: [{ label: '7 Tage', from: '2026-08-20', to: '2026-08-26' }, { label: '30 Tage', from: '2026-07-28', to: '2026-08-26' }] }, code: importCode(name, '<DateRangePicker bind:from bind:to {presets} />') };
+    case 'DonutChart': return { props: { data: chartData, centerValue: '100 %', centerLabel: 'Traffic', size: 150 }, code: importCode(name, '<DonutChart data={channels} centerValue="100 %" />') };
+    case 'FilterBar': return { props: { title: 'Berichtsfilter', activeCount: 2, onreset: noop, children: raw('<select class="rg-select" aria-label="Segment"><option>Alle Segmente</option><option selected>Team</option></select><input class="rg-input" type="date" value="2026-08-26" />') }, code: importCode(name, '<FilterBar activeCount={2}>…</FilterBar>') };
+    case 'MiniBarChart': return { props: { data: [{ label: 'Mär', value: 32 }, { label: 'Apr', value: 44 }, { label: 'Mai', value: 38 }, { label: 'Jun', value: 57 }, { label: 'Jul', value: 61 }, { label: 'Aug', value: 74 }], height: 150 }, code: importCode(name, '<MiniBarChart data={monthly} />') };
+    case 'ProgressRing': return { props: { value: 74, label: 'Monatsziel', detail: '74 von 100 Punkten', tone: 'primary' }, code: importCode(name, '<ProgressRing value={74} label="Monatsziel" />') };
+    case 'QuickActions': return { props: { items: [{ label: 'Projekt anlegen', description: 'Neuen Workspace starten', href: path('/patterns') }, { label: 'Mitglied einladen', description: 'Teamzugriff verwalten', href: path('/dashboard') }, { label: 'Report exportieren', description: 'PDF oder CSV erzeugen', href: path('/data') }] }, code: importCode(name, '<QuickActions {items} />') };
+    case 'Sparkline': return { props: { values: [12, 18, 16, 24, 22, 31, 36], width: 210, height: 60, label: 'Steigender Verlauf' }, code: importCode(name, '<Sparkline values={[12, 18, 16, 24, 31]} />'), height: 'compact' };
+    case 'StatusSummary': return { props: { title: 'Systemstatus', compact: true, items: [{ label: 'API', value: '99,99 %', detail: 'stabil', tone: 'success' }, { label: 'E-Mail Queue', value: '38', detail: 'in Bearbeitung', tone: 'warning' }, { label: 'Fehlerrate', value: '0,08 %', detail: 'unter Grenzwert', tone: 'info' }] }, code: importCode(name, '<StatusSummary title="Systemstatus" {items} />') };
+    case 'TableSkeleton': return { props: { rows: 4, columns: 4 }, code: importCode(name, '<TableSkeleton rows={4} columns={4} />'), padded: false };
+    case 'TrendIndicator': return { props: { value: '+8,2 %', direction: 'up', label: 'zum Vormonat' }, code: importCode(name, '<TrendIndicator value="+8,2 %" direction="up" />'), height: 'compact' };
+
+    case 'Article': return { props: { size: 'sm', children: raw('<h2 style="margin-top:0">Eine gemeinsame Sprache</h2><p style="color:var(--rg-fg-muted);line-height:1.7">Dashboard, Anwendung und Blog teilen dieselben Tokens und Zustände.</p>') }, code: importCode(name, '<Article>…</Article>') };
+    case 'ArticleHeader': return { props: { eyebrow: 'Design-System', title: 'RobinGru Svelte UI', description: 'Eine ruhige Komponentenbasis für Apps, Dashboards und redaktionelle Inhalte.', align: 'start' }, code: importCode(name, '<ArticleHeader title="RobinGru Svelte UI" />') };
+    case 'ArticleMeta': return { props: { author: 'Robin Gru', published: '26. August 2026', publishedDatetime: '2026-08-26', minutes: 6, category: 'Design-System' }, code: importCode(name, '<ArticleMeta author="Robin Gru" minutes={6} />') };
+    case 'ArticleNavigation': return { props: { previous: { title: 'Datenoberflächen gestalten', href: path('/data') }, next: { title: 'Accessibility als System', href: path('/accessibility') } }, code: importCode(name, '<ArticleNavigation {previous} {next} />') };
+    case 'AuthorCard': return { props: { name: 'Robin Gru', role: 'Design-System Maintainer', bio: 'Arbeitet an klaren, langlebigen Svelte-Oberflächen.', actions: raw('<button class="rg-button" data-size="sm" data-variant="outline">Folgen</button>') }, code: importCode(name, '<AuthorCard name="Robin Gru" role="Maintainer" />') };
+    case 'Blockquote': return { props: { tone: 'primary', source: 'RobinGru Designprinzip', children: raw('Gute UI lenkt Aufmerksamkeit, ohne selbst permanent Aufmerksamkeit zu verlangen.') }, code: importCode(name, '<Blockquote source="RobinGru">…</Blockquote>') };
+    case 'CodeBlock': return { props: { code: '<script lang="ts">\n  import { Button } from \'@robingru/svelte-ui\';\n<\/script>\n\n<Button>Speichern</Button>', language: 'svelte', filename: '+page.svelte', lineNumbers: true, highlightLines: [2] }, code: importCode(name, '<CodeBlock code={source} language="svelte" />'), height: 'tall' };
+    case 'Figure': return { props: { caption: 'RobinGru-Komponenten teilen dieselbe visuelle Grammatik.', credit: 'RobinGru UI', aspect: '16 / 7', media: raw('<div style="height:100%;display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;padding:1.25rem;background:var(--rg-surface-sunken)"><div class="rg-card"></div><div class="rg-card" style="background:var(--rg-primary-soft)"></div><div class="rg-card"></div></div>') }, code: importCode(name, '<Figure {media} caption="…" />') };
+    case 'NewsletterCard': return { props: { title: 'RobinGru Notes', description: 'Neue Komponenten und nachvollziehbare Designentscheidungen.', privacyText: 'Kein Tracking, jederzeit abbestellbar.', onsubmit: noop }, code: importCode(name, '<NewsletterCard title="RobinGru Notes" />') };
+    case 'PostCard': return { props: { ...posts[0], featured: true }, code: importCode(name, '<PostCard title="…" href="/blog/post" />'), height: 'tall' };
+    case 'PostGrid': return { props: { minItemWidth: '11rem', children: raw(`<article class="rg-post-card"><div class="rg-post-body"><span class="rg-post-eyebrow">Dashboard</span><h3><a href="${base}/dashboard">Kennzahlen verständlich zeigen</a></h3><p>Klarer Trend statt dekorativer Effekte.</p></div></article><article class="rg-post-card"><div class="rg-post-body"><span class="rg-post-eyebrow">Content</span><h3><a href="${base}/blog">Editorial mit denselben Tokens</a></h3><p>Lesefluss und App-UI gehören zusammen.</p></div></article>`) }, code: importCode(name, '<PostGrid>…</PostGrid>') };
+    case 'Prose': return { props: { size: 'sm', children: raw(`<h2>Ruhige Editorial-Typografie</h2><p>Die Lesbarkeit bleibt im Mittelpunkt. <a href="${base}/components">Links</a>, <code>Inline-Code</code> und Listen sind aufeinander abgestimmt.</p><ul><li>klare Hierarchie</li><li>begrenzte Zeilenlänge</li><li>konsistente Abstände</li></ul>`) }, code: importCode(name, '<Prose>\n  <h2>Überschrift</h2>\n  <p>Artikeltext …</p>\n</Prose>') };
+    case 'ReadingTime': return { props: { words: 1320 }, code: importCode(name, '<ReadingTime words={1320} />'), height: 'compact' };
+    case 'RelatedPosts': return { props: { posts, title: 'Passende Beiträge' }, code: importCode(name, '<RelatedPosts {posts} />'), height: 'tall' };
+    case 'ShareButtons': return { props: { url: 'https://example.com/robingru', title: 'RobinGru Svelte UI', platforms: ['copy', 'email', 'linkedin'] }, code: importCode(name, '<ShareButtons {url} {title} />') };
+    case 'TableOfContents': return { props: { sticky: false, items: [{ label: 'Einleitung', href: path('/components'), level: 2, active: true }, { label: 'Designprinzipien', href: path('/patterns'), level: 2 }, { label: 'Tokens', href: path('/tokens'), level: 3 }, { label: 'Komponenten', href: path('/components'), level: 2 }] }, code: importCode(name, '<TableOfContents {items} />') };
+    case 'TagList': return { props: { tags: [{ label: 'Svelte', tone: 'primary' }, { label: 'Design-System' }, { label: 'Accessibility', tone: 'info' }] }, code: importCode(name, '<TagList tags={[\'Svelte\', \'UI\']} />'), height: 'compact' };
+
+    default: return { props: {}, code: importCode(name, `<${name} />`) };
+  }
+}
+
+export const sharedPreviewOptions = options;

@@ -1,0 +1,38 @@
+# RobinGru Svelte UI
+
+> RobinGru Svelte UI is a token-based design system for Svelte 5 and SvelteKit. It provides 116 public components for product applications, dashboards, data-heavy views, navigation, overlays and editorial content. Its documentation site contains a live example for every component.
+
+Important notes:
+
+- The package is currently distributed from GitHub, not npm. Install it as `github:RobinGru/robingru-svelte-ui`, then import `@robingru/svelte-ui/styles.css` once for standalone styling.
+- The system supports `data-theme="robin"`, `data-theme="robin-dark"` and `data-density="compact"`.
+- Components use semantic custom properties with a `--rg-` prefix. Prefer public component props and tokens over undocumented internal selectors.
+- `DataTable` is for normal to moderately large datasets. RobinGru intentionally has no VirtualTable or general enterprise grid engine.
+- For a compact desktop sidebar rail, use `Sidebar` with `collapsible`, `bind:collapsed`, `collapsedHeader` and `collapsedChildren`.
+- The linked documentation is statically rendered HTML with live Svelte examples. No separate per-page Markdown mirrors are currently published.
+
+## Documentation
+
+- [Overview](./): Installation, themes, design principles and primary entry points.
+- [Component catalog](./components): All 116 public components with live previews, props and usage examples.
+- [Patterns](./patterns): Product-like compositions for login, settings, comments and empty states.
+- [Dashboard](./dashboard): KPIs, status, filters, charts and operational data views.
+- [DataTable](./data): Search, sorting, filters, selection, column controls, pagination and a detail drawer.
+- [Design tokens](./tokens): Colors, spacing, radii, shadows, typography and motion.
+- [Accessibility](./accessibility): Keyboard, focus, form, live-region and reduced-motion examples.
+- [Workbench](./workbench): Integrated application-shell showcase.
+
+## Component references
+
+- [Navigation and shell](./components#navigation): `AppShell`, `Sidebar`, `Navbar`, `PageHeader`, `Tabs`, `Breadcrumbs` and `Pagination`.
+- [Foundation](./components#foundation): `Button`, `IconButton`, `Card`, `Badge`, `Alert`, `EmptyState`, `LoadingState` and `ErrorState`.
+- [Forms](./components#forms): `FormField`, `Input`, `Checkbox`, `Select`, `DateInput`, `FileUpload` and `Dropzone`.
+- [Overlays and feedback](./components#overlay): `Dialog`, `Drawer`, `CommandPalette`, `Tooltip`, `Popover` and `Toast`.
+- [Data components](./components#data): `DataTable`, `Table`, `TableToolbar`, `DataGrid`, `Timeline` and `ActivityFeed`.
+- [Dashboard components](./components#dashboard): `DashboardGrid`, `KpiCard`, `ChartCard`, `Sparkline`, `MiniBarChart` and `DonutChart`.
+- [Editorial components](./components#content): `Article`, `Prose`, `PostCard`, `ArticleNavigation`, `TableOfContents` and `ShareButtons`.
+
+## Optional
+
+- [Accessibility laboratory](./accessibility): Detailed interaction and accessibility checks.
+- [Design-token reference](./tokens): The complete visual vocabulary for theme customization.

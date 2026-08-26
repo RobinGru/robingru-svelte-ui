@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-08-26T10:30:00Z",
+  "package": "@robingru/svelte-ui@0.3.1",
+  "status": {
+    "static_source_verification": "pass",
+    "strict_svelte_script_verification": "pass",
+    "component_catalog": "pass",
+    "docs_catalog_and_live_previews": "pass",
+    "docs_routes": "pass",
+    "preview_required_props": "pass",
+    "export_reconciliation": "pass",
+    "redundancy_check": "pass",
+    "virtual_table_absence": "pass",
+    "docs_package_separation": "pass",
+    "source_distribution": "pass",
+    "distribution_verification": "pass",
+    "npm_tarball_verification": "pass",
+    "svelte_check": "not_run_registry_unavailable",
+    "vitest": "not_run_registry_unavailable",
+    "sveltekit_build": "not_run_registry_unavailable",
+    "svelte_package": "not_run_registry_unavailable",
+    "real_windows_bun_0_3_0_build": "reached_prerender_then_failed_missing_fragment_target",
+    "fragment_link_regression_audit": "pass",
+    "sveltekit_build_0_3_1": "pending_external_rerun"
+  },
+  "metrics": {
+    "components": 116,
+    "unique_component_names": 116,
+    "public_component_exports": 116,
+    "live_component_previews": 116,
+    "docs_routes_checked": 12,
+    "source_files_checked": 148,
+    "svelte_files_checked": 134,
+    "strict_svelte_scripts_checked": 134,
+    "distribution_files": 127,
+    "packaged_components": 116,
+    "npm_tarball_entries": 148,
+    "docs_runtime_files_in_dist": 0,
+    "source_routes_in_npm_tarball": 0
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2026-08-26T11:29:44.772Z",
+  "components": 116,
+  "categories": {
+    "content": 17,
+    "dashboard": 14,
+    "data": 10,
+    "forms": 22,
+    "foundation": 30,
+    "navigation": 12,
+    "overlay": 11
+  },
+  "uniqueComponentNames": 116,
+  "publicComponentExports": 116,
+  "sourceFilesChecked": 148,
+  "svelteFilesChecked": 134,
+  "errors": [],
+  "warnings": []
+}
