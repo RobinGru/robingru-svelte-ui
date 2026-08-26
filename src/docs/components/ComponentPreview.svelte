@@ -30,7 +30,7 @@
   function showToast() {
     demoToaster.push({
       title: 'Änderungen gespeichert',
-      description: 'Die Vorschau verwendet den RobinGru ToastViewport.',
+      description: 'Die Vorschau verwendet den zentralen ToastViewport.',
       tone: 'success'
     });
   }

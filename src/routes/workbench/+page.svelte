@@ -149,7 +149,7 @@
       eyebrow: 'Data UI',
       date: '22. August 2026',
       dateTime: '2026-08-22',
-      author: 'RobinGru',
+      author: 'Editorial Team',
       minutes: 6,
       tags: ['DataTable', 'UX']
     },
@@ -160,7 +160,7 @@
       eyebrow: 'Dashboard',
       date: '18. August 2026',
       dateTime: '2026-08-18',
-      author: 'RobinGru',
+      author: 'Editorial Team',
       minutes: 5,
       tags: ['KPI', 'Charts']
     },
@@ -171,7 +171,7 @@
       eyebrow: 'Content',
       date: '12. August 2026',
       dateTime: '2026-08-12',
-      author: 'RobinGru',
+      author: 'Editorial Team',
       minutes: 7,
       tags: ['Blog', 'SvelteKit']
     }
@@ -232,7 +232,7 @@
   <title>RobinGru Svelte UI · Workbench</title>
   <meta
     name="description"
-    content="RobinGru Svelte UI: abgestimmte Svelte-Komponenten für Apps, Dashboards, Datentabellen und Editorial Content."
+    content="Abgestimmte Svelte-Komponenten für Apps, Dashboards, Datentabellen und Editorial Content."
   />
 </svelte:head>
 
@@ -310,12 +310,12 @@
 
   <div id="top" class="page-stack">
     <PageHeader
-      eyebrow="RobinGru Svelte UI · v0.3.1"
+      eyebrow="Release · v0.3.1"
       title="Eine Oberfläche für App, Daten und Inhalt"
       description="116 aufeinander abgestimmte Svelte-Komponenten: ruhiges Robin Blue, klare Informationshierarchie und keine parallelen Komponentenbibliotheken."
     >
       {#snippet breadcrumbs()}
-        <Breadcrumbs items={[{ label: 'RobinGru', href: '#top' }, { label: 'Workbench', current: true }]} />
+        <Breadcrumbs items={[{ label: 'Übersicht', href: '#top' }, { label: 'Workbench', current: true }]} />
       {/snippet}
       {#snippet actions()}
         <Button variant="outline" onclick={() => jumpTo('editorial')}>Blog ansehen</Button>
@@ -461,7 +461,7 @@
           <ArticleHeader
             eyebrow="Design System"
             title="Ein Svelte-UI-Kit muss Inhalt und Anwendung zusammenhalten"
-            description="RobinGru verbindet Arbeitsoberflächen, Daten und Editorial Content über gemeinsame Tokens – nicht über identische Karten für alles."
+            description="Arbeitsoberflächen, Daten und Editorial Content teilen dieselben Tokens – nicht dieselben Karten für alles."
           >
             {#snippet breadcrumbs()}
               <Breadcrumbs items={[{ label: 'Blog', href: '#editorial' }, { label: 'Design System', current: true }]} />
@@ -490,7 +490,7 @@
               damit Kennzahlen, Tabelleninhalte und Texte nicht um Aufmerksamkeit konkurrieren.
             </p>
 
-            <Blockquote source="RobinGru Designprinzip" tone="primary">
+            <Blockquote source="Designprinzip" tone="primary">
               <p>Farbe soll Bedeutung tragen. Sie darf nicht die fehlende Informationshierarchie ersetzen.</p>
             </Blockquote>
 
@@ -511,12 +511,12 @@
             <h2 id="fewer-dependencies">Weniger Abhängigkeiten</h2>
             <p>
               Komplexes Fokusmanagement kommt aus Bits UI. Das optionale Skeleton-Stylesheet integriert
-              Tailwind und Skeleton. RobinGru führt daneben keine zweite Toast-, Tabellen- oder
+              Tailwind und Skeleton. Daneben entsteht keine zweite Toast-, Tabellen- oder
               Komponentenbibliothek ein.
             </p>
 
             <table>
-              <thead><tr><th>Bereich</th><th>Priorität</th><th>RobinGru-Bausteine</th></tr></thead>
+              <thead><tr><th>Bereich</th><th>Priorität</th><th>Bausteine</th></tr></thead>
               <tbody>
                 <tr><td>Blog</td><td>Lesefluss</td><td>Article, Prose, TOC, CodeBlock</td></tr>
                 <tr><td>Dashboard</td><td>Vergleich</td><td>KpiCard, ChartCard, StatusSummary</td></tr>
@@ -525,11 +525,11 @@
             </table>
           </Prose>
 
-          <ShareButtons url="https://example.com/robingru-design-system" title="RobinGru Design System" />
+          <ShareButtons url="https://example.com/design-system" title="Design-System" />
 
           <AuthorCard
             name="Robin Gru"
-            role="Maintainer von RobinGru Svelte UI"
+            role="Maintainer des Design-Systems"
             bio="Entwickelt ein ruhiges, Svelte-natives Komponenten-System für produktive Anwendungen und redaktionelle Inhalte."
           />
 
@@ -550,7 +550,7 @@
 
       <RelatedPosts
         posts={relatedPosts}
-        title="Weitere RobinGru-Muster"
+        title="Weitere Muster"
         description="Blog-Karten verwenden dieselben Tokens, aber eine eigenständige Editorial-Hierarchie."
       />
     </section>

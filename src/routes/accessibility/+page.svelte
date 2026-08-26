@@ -125,7 +125,7 @@
   </section>
 
   <section class="docs-lab-section" aria-labelledby="checklist-title">
-    <div class="docs-section-heading"><div><span class="docs-eyebrow">Prüfliste</span><h2 id="checklist-title">Was RobinGru standardmäßig unterstützt</h2><p>Diese Punkte werden in Komponenten und Demo-Routen sichtbar gemacht und sollten bei projektspezifischen Anpassungen erhalten bleiben.</p></div><Accessibility size={24} aria-hidden="true" /></div>
+    <div class="docs-section-heading"><div><span class="docs-eyebrow">Prüfliste</span><h2 id="checklist-title">Standardmäßig berücksichtigt</h2><p>Diese Punkte werden in Komponenten und Demo-Routen sichtbar gemacht und sollten bei projektspezifischen Anpassungen erhalten bleiben.</p></div><Accessibility size={24} aria-hidden="true" /></div>
     <ul class="docs-checklist docs-checklist-wide">
       {#each checks as item}<li><Check size={17} aria-hidden="true" /><span>{item}</span></li>{/each}
     </ul>

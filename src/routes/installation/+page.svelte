@@ -16,7 +16,7 @@
   <meta name="description" content="RobinGru Svelte UI direkt aus GitHub installieren und in einem Svelte-5-Projekt verwenden." />
 </svelte:head>
 
-<SectionIntro eyebrow="Einstieg" title="Installation aus GitHub" description="RobinGru Svelte UI wird derzeit direkt aus dem GitHub-Repository bezogen – es gibt bewusst kein npm-Paket. Die benötigte Paketausgabe entsteht beim Installieren automatisch." />
+<SectionIntro eyebrow="Einstieg" title="Installation aus GitHub" description="Die Bibliothek wird derzeit direkt aus dem GitHub-Repository bezogen – es gibt bewusst kein npm-Paket. Die benötigte Paketausgabe entsteht beim Installieren automatisch." />
 
 <section class="docs-token-section" aria-labelledby="install-title">
   <h2 id="install-title">1. Paket hinzufügen</h2>
@@ -41,7 +41,7 @@
 
 <section class="docs-token-section" aria-labelledby="integration-title">
   <h2 id="integration-title">Optional: Skeleton-Integration</h2>
-  <p>Verwendet dein Projekt bereits Skeleton 5 und Tailwind 4, lädt dieser Einstieg zuerst deren Layer und danach RobinGru.</p>
+  <p>Verwendet dein Projekt bereits Skeleton 5 und Tailwind 4, lädt dieser Einstieg zuerst deren Layer und danach die Komponentenstyles.</p>
   <CodePanel code={skeleton} language="css" filename="src/app.css" />
 </section>
 

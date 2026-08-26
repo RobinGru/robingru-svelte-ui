@@ -119,7 +119,7 @@
 
 <svelte:head>
   <title>Dashboard Demo · RobinGru Svelte UI</title>
-  <meta name="description" content="Vollständiges RobinGru Dashboard mit Filtern, KPIs, Charts, Status und DataTable." />
+  <meta name="description" content="Vollständiges Dashboard mit Filtern, KPIs, Charts, Status und DataTable." />
 </svelte:head>
 
 <SectionIntro eyebrow="Vollständige Live-Demo" title="Operatives Dashboard" description="Eine realistische Dashboard-Seite mit Filterleiste, Kennzahlen, kleinen Visualisierungen, Systemstatus und einer normalen paginierten Tabelle. Blau bleibt Orientierung und wird nicht zur Hintergrundtapete.">

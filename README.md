@@ -1,6 +1,6 @@
 # RobinGru Svelte UI
 
-Ein ruhiges, hellblaues Design-System für **Svelte 5 und SvelteKit**. RobinGru verbindet produktive App-Oberflächen, Dashboards, normale bis größere Datentabellen und redaktionelle Seiten mit einer gemeinsamen visuellen Sprache – ohne eine zweite Komponentenbibliothek nebenher zu installieren.
+Ein ruhiges, hellblaues Design-System für **Svelte 5 und SvelteKit**. Die Bibliothek verbindet produktive App-Oberflächen, Dashboards, normale bis größere Datentabellen und redaktionelle Seiten mit einer gemeinsamen visuellen Sprache – ohne eine zweite Komponentenbibliothek nebenher zu installieren.
 
 ## Release 0.3.1
 
@@ -18,13 +18,13 @@ Ein ruhiges, hellblaues Design-System für **Svelte 5 und SvelteKit**. RobinGru
 
 ## Designcharakter
 
-RobinGru verwendet ein leichtes, zurückhaltendes Blau für Fokus, Auswahl und wichtige Aktionen. Hauptflächen bleiben neutral. Das System setzt auf klare 1-px-Ränder, moderate Radien, kompakte Informationsdichte und sparsame Schatten.
+Ein leichtes, zurückhaltendes Blau markiert Fokus, Auswahl und wichtige Aktionen. Hauptflächen bleiben neutral. Das System setzt auf klare 1-px-Ränder, moderate Radien, kompakte Informationsdichte und sparsame Schatten.
 
 Nicht Teil des Standarddesigns sind Glassmorphism, Neonverläufe, dekorative Blob-Hintergründe, übergroße SaaS-Hero-Schriften oder eine Card um jeden Absatz. daisyUI dient nur als leichte Referenz für freundliche Zustände – keine Klasse und kein Paket wird übernommen.
 
 ## Integrierte Demo- und Dokumentationswebsite
 
-Das Repository enthält eine vollständige SvelteKit-Site, die RobinGru direkt aus dem lokalen `src/lib` importiert. Sie ist damit Dokumentation, Showcase und Integrationstest zugleich.
+Das Repository enthält eine vollständige SvelteKit-Site, die die Bibliothek direkt aus dem lokalen `src/lib` importiert. Sie ist damit Dokumentation, Showcase und Integrationstest zugleich.
 
 ```bash
 npm install
@@ -72,7 +72,7 @@ Für Projekte ohne Skeleton-Theme-Stack:
 @import '@robingru/svelte-ui/skeleton.css';
 ```
 
-`./skeleton.css` lädt Tailwind, Skeleton und anschließend RobinGru. `./styles.css` enthält dagegen ausschließlich RobinGru-Tokens und -Komponentenstyles.
+`./skeleton.css` lädt Tailwind, Skeleton und anschließend die Komponentenstyles. `./styles.css` enthält dagegen ausschließlich Tokens und Komponentenstyles.
 
 ## Theme
 
@@ -184,7 +184,7 @@ Die DataTable unterstützt Suche, Sortierung, Spaltenfilter, Auswahl, Spaltenste
 />
 ```
 
-Für selektierbare Tabellen sollte `rowId` auf einen stabilen Schlüssel zeigen. RobinGru virtualisiert bewusst nicht; bei serverseitigen Daten können Sortierung, Filter und Pagination außerhalb der Komponente gesteuert oder die vorhandenen Primitives zu einer projektspezifischen Tabelle zusammengesetzt werden.
+Für selektierbare Tabellen sollte `rowId` auf einen stabilen Schlüssel zeigen. Die Bibliothek virtualisiert bewusst nicht; bei serverseitigen Daten können Sortierung, Filter und Pagination außerhalb der Komponente gesteuert oder die vorhandenen Primitives zu einer projektspezifischen Tabelle zusammengesetzt werden.
 
 ## Blog- und Editorial-Beispiel
 
@@ -217,7 +217,7 @@ Für selektierbare Tabellen sollte `rowId` auf einen stabilen Schlüssel zeigen.
 
   <Prose>
     <h2 id="intro">Einleitung</h2>
-    <p>RobinGru trennt Editorial-Hierarchie und App-Hierarchie, verwendet aber dieselben Tokens.</p>
+    <p>Das System trennt Editorial-Hierarchie und App-Hierarchie, verwendet aber dieselben Tokens.</p>
   </Prose>
 </Article>
 ```
@@ -270,7 +270,7 @@ Details stehen in [`docs/quality-report.md`](docs/quality-report.md).
 1. **Native first:** Standard-Inputs, Selects, Datum, Zeit, Progress und Meter bleiben native Elemente.
 2. **Bits for behavior:** Fokusmanagement, Portale, Escape-Handling und Floating-Positionierung kommen aus Bits UI.
 3. **Ein öffentliches Muster pro Aufgabe:** Neue Komponenten dürfen keine beinahe identische zweite API schaffen.
-4. **Leichte Visualisierung:** Sparkline, MiniBarChart, DonutChart und ProgressRing decken kompakte Dashboards ab; RobinGru baut keine allgemeine Chart-Engine nach.
+4. **Leichte Visualisierung:** Sparkline, MiniBarChart, DonutChart und ProgressRing decken kompakte Dashboards ab; die Bibliothek baut keine allgemeine Chart-Engine nach.
 5. **DataTable statt Grid-Parallelwelt:** Normale bis größere Tabellen erhalten eine starke Standardkomponente, aber keine VirtualTable.
 6. **Editorial bleibt Editorial:** Prose und Article optimieren Lesefluss statt Dashboard-Karten zu imitieren.
 7. **daisyUI nur als Referenz:** Keine Runtime-, Klassen- oder Theme-Abhängigkeit.

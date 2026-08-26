@@ -1,13 +1,13 @@
 # RobinGru Svelte UI
 
-> RobinGru Svelte UI is a token-based design system for Svelte 5 and SvelteKit. It provides 116 public components for product applications, dashboards, data-heavy views, navigation, overlays and editorial content. Its documentation site contains a live example for every component.
+> A token-based design system for Svelte 5 and SvelteKit. It provides 116 public components for product applications, dashboards, data-heavy views, navigation, overlays and editorial content. Its documentation site contains a live example for every component.
 
 Important notes:
 
 - The package is currently distributed from GitHub, not npm. Install it as `github:RobinGru/robingru-svelte-ui`, then import `@robingru/svelte-ui/styles.css` once for standalone styling.
 - The system supports `data-theme="robin"`, `data-theme="robin-dark"` and `data-density="compact"`.
 - Components use semantic custom properties with a `--rg-` prefix. Prefer public component props and tokens over undocumented internal selectors.
-- `DataTable` is for normal to moderately large datasets. RobinGru intentionally has no VirtualTable or general enterprise grid engine.
+- `DataTable` is for normal to moderately large datasets. The system intentionally has no VirtualTable or general enterprise grid engine.
 - For a compact desktop sidebar rail, use `Sidebar` with `collapsible`, `bind:collapsed`, `collapsedHeader` and `collapsedChildren`.
 - Each linked documentation entry has a Markdown counterpart at the same route with `/index.md` appended. HTML pages expose that counterpart with `rel="alternate" type="text/markdown"`.
 

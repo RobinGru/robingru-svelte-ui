@@ -36,13 +36,13 @@
 
 <svelte:head>
   <title>Patterns · RobinGru Svelte UI</title>
-  <meta name="description" content="Zusammengesetzte RobinGru UI Patterns für Authentifizierung, Einstellungen, Kommentare und Onboarding." />
+  <meta name="description" content="Zusammengesetzte UI-Patterns für Authentifizierung, Einstellungen, Kommentare und Onboarding." />
 </svelte:head>
 
 <SectionIntro
   eyebrow="Zusammengesetzte UI"
   title="Patterns statt Copy-paste-Blöcke."
-  description="Patterns zeigen, wie RobinGru-Komponenten in echten Abläufen zusammenarbeiten. Sie sind bewusst nachvollziehbar aufgebaut und bleiben anpassbar – keine magischen, schwer wartbaren Mega-Komponenten."
+  description="Patterns zeigen, wie Komponenten in echten Abläufen zusammenarbeiten. Sie sind bewusst nachvollziehbar aufgebaut und bleiben anpassbar – keine magischen, schwer wartbaren Mega-Komponenten."
 />
 
 <div class="docs-pattern-grid">
@@ -128,4 +128,4 @@
   </div>
 </section>
 
-<footer class="docs-footer"><div><span>Patterns verwenden nur öffentliche RobinGru-Exports.</span><a href={`${base}/dashboard`}>Vollständiges Dashboard öffnen</a></div></footer>
+<footer class="docs-footer"><div><span>Patterns verwenden nur öffentliche Exports.</span><a href={`${base}/dashboard`}>Vollständiges Dashboard öffnen</a></div></footer>

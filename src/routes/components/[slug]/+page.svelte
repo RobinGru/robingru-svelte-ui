@@ -59,7 +59,7 @@
 
     <section class="docs-section" style="margin-top:1rem">
       <div class="docs-section-heading">
-        <div><h2>Einordnung im System</h2><p>{item.name} übernimmt eine klar abgegrenzte Aufgabe und verwendet dieselben semantischen Tokens wie alle anderen RobinGru-Komponenten.</p></div>
+        <div><h2>Einordnung im System</h2><p>{item.name} übernimmt eine klar abgegrenzte Aufgabe und verwendet dieselben semantischen Tokens wie alle anderen Komponenten.</p></div>
       </div>
       <div class="docs-feature-grid">
         <article class="docs-feature-card"><span><Layers3 size={18} /></span><h3>Keine parallele Variante</h3><p>Neue Zustände werden über Props und Tokens ergänzt, nicht durch fast identische Zweitkomponenten.</p></article>

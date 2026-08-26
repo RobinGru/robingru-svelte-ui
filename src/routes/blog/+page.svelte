@@ -31,7 +31,7 @@
     {
       title: 'Ein Svelte-UI-Kit muss Inhalt und Anwendung zusammenhalten',
       href: '#article',
-      excerpt: 'RobinGru verbindet Arbeitsoberflächen, Daten und Editorial Content über gemeinsame Tokens – nicht über identische Cards für alles.',
+      excerpt: 'Arbeitsoberflächen, Daten und Editorial Content teilen Tokens – nicht identische Cards für alles.',
       eyebrow: 'Design-System',
       date: '26. August 2026',
       dateTime: '2026-08-26',
@@ -47,7 +47,7 @@
       eyebrow: 'Data UI',
       date: '22. August 2026',
       dateTime: '2026-08-22',
-      author: 'RobinGru',
+      author: 'Editorial Team',
       minutes: 6,
       tags: ['DataTable', 'UX']
     },
@@ -58,7 +58,7 @@
       eyebrow: 'Dashboard',
       date: '18. August 2026',
       dateTime: '2026-08-18',
-      author: 'RobinGru',
+      author: 'Editorial Team',
       minutes: 5,
       tags: ['KPI', 'Charts']
     }
@@ -81,10 +81,10 @@
 
 <svelte:head>
   <title>Blog & Editorial Demo · RobinGru Svelte UI</title>
-  <meta name="description" content="Vollständige RobinGru Blog- und Artikeldemo mit Prose, Inhaltsverzeichnis, Code, Autor und verwandten Beiträgen." />
+  <meta name="description" content="Vollständige Blog- und Artikeldemo mit Prose, Inhaltsverzeichnis, Code, Autor und verwandten Beiträgen." />
 </svelte:head>
 
-<SectionIntro eyebrow="Editorial Showcase" title="Ein Blog, der nicht wie ein Dashboard verkleidet ist." description="Typografie, Metadaten und Navigation geben dem Inhalt Ruhe. Gleichzeitig bleiben Farben, Radien, Fokuszustände und Abstände klar als RobinGru erkennbar." />
+<SectionIntro eyebrow="Editorial Showcase" title="Ein Blog, der nicht wie ein Dashboard verkleidet ist." description="Typografie, Metadaten und Navigation geben dem Inhalt Ruhe. Farben, Radien, Fokuszustände und Abstände bleiben dabei systematisch abgestimmt." />
 
 <div class="docs-blog-index">
   <section>
@@ -103,7 +103,7 @@
       <ArticleHeader
         eyebrow="Design-System"
         title="Ein Svelte-UI-Kit muss Inhalt und Anwendung zusammenhalten"
-        description="RobinGru verbindet Arbeitsoberflächen, Daten und Editorial Content über gemeinsame Tokens – nicht über identische Karten für alles."
+        description="Arbeitsoberflächen, Daten und Editorial Content teilen Tokens – nicht identische Karten für alles."
       >
         {#snippet breadcrumbs()}<Breadcrumbs items={[{ label: 'Blog', href: `${base}/blog` }, { label: 'Design-System', current: true }]} />{/snippet}
         {#snippet meta()}
@@ -118,14 +118,14 @@
         <h2 id="common-language">Eine gemeinsame Sprache</h2>
         <p>Robin Blue markiert Fokus, Auswahl und wichtige Aktionen. Flächen bleiben überwiegend neutral, damit Kennzahlen, Tabelleninhalte und Texte nicht um Aufmerksamkeit konkurrieren.</p>
 
-        <Blockquote source="RobinGru Designprinzip" tone="primary">
+        <Blockquote source="Designprinzip" tone="primary">
           <p>Farbe soll Bedeutung tragen. Sie darf nicht die fehlende Informationshierarchie ersetzen.</p>
         </Blockquote>
 
         <h2 id="dashboard-editorial">Dashboard und Editorial</h2>
         <p>Im Dashboard zählt Vergleichbarkeit. Im Artikel zählen Rhythmus und Lesefluss. Beide verwenden dennoch dieselben Radien, Fokuszustände, Abstände und semantischen Farben.</p>
 
-        <Figure caption="Dieselben Tokens können operative und redaktionelle Oberflächen verbinden, ohne sie gleichzumachen." credit="RobinGru Svelte UI" aspect="16 / 7">
+        <Figure caption="Dieselben Tokens können operative und redaktionelle Oberflächen verbinden, ohne sie gleichzumachen." credit="Design-System" aspect="16 / 7">
           {#snippet media()}
             <div class="docs-editorial-bridge">
               <div class="docs-bridge-story">
@@ -146,10 +146,10 @@
         <CodeBlock code={exampleCode} language="svelte" filename="+page.svelte" lineNumbers highlightLines={[2, 6]} />
 
         <h2 id="fewer-dependencies">Weniger Abhängigkeiten</h2>
-        <p>Komplexes Fokusmanagement kommt aus Bits UI. Das optionale Skeleton-Stylesheet integriert Tailwind und Skeleton. RobinGru führt daneben keine zweite Toast-, Tabellen- oder Komponentenbibliothek ein.</p>
+        <p>Komplexes Fokusmanagement kommt aus Bits UI. Das optionale Skeleton-Stylesheet integriert Tailwind und Skeleton. Daneben gibt es keine zweite Toast-, Tabellen- oder Komponentenbibliothek.</p>
 
         <table>
-          <thead><tr><th>Bereich</th><th>Priorität</th><th>RobinGru-Bausteine</th></tr></thead>
+          <thead><tr><th>Bereich</th><th>Priorität</th><th>Bausteine</th></tr></thead>
           <tbody>
             <tr><td>Blog</td><td>Lesefluss</td><td>Article, Prose, TOC, CodeBlock</td></tr>
             <tr><td>Dashboard</td><td>Vergleich</td><td>KpiCard, ChartCard, StatusSummary</td></tr>
@@ -161,9 +161,9 @@
         <p>Eine Produktseite kann eine Tabelle, einen erklärenden Artikel und eine Einstellungsoberfläche enthalten, ohne drei voneinander unabhängige Designsprachen zu benötigen.</p>
       </Prose>
 
-      <ShareButtons url="https://example.com/robingru-design-system" title="RobinGru Design System" />
+      <ShareButtons url="https://example.com/design-system" title="Design-System" />
 
-      <AuthorCard name="Robin Gru" role="Maintainer von RobinGru Svelte UI" bio="Entwickelt ein ruhiges, Svelte-natives Komponenten-System für produktive Anwendungen und redaktionelle Inhalte.">
+      <AuthorCard name="Robin Gru" role="Maintainer des Design-Systems" bio="Entwickelt ein ruhiges, Svelte-natives Komponenten-System für produktive Anwendungen und redaktionelle Inhalte.">
         {#snippet actions()}<Button size="sm" variant="outline" tone="neutral">Profil öffnen</Button>{/snippet}
       </AuthorCard>
 
@@ -173,7 +173,7 @@
     </Article>
   </section>
 
-  <RelatedPosts posts={relatedPosts} title="Weitere RobinGru-Muster" description="Blog-Karten verwenden dieselben Tokens, aber eine eigenständige Editorial-Hierarchie." />
+  <RelatedPosts posts={relatedPosts} title="Weitere Muster" description="Blog-Karten verwenden dieselben Tokens, aber eine eigenständige Editorial-Hierarchie." />
 </div>
 
 <footer class="docs-footer"><div><span>Editorial Content bleibt semantisches HTML.</span><a href={`${base}/tokens`}>Typografie- und Farb-Tokens ansehen</a></div></footer>

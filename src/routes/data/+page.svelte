@@ -146,7 +146,7 @@
 
 <svelte:head>
   <title>DataTable Demo · RobinGru Svelte UI</title>
-  <meta name="description" content="Interaktive RobinGru DataTable mit Suche, Filtern, Sortierung, Auswahl, Spalten und Pagination." />
+  <meta name="description" content="Interaktive DataTable mit Suche, Filtern, Sortierung, Auswahl, Spalten und Pagination." />
 </svelte:head>
 
 <SectionIntro
@@ -169,7 +169,7 @@
   </DashboardGrid>
 
   <Callout title="Warum keine VirtualTable?" tone="info">
-    Pagination, ein begrenzter sichtbarer Tabellenbereich und optional serverseitig geladene Seiten reichen für typische Admin- und Dashboard-Daten aus. RobinGru hält deshalb nur eine verständliche Tabellen-API vor.
+    Pagination, ein begrenzter sichtbarer Tabellenbereich und optional serverseitig geladene Seiten reichen für typische Admin- und Dashboard-Daten aus. Deshalb bleibt die Tabellen-API bewusst verständlich.
   </Callout>
 
   <div class="docs-data-toolbar">

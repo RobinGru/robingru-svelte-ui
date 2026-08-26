@@ -55,7 +55,7 @@
   <div class="docs-home-copy">
     <Badge tone="primary"><Sparkles size={13} /> Release 0.3.1 · Live Docs</Badge>
     <h1>Ruhige Svelte-Oberflächen, vollständig live dokumentiert.</h1>
-    <p>RobinGru Svelte UI verbindet App-Komponenten, Dashboards, normale bis mittelgroße Datentabellen und redaktionelle Inhalte – ohne visuelle Effekt-Überladung und ohne redundante UI-Schichten.</p>
+    <p>App-Komponenten, Dashboards, normale bis mittelgroße Datentabellen und redaktionelle Inhalte teilen eine ruhige visuelle Sprache – ohne Effekt-Überladung und redundante UI-Schichten.</p>
     <div class="docs-home-actions">
       <Button onclick={() => window.location.href = `${base}/components`}>Komponenten ansehen <ArrowRight size={16} /></Button>
       <Button variant="outline" tone="neutral" onclick={() => window.location.href = `${base}/installation`}>Installation</Button>
@@ -69,10 +69,10 @@
     </div>
   </div>
 
-  <div class="docs-hero-workbench" aria-label="Stilisierte Vorschau eines RobinGru Dashboards">
+  <div class="docs-hero-workbench" aria-label="Stilisierte Vorschau eines Dashboards">
     <header>
       <span class="docs-window-dots"><i></i><i></i><i></i></span>
-      <span>RobinGru Workspace</span>
+      <span>Produkt-Workspace</span>
       <InlineCode>robin</InlineCode>
     </header>
     <div class="docs-hero-workbench-body">
