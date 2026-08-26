@@ -21,6 +21,6 @@ export default defineConfig({
     { name: 'desktop', use: { viewport: { width: 1440, height: 1000 }, colorScheme: 'light' } },
     { name: 'compact', use: { viewport: { width: 1440, height: 1000 }, colorScheme: 'light' } },
     { name: 'dark', use: { viewport: { width: 1440, height: 1000 }, colorScheme: 'dark' } },
-    { name: 'mobile', use: { ...devices['iPhone 13'] } }
+    { name: 'mobile', use: { ...devices['iPhone 13'], browserName: 'chromium' } }
   ]
 });

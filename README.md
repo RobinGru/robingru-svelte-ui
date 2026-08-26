@@ -251,7 +251,7 @@ npm run verify
 
 Sie umfasst statische Prüfung, `svelte-check`, Vitest, SvelteKit-Build, Svelte-Package, Katalog- und Distributionsprüfung.
 
-Lokale visuelle Referenzen prüfen Blog und DataTable in Desktop, Kompakt, Dark und Mobil. Beim ersten Lauf werden die Baselines bewusst explizit erzeugt:
+Lokale visuelle Referenzen prüfen Blog und DataTable in Desktop, Kompakt, Dark und Mobil. Sie verwenden bewusst Node.js (20+) für Playwright, während Entwicklung und Build weiterhin über Bun laufen. Beim ersten Lauf werden die Baselines explizit erzeugt:
 
 ```bash
 bun run test:visual:update
