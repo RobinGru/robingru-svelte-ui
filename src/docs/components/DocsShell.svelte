@@ -10,12 +10,14 @@
     ChevronRight,
     Component,
     Database,
+    Download,
     Gauge,
     LayoutTemplate,
     Menu,
     PanelLeftClose,
     PanelLeftOpen,
     Palette,
+    Scale,
     Search,
     X
   } from '@lucide/svelte';
@@ -37,6 +39,8 @@
 
   const mainLinks = [
     { href: '/', label: 'Übersicht', icon: Gauge },
+    { href: '/installation', label: 'Installation', icon: Download },
+    { href: '/why-robingru', label: 'Warum RG Svelte UI?', icon: Scale },
     { href: '/components', label: 'Komponenten', icon: Component, count: componentCatalog.length },
     { href: '/patterns', label: 'Patterns', icon: LayoutTemplate }
   ];

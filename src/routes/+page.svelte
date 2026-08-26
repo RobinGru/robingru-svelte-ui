@@ -7,11 +7,13 @@
     Code2,
     Component,
     Database,
+    Download,
     Gauge,
     Keyboard,
     LayoutDashboard,
     MoonStar,
     Palette,
+    Scale,
     Sparkles
   } from '@lucide/svelte';
   import { Badge, Button, InlineCode } from '$lib';
@@ -34,6 +36,8 @@
 
   const routes = [
     { icon: Component, href: '/components', title: 'Komponenten', text: 'Alle Komponenten live, filterbar und mit eigener Detailseite.', meta: '116 Live-Previews' },
+    { icon: Download, href: '/installation', title: 'Installation', text: 'GitHub-Installation, Styles und erste Komponente in wenigen nachvollziehbaren Schritten.', meta: 'Kein npm-Release nötig' },
+    { icon: Scale, href: '/why-robingru', title: 'Warum RG Svelte UI?', text: 'Einordnung, Stärken und der passende Einsatzbereich statt pauschaler Vergleichsversprechen.', meta: 'Klare Positionierung' },
     { icon: Blocks, href: '/patterns', title: 'Patterns', text: 'Login, Einstellungen, Kommentare und weitere zusammengesetzte Oberflächen.', meta: 'Produktnahe Beispiele' },
     { icon: LayoutDashboard, href: '/dashboard', title: 'Dashboard', text: 'KPIs, Filter, leichte Charts, Status und operative Tabelle.', meta: 'Vollständige Demo' },
     { icon: BookOpen, href: '/blog', title: 'Blog & Editorial', text: 'Beitragsübersicht und vollständiger Artikel mit Prose-System.', meta: 'Editorial Showcase' },
@@ -54,6 +58,7 @@
     <p>RobinGru Svelte UI verbindet App-Komponenten, Dashboards, normale bis mittelgroße Datentabellen und redaktionelle Inhalte – ohne visuelle Effekt-Überladung und ohne redundante UI-Schichten.</p>
     <div class="docs-home-actions">
       <Button onclick={() => window.location.href = `${base}/components`}>Komponenten ansehen <ArrowRight size={16} /></Button>
+      <Button variant="outline" tone="neutral" onclick={() => window.location.href = `${base}/installation`}>Installation</Button>
       <Button variant="outline" tone="neutral" onclick={() => window.location.href = `${base}/patterns`}>Patterns öffnen</Button>
     </div>
     <div class="docs-home-meta">
