@@ -115,8 +115,8 @@
         <span class="docs-brand-mark" aria-hidden="true">R</span>
         <span><strong>RobinGru</strong><small>Svelte UI</small></span>
       </a>
-      <IconButton class="docs-sidebar-collapse" label={sidebarCollapsed ? 'Seitenleiste ausklappen' : 'Seitenleiste einklappen'} size="sm" variant="ghost" onclick={toggleSidebar}>
-        {#if sidebarCollapsed}<PanelLeftOpen size={17} />{:else}<PanelLeftClose size={17} />{/if}
+      <IconButton class="docs-sidebar-collapse" label={sidebarCollapsed ? 'Seitenleiste ausklappen' : 'Seitenleiste einklappen'} variant="outline" onclick={toggleSidebar}>
+        {#if sidebarCollapsed}<PanelLeftOpen size={18} />{:else}<PanelLeftClose size={18} />{/if}
       </IconButton>
       <IconButton class="docs-mobile-close" label="Navigation schließen" size="sm" variant="ghost" onclick={() => mobileOpen = false}><X size={17} /></IconButton>
     </div>

@@ -128,6 +128,16 @@
 }
 
 [data-density='compact'] {
+  /* Die Typografie bleibt lesbar; die Dichte entsteht über Rhythmus und Controls. */
+  --rg-space-1: 0.2rem;
+  --rg-space-2: 0.4rem;
+  --rg-space-3: 0.625rem;
+  --rg-space-4: 0.8rem;
+  --rg-space-5: 1rem;
+  --rg-space-6: 1.25rem;
+  --rg-space-8: 1.5rem;
+  --rg-space-10: 2rem;
+  --rg-space-12: 2.5rem;
   --rg-control-h-xs: 1.625rem;
   --rg-control-h-sm: 1.95rem;
   --rg-control-h-md: 2.25rem;

@@ -575,6 +575,18 @@
   .rg-kpi-visual { width: min(8rem, 42%); }
   .rg-kpi-footer { margin-top: .25rem; padding-top: var(--rg-space-3); border-top: 1px solid var(--rg-border); color: var(--rg-fg-muted); font-size: var(--rg-text-xs); }
   .rg-kpi-icon { display: grid; width: 1.8rem; height: 1.8rem; place-items: center; border-radius: var(--rg-radius-sm); background: var(--rg-surface-muted); color: var(--rg-primary-active); }
+
+  /* Global compact mode: tighter layout rhythm while preserving readable type sizes. */
+  [data-density='compact'] .rg-navbar { height: 3.25rem; padding-inline: var(--rg-space-4); }
+  [data-density='compact'] .rg-sidebar-header { min-height: 3rem; }
+  [data-density='compact'] .rg-nav-item { min-height: 2rem; gap: .5rem; padding: .35rem .55rem; }
+  [data-density='compact'] .rg-nav-label { padding: .25rem .5rem; }
+  [data-density='compact'] .rg-command-search { padding: var(--rg-space-3); }
+  [data-density='compact'] .rg-command-item { min-height: 2.1rem; padding: .35rem .55rem; }
+  [data-density='compact'] .rg-table th { padding: .5rem .65rem; }
+  [data-density='compact'] .rg-table td { padding: .55rem .65rem; }
+  [data-density='compact'] .rg-upload { min-height: 7rem; }
+  [data-density='compact'] .rg-state { min-height: 9rem; padding: var(--rg-space-6); }
 }
 
 @media (max-width: 58rem) {
