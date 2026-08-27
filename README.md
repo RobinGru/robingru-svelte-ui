@@ -1,5 +1,9 @@
 # RobinGru Svelte UI
 
+[![GitHub Pages](https://github.com/RobinGru/robingru-svelte-ui/actions/workflows/deploy-pages.yml/badge.svg)](https://robingru.github.io/robingru-svelte-ui/)
+[![Quality checks](https://github.com/RobinGru/robingru-svelte-ui/actions/workflows/sveltekit-check.yml/badge.svg)](https://github.com/RobinGru/robingru-svelte-ui/actions/workflows/sveltekit-check.yml)
+[![Gitleaks](https://github.com/RobinGru/robingru-svelte-ui/actions/workflows/gitleaks.yml/badge.svg)](https://github.com/RobinGru/robingru-svelte-ui/actions/workflows/gitleaks.yml)
+
 Ein ruhiges, hellblaues Design-System für **Svelte 5 und SvelteKit**. Die Bibliothek verbindet produktive App-Oberflächen, Dashboards, normale bis größere Datentabellen und redaktionelle Seiten mit einer gemeinsamen visuellen Sprache – ohne eine zweite Komponentenbibliothek nebenher zu installieren.
 
 ## Release 0.3.1
