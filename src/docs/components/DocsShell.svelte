@@ -112,7 +112,9 @@
       }
     };
     window.addEventListener('keydown', shortcut);
-    return () => window.removeEventListener('keydown', shortcut);
+    return () => {
+      window.removeEventListener('keydown', shortcut);
+    };
   });
 </script>
 

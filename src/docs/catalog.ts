@@ -84,7 +84,7 @@ const names: Record<ComponentCategoryId, string[]> = {
   ],
   navigation: [
     'AppShell', 'Breadcrumbs', 'FileTree', 'MenuBar', 'Navbar', 'PageHeader', 'Pagination',
-    'ResizablePanels', 'Sidebar', 'Stepper', 'Tabs', 'ThemeToggle', 'Toolbar', 'TreeView', 'UserMenu'
+    'ResizablePanels', 'ScrollToTop', 'Sidebar', 'Stepper', 'Tabs', 'ThemeToggle', 'Toolbar', 'TreeView', 'UserMenu'
   ],
   overlay: [
     'Accordion', 'AlertDialog', 'Collapsible', 'CommandPalette', 'ContextMenu', 'Dialog', 'Drawer',
@@ -175,6 +175,7 @@ const descriptions: Record<string, string> = {
   PageHeader: 'Seitenkopf mit Eyebrow, Beschreibung, Breadcrumbs und Aktionen.',
   Pagination: 'Kompakte Seitennavigation mit Ellipsen und Randseiten.',
   ResizablePanels: 'Zwei per Zeiger oder Tastatur skalierbare Arbeitsbereiche.',
+  ScrollToTop: 'Platzierbare Aktion, die einen langen Seiteninhalt wieder an den Anfang führt.',
   Sidebar: 'Vertikale Navigation mit Header, Inhalt, Footer und optionaler kompakter Rail.',
   Stepper: 'Fortschrittsanzeige für mehrstufige Abläufe.',
   Tabs: 'Tastaturbedienbare Ansichtsumschaltung mit Tabpanel.',

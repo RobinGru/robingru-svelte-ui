@@ -26,3 +26,24 @@ for (const route of ['/blog', '/data', '/components']) {
     });
   });
 }
+
+test('component catalog toolbar stays below the app header while scrolling', async ({ page }, testInfo) => {
+  await page.goto('/components', { waitUntil: 'domcontentloaded' });
+  await page.waitForTimeout(200);
+  await page.evaluate(() => window.scrollTo(0, 1_400));
+  await page.waitForTimeout(100);
+
+  const toolbar = await page.locator('.docs-catalog-toolbar').boundingBox();
+
+  if (testInfo.project.name === 'mobile') {
+    expect(toolbar).not.toBeNull();
+    expect(toolbar!.y).toBeLessThan(0);
+    return;
+  }
+
+  const topbar = await page.locator('.docs-topbar').boundingBox();
+  expect(toolbar).not.toBeNull();
+  expect(topbar).not.toBeNull();
+  expect(toolbar!.y).toBeGreaterThanOrEqual(topbar!.y + topbar!.height + 10);
+  expect(toolbar!.y).toBeLessThanOrEqual(topbar!.y + topbar!.height + 16);
+});

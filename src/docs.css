@@ -2,6 +2,7 @@
 :root {
   --docs-sidebar: 17rem;
   --docs-topbar: 3.75rem;
+  --docs-topbar-current: var(--docs-topbar);
   --docs-content: 82rem;
 }
 
@@ -142,7 +143,7 @@ body { overflow-x: hidden; }
 .docs-route-card p { margin: 0; color: var(--rg-fg-muted); font-size: var(--rg-text-sm); line-height: 1.55; }
 .docs-route-card footer { display: flex; align-items: center; justify-content: space-between; margin-top: 1.25rem; color: var(--rg-fg-subtle); font-size: var(--rg-text-xs); }
 
-.docs-catalog-toolbar { position: sticky; top: var(--docs-topbar); z-index: 15; display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: 1.25rem; padding: .65rem; border: 1px solid var(--rg-border); border-radius: var(--rg-radius-lg); background: var(--rg-surface); box-shadow: 0 .45rem .8rem color-mix(in oklab, var(--rg-bg) 82%, transparent); }
+.docs-catalog-toolbar { position: sticky; top: calc(var(--docs-topbar-current) + .75rem); z-index: 15; display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: 1.25rem; padding: .65rem; border: 1px solid var(--rg-border); border-radius: var(--rg-radius-lg); background: var(--rg-surface); box-shadow: var(--rg-shadow-sm); }
 .docs-catalog-search { position: relative; flex: 1; max-width: 28rem; }
 .docs-catalog-search svg { position: absolute; top: 50%; left: .75rem; transform: translateY(-50%); color: var(--rg-fg-subtle); pointer-events: none; }
 .docs-catalog-search input { padding-left: 2.25rem; }
@@ -442,6 +443,7 @@ body { overflow-x: hidden; }
 .docs-component-card { content-visibility: auto; contain-intrinsic-size: 26rem; }
 
 /* The documentation follows the same global density tokens as the library. */
+[data-density='compact'] { --docs-topbar-current: 3.25rem; }
 [data-density='compact'] .docs-brand-row { min-height: 3.25rem; padding: .45rem .7rem; }
 [data-density='compact'] .docs-brand-mark { width: 1.75rem; height: 1.75rem; font-size: .8rem; }
 [data-density='compact'] .docs-search-trigger { margin: .6rem .65rem .35rem; padding: .38rem .5rem; }
@@ -456,7 +458,7 @@ body { overflow-x: hidden; }
 [data-density='compact'] .docs-section-intro { gap: 1.5rem; margin-bottom: 1.5rem; padding-bottom: 1rem; }
 [data-density='compact'] .docs-section-intro p { margin-top: .6rem; }
 [data-density='compact'] .docs-home-hero { gap: clamp(1rem, 3vw, 2.5rem); padding-bottom: 2rem; }
-[data-density='compact'] .docs-catalog-toolbar { top: calc(var(--docs-topbar) + .5rem); margin-bottom: 1rem; padding: .5rem; }
+[data-density='compact'] .docs-catalog-toolbar { top: calc(var(--docs-topbar-current) + .75rem); margin-bottom: 1rem; padding: .5rem; }
 [data-density='compact'] .docs-catalog-section { margin-top: 1.8rem; }
 [data-density='compact'] .docs-component-detail-grid { gap: 1.5rem; }
 [data-density='compact'] .docs-component-detail-main { gap: 1rem; }

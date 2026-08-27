@@ -121,6 +121,7 @@ export { default as Navbar } from './components/navigation/Navbar.svelte';
 export { default as PageHeader } from './components/navigation/PageHeader.svelte';
 export { default as Pagination } from './components/navigation/Pagination.svelte';
 export { default as ResizablePanels } from './components/navigation/ResizablePanels.svelte';
+export { default as ScrollToTop } from './components/navigation/ScrollToTop.svelte';
 export { default as Sidebar } from './components/navigation/Sidebar.svelte';
 export { default as Stepper } from './components/navigation/Stepper.svelte';
 export { default as Tabs } from './components/navigation/Tabs.svelte';
