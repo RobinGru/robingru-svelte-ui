@@ -3,6 +3,7 @@
   import { cn } from '../../internal/cn.js';
   import type { MentionOption } from '../../types.js';
   import Avatar from '../foundation/Avatar.svelte';
+  import FloatingMenu from '../internal/FloatingMenu.svelte';
 
   type Props = Omit<HTMLTextareaAttributes, 'value' | 'onchange'> & {
     value?: string;
@@ -18,6 +19,7 @@
   let { value = $bindable(''), suggestions, label = 'Text mit Erwähnungen', trigger = '@', emptyLabel = 'Keine Treffer', invalid = false, onchange, onmention, class: className, ...rest }: Props = $props();
   const uid = $props.id();
   let textarea: HTMLTextAreaElement | undefined;
+  let root = $state<HTMLElement | undefined>();
   let caret = $state(0);
   let open = $state(false);
   let activeIndex = $state(0);
@@ -55,10 +57,11 @@
   }
 </script>
 
-<div class={cn('rg-mention', className)} data-open={open}>
+<div bind:this={root} class={cn('rg-mention', className)} data-open={open}>
   <textarea {...rest} bind:this={textarea} class="rg-textarea" {value} aria-label={label} aria-invalid={invalid || undefined} aria-controls={open ? `${uid}-mentions` : undefined} oninput={update} onkeyup={syncCaret} onclick={syncCaret} onkeydown={keydown}></textarea>
   {#if open}
-    <div class="rg-mention-menu" id={`${uid}-mentions`} role="listbox" aria-label="Erwähnungen">
+    <FloatingMenu anchor={root} class="rg-floating-menu rg-mention-menu">
+      <div id={`${uid}-mentions`} role="listbox" aria-label="Erwähnungen">
       {#if matches.length}
         {#each matches as item, index}
           <button type="button" role="option" aria-selected={index === activeIndex} data-active={index === activeIndex} disabled={item.disabled} onmousedown={(event) => event.preventDefault()} onclick={() => choose(item)}>
@@ -67,6 +70,7 @@
           </button>
         {/each}
       {:else}<div class="rg-combobox-state">{emptyLabel}</div>{/if}
-    </div>
+      </div>
+    </FloatingMenu>
   {/if}
 </div>

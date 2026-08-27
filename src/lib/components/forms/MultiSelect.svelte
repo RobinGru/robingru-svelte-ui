@@ -3,6 +3,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/cn.js';
   import type { Option } from '../../types.js';
+  import FloatingMenu from '../internal/FloatingMenu.svelte';
 
   type Props = Omit<HTMLAttributes<HTMLDivElement>, 'onchange'> & {
     values?: string[];
@@ -24,6 +25,8 @@
   }: Props = $props();
 
   const uid = $props.id();
+  let root = $state<HTMLElement | undefined>();
+  let menu = $state<HTMLElement | undefined>();
   let open = $state(false);
   let query = $state('');
   let activeIndex = $state(0);
@@ -58,12 +61,11 @@
   }
 
   function focusout(event: FocusEvent) {
-    const root = event.currentTarget as HTMLElement;
-    queueMicrotask(() => { if (!root.contains(document.activeElement)) open = false; });
+    queueMicrotask(() => { if (!root?.contains(document.activeElement) && !menu?.contains(document.activeElement)) open = false; });
   }
 </script>
 
-<div {...rest} class={cn('rg-multiselect', className)} data-open={open} data-invalid={invalid} onfocusout={focusout}>
+<div {...rest} bind:this={root} class={cn('rg-multiselect', className)} data-open={open} data-invalid={invalid} onfocusout={focusout}>
   <div class="rg-multiselect-control" data-disabled={disabled}>
     <span class="rg-multiselect-values">
       {#if selected.length}
@@ -76,7 +78,8 @@
     <button type="button" class="rg-multiselect-toggle" aria-label={label} aria-haspopup="listbox" aria-expanded={open} aria-controls={`${uid}-listbox`} {disabled} onclick={(event) => { event.stopPropagation(); open = !open; }}><ChevronDown size={16} aria-hidden="true" /></button>
   </div>
   {#if open}
-    <div class="rg-multiselect-menu" id={`${uid}-listbox`} role="listbox" aria-label={label} aria-multiselectable="true" tabindex="-1" onkeydown={keydown}>
+    <FloatingMenu bind:element={menu} anchor={root} class="rg-floating-menu rg-multiselect-menu" onfocusout={focusout}>
+      <div id={`${uid}-listbox`} role="listbox" aria-label={label} aria-multiselectable="true" tabindex="-1" onkeydown={keydown}>
       {#if searchable}
         <label class="rg-multiselect-search"><Search size={15} aria-hidden="true" /><input bind:value={query} aria-label={`${label} durchsuchen`} placeholder="Suchen …" onkeydown={keydown} /></label>
       {/if}
@@ -90,6 +93,7 @@
           {/each}
         {:else}<div class="rg-combobox-state">{emptyLabel}</div>{/if}
       </div>
-    </div>
+      </div>
+    </FloatingMenu>
   {/if}
 </div>

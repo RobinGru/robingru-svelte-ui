@@ -3,6 +3,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/cn.js';
   import type { Option } from '../../types.js';
+  import FloatingMenu from '../internal/FloatingMenu.svelte';
 
   type Props = Omit<HTMLAttributes<HTMLDivElement>, 'onchange'> & {
     value?: string;
@@ -34,6 +35,8 @@
 
   const uid = $props.id();
   let input: HTMLInputElement | undefined;
+  let root = $state<HTMLElement | undefined>();
+  let menu = $state<HTMLElement | undefined>();
   let open = $state(false);
   let query = $state('');
   let activeIndex = $state(0);
@@ -94,9 +97,8 @@
   }
 
   function focusout(event: FocusEvent) {
-    const root = event.currentTarget as HTMLElement;
     queueMicrotask(() => {
-      if (!root.contains(document.activeElement)) {
+      if (!root?.contains(document.activeElement) && !menu?.contains(document.activeElement)) {
         open = false;
         query = selected?.label ?? '';
       }
@@ -104,7 +106,7 @@
   }
 </script>
 
-<div {...rest} class={cn('rg-combobox', className)} data-open={open} data-invalid={invalid} onfocusout={focusout}>
+<div {...rest} bind:this={root} class={cn('rg-combobox', className)} data-open={open} data-invalid={invalid} onfocusout={focusout}>
   <div class="rg-combobox-control">
     <Search size={16} aria-hidden="true" />
     <input
@@ -128,7 +130,8 @@
     {:else}<ChevronDown size={16} aria-hidden="true" />{/if}
   </div>
   {#if open}
-    <div class="rg-combobox-menu" id={`${uid}-listbox`} role="listbox" aria-label={label}>
+    <FloatingMenu bind:element={menu} anchor={root} class="rg-floating-menu rg-combobox-menu" onfocusout={focusout}>
+      <div id={`${uid}-listbox`} role="listbox" aria-label={label}>
       {#if loading}<div class="rg-combobox-state">Optionen werden geladen …</div>
       {:else if filtered.length}
         {#each filtered as option, index}
@@ -148,6 +151,7 @@
           </button>
         {/each}
       {:else}<div class="rg-combobox-state">{emptyLabel}</div>{/if}
-    </div>
+      </div>
+    </FloatingMenu>
   {/if}
 </div>

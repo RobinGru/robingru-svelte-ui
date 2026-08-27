@@ -52,6 +52,33 @@ test('selection and editing components support their primary keyboard flows', as
   await expect(mention).toHaveValue(/@mara/);
 });
 
+test('catalog suggestion lists escape their preview container', async ({ page }, testInfo) => {
+  desktopOnly(testInfo);
+  await page.setViewportSize({ width: 805, height: 700 });
+  await gotoPreview(page, '/components');
+
+  const cases = [
+    { name: 'Combobox', trigger: '.rg-combobox input', menu: '.rg-combobox-menu' },
+    { name: 'MultiSelect', trigger: '.rg-multiselect-control', menu: '.rg-multiselect-menu' },
+    { name: 'MentionInput', trigger: '.rg-mention textarea', menu: '.rg-mention-menu' }
+  ];
+
+  for (const item of cases) {
+    const card = page.locator('.docs-component-card').filter({ has: page.getByRole('heading', { name: item.name, exact: true }) });
+    const trigger = card.locator(item.trigger);
+    await trigger.click();
+    if (item.name === 'MentionInput') await trigger.fill('Bitte mit @');
+
+    const preview = card.locator('.docs-component-preview');
+    const menu = page.locator(item.menu).last();
+    await expect(menu).toBeVisible();
+    expect(await menu.evaluate((element) => !element.closest('.docs-component-preview'))).toBe(true);
+    const dimensions = await preview.evaluate((element) => ({ clientHeight: element.clientHeight, scrollHeight: element.scrollHeight }));
+    expect(dimensions.scrollHeight).toBe(dimensions.clientHeight);
+    await page.keyboard.press('Escape');
+  }
+});
+
 test('multi-select keeps multiple choices in its bound preview state', async ({ page }, testInfo) => {
   desktopOnly(testInfo);
   await gotoPreview(page, '/components/multi-select');
