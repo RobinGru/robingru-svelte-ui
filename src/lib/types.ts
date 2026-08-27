@@ -1,7 +1,7 @@
 import type { Snippet } from 'svelte';
 
 export type Size = 'xs' | 'sm' | 'md' | 'lg';
-export type Tone = 'neutral' | 'primary' | 'info' | 'success' | 'warning' | 'danger';
+export type Tone = 'neutral' | 'primary' | 'info' | 'success' | 'warning' | 'danger' | 'cyan' | 'green' | 'amber' | 'red';
 export type Variant = 'solid' | 'soft' | 'outline' | 'ghost';
 export type Orientation = 'horizontal' | 'vertical';
 export type Align = 'start' | 'center' | 'end';

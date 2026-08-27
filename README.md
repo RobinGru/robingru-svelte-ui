@@ -4,9 +4,9 @@ Ein ruhiges, hellblaues Design-System für **Svelte 5 und SvelteKit**. Die Bibl
 
 ## Release 0.3.1
 
-- **129 eindeutige Svelte-Komponenten** in sieben Bereichen
+- **131 eindeutige Svelte-Komponenten** in sieben Bereichen
 - integrierte **mehrseitige SvelteKit-Demo- und Dokumentationswebsite**
-- **129 echte Live-Previews** mit Detailseiten, Beispielcode und Theme-/Dichte-Test
+- **131 echte Live-Previews** mit Detailseiten, Beispielcode und Theme-/Dichte-Test
 - **17 Blog- und Editorial-Komponenten**
 - **14 Dashboard- und Visualisierungsbausteine**
 - eine erweiterte **DataTable** für typische Produkt-, CRM-, Admin- und Backoffice-Tabellen
@@ -20,7 +20,7 @@ Ein ruhiges, hellblaues Design-System für **Svelte 5 und SvelteKit**. Die Bibl
 
 Ein leichtes, zurückhaltendes Blau markiert Fokus, Auswahl und wichtige Aktionen. Hauptflächen bleiben neutral. Das System setzt auf klare 1-px-Ränder, moderate Radien, kompakte Informationsdichte und sparsame Schatten.
 
-Nicht Teil des Standarddesigns sind Glassmorphism, Neonverläufe, dekorative Blob-Hintergründe, übergroße SaaS-Hero-Schriften oder eine Card um jeden Absatz. daisyUI dient nur als leichte Referenz für freundliche Zustände – keine Klasse und kein Paket wird übernommen.
+Nicht Teil des Standarddesigns sind Glassmorphism, Neonverläufe, dekorative Blob-Hintergründe, übergroße SaaS-Hero-Schriften oder eine Card um jeden Absatz. Das System verwendet keine daisyUI-Klassen oder -Abhängigkeiten.
 
 ## Integrierte Demo- und Dokumentationswebsite
 
@@ -36,13 +36,13 @@ Die Hauptbereiche sind:
 | Route | Inhalt |
 |---|---|
 | `/` | Übersicht, Designprinzipien und Einstieg |
-| `/components` | filterbarer Katalog mit 129 Live-Previews |
+| `/components` | filterbarer Katalog mit 131 Live-Previews |
 | `/components/[slug]` | Einzelansicht mit DemoFrame, Usage-Code und verwandten Komponenten |
 | `/patterns` | Login, Einstellungen, Kommentare und Empty-State als reale Kompositionen |
 | `/dashboard` | vollständiges operatives Dashboard |
 | `/blog` | Beitragsübersicht und kompletter Editorial-Artikel |
 | `/data` | DataTable mit 48 Datensätzen, Filtern, Auswahl und Detail-Drawer |
-| `/tokens` | live umschaltbare Farb-, Spacing-, Radius-, Shadow- und Typografie-Tokens |
+| `/tokens` | vollständige Blue-, Slate-, Cyan-, Green-, Amber- und Red-Skalen sowie Spacing-, Radius-, Shadow-, Typografie- und Text-Deckkraft-Tokens |
 | `/accessibility` | Tastatur-, Fokus-, Formular-, Live-Region- und Motion-Labor |
 | `/workbench` | ursprüngliche Gesamtansicht aller großen Anwendungsbereiche |
 
@@ -93,6 +93,38 @@ Kompaktere Dichte:
 ```
 
 Alle Komponenten verwenden semantische Variablen mit `--rg-*`-Präfix. Ein Brand-Theme kann deshalb ohne dupliziertes Komponenten-CSS angepasst werden.
+
+### Farbpalette und Töne
+
+Neben der blauen Primärskala und neutralem Slate stehen abgestimmte Cyan-, Green-, Amber- und Red-Skalen mit Stufen von `25` bis `950` bereit. Semantische Töne und direkte Akzente funktionieren bei den passenden Komponenten – etwa Buttons, Badges, Chips, Tags, Callouts, Statusmarkierungen und Diagrammen.
+
+```svelte
+<script lang="ts">
+  import { Badge, Button, Callout } from '@robingru/svelte-ui';
+</script>
+
+<Button tone="cyan">Importieren</Button>
+<Badge tone="green">Aktiv</Badge>
+<Callout tone="amber" title="Bitte prüfen">Die Änderung benötigt noch eine Freigabe.</Callout>
+```
+
+Verfügbare Töne: `primary`, `info`, `success`, `warning`, `danger`, `cyan`, `green`, `amber` und `red`.
+
+### Text-Deckkraft
+
+Für reine Textelemente stehen abgestufte Utilities zur Verfügung: `rg-text-opacity-100`, `rg-text-opacity-90`, `rg-text-opacity-75`, `rg-text-opacity-50` und `rg-text-opacity-25`.
+
+### Zurück nach oben
+
+`ScrollToTop` ist eine normale, platzierbare Komponente – sie positioniert sich nicht selbst.
+
+```svelte
+<script lang="ts">
+  import { ScrollToTop } from '@robingru/svelte-ui';
+</script>
+
+<footer><ScrollToTop /></footer>
+```
 
 ## Dashboard-Beispiel
 
@@ -226,13 +258,13 @@ Für selektierbare Tabellen sollte `rowId` auf einen stabilen Schlüssel zeigen.
 
 | Bereich | Anzahl | Aufgabe |
 |---|---:|---|
-| Foundation | 30 | Buttons, Flächen, Status, Avatare und Ladezustände |
-| Forms | 22 | Native-first Formulare und zusammengesetzte Controls |
-| Navigation | 12 | App-Shell, Sidebar, Navbar, Tabs und Orientierung |
+| Foundation | 31 | Buttons, Flächen, Status, Avatare und Ladezustände |
+| Forms | 28 | Native-first Formulare und zusammengesetzte Controls |
+| Navigation | 16 | App-Shell, Sidebar, Navbar, Tabs und Orientierung |
 | Overlay | 11 | Dialoge, Menüs, Popover, Tooltips und Feedback |
-| Data | 10 | Tabellen, KPI, Listen, Aktivitäten und strukturierte Daten |
+| Data | 13 | Tabellen, KPI, Listen, Aktivitäten und strukturierte Daten |
 | Dashboard | 14 | Filter, Trends, Status und leichte SVG-Visualisierung |
-| Content | 17 | Artikel, Prose, TOC, Code, Sharing und Beitragskarten |
+| Content | 18 | Artikel, Prose, TOC, Code, Sharing und Beitragskarten |
 
 Der vollständige, automatisch erzeugte Katalog steht in [`docs/component-catalog.md`](docs/component-catalog.md).
 
@@ -286,7 +318,7 @@ Details stehen in [`docs/quality-report.md`](docs/quality-report.md).
 4. **Leichte Visualisierung:** Sparkline, MiniBarChart, DonutChart und ProgressRing decken kompakte Dashboards ab; die Bibliothek baut keine allgemeine Chart-Engine nach.
 5. **DataTable statt Grid-Parallelwelt:** Normale bis größere Tabellen erhalten eine starke Standardkomponente, aber keine VirtualTable.
 6. **Editorial bleibt Editorial:** Prose und Article optimieren Lesefluss statt Dashboard-Karten zu imitieren.
-7. **daisyUI nur als Referenz:** Keine Runtime-, Klassen- oder Theme-Abhängigkeit.
+7. **Eigenständiges System:** Keine daisyUI- oder shadcn-Abhängigkeit in Klassen, Themes oder Runtime.
 
 Weitere Details: [`docs/architecture.md`](docs/architecture.md)
 

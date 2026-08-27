@@ -83,7 +83,7 @@ const preview = await readFile(previewPath, 'utf8');
 const previewComponent = await readFile(previewComponentPath, 'utf8');
 const namesBlock = catalog.split('const names:', 2)[1]?.split('const descriptions:', 1)[0] ?? '';
 const catalogNames = [...namesBlock.matchAll(/'([A-Z][A-Za-z0-9]+)'/g)].map((match) => match[1]);
-const componentFiles = (await walk(componentRoot)).filter((file) => file.endsWith('.svelte')).sort();
+const componentFiles = (await walk(componentRoot)).filter((file) => file.endsWith('.svelte') && !/[\\/]internal[\\/]/.test(file)).sort();
 const componentNames = componentFiles.map((file) => basename(file, '.svelte'));
 const caseNames = [...preview.matchAll(/case '([^']+)'/g)].map((match) => match[1]);
 const specialNames = ['Tabs', 'List', 'CommandPalette', 'ToastViewport'];
@@ -97,10 +97,10 @@ if (/href=[\"']#[A-Za-z0-9_-]+/.test(preview) || /href:\s*[\"']#[A-Za-z0-9_-]+/.
   errors.push('Preview configuration contains a page-local fragment link. Use a real docs route or a guaranteed route anchor instead.');
 }
 
-if (catalogNames.length !== 129 || new Set(catalogNames).size !== 129) {
-  errors.push(`Expected 129 unique catalog names, found ${catalogNames.length}/${new Set(catalogNames).size}.`);
+if (catalogNames.length !== 131 || new Set(catalogNames).size !== 131) {
+  errors.push(`Expected 131 unique catalog names, found ${catalogNames.length}/${new Set(catalogNames).size}.`);
 }
-if (new Set(caseNames).size !== 125) errors.push(`Expected 125 regular preview cases, found ${new Set(caseNames).size}.`);
+if (new Set(caseNames).size !== 127) errors.push(`Expected 127 regular preview cases, found ${new Set(caseNames).size}.`);
 for (const name of specialNames) {
   if (!previewComponent.includes(`name === '${name}'`)) errors.push(`Missing special live preview for ${name}.`);
 }

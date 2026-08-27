@@ -45,7 +45,7 @@
   ];
   const listItems = ['Design Tokens', 'Komponenten', 'Patterns'];
   const commandItems = [
-    { id: 'components', label: 'Komponenten öffnen', description: 'Alle 129 Live-Previews', shortcut: 'G C' },
+    { id: 'components', label: 'Komponenten öffnen', description: 'Alle 131 Live-Previews', shortcut: 'G C' },
     { id: 'dashboard', label: 'Dashboard-Demo öffnen', description: 'KPIs, Filter und Charts', shortcut: 'G D' },
     { id: 'tokens', label: 'Tokens ansehen', description: 'Farben, Radien und Typografie', shortcut: 'G T' }
   ];

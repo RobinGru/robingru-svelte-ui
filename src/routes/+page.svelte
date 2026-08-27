@@ -26,7 +26,7 @@
   const setup = `/* src/app.css */\n@import '@robingru/svelte-ui/styles.css';`;
 
   const featureCards = [
-    { icon: Component, title: '129 abgestimmte Komponenten', text: 'Grundlagen, Formulare, Navigation, Daten, Dashboard und Editorial in einer gemeinsamen Sprache.' },
+    { icon: Component, title: '131 abgestimmte Komponenten', text: 'Grundlagen, Formulare, Navigation, Daten, Dashboard und Editorial in einer gemeinsamen Sprache.' },
     { icon: Keyboard, title: 'Interaktion und Accessibility', text: 'Native Semantik, sichtbare Fokuszustände sowie Bits UI für komplexes Fokus- und Overlayverhalten.' },
     { icon: Palette, title: 'Robin Light und Dark', text: 'Ein ruhiges helles Blau, neutrale Flächen, moderate Radien und eine kompakte optionale Dichte.' },
     { icon: Code2, title: 'Source-orientierte API', text: 'Svelte-5-Komponenten, Snippets und klare Props ohne parallele Utility- oder Styling-Schichten.' },
@@ -35,7 +35,7 @@
   ];
 
   const routes = [
-    { icon: Component, href: '/components', title: 'Komponenten', text: 'Alle Komponenten live, filterbar und mit eigener Detailseite.', meta: '129 Live-Previews' },
+    { icon: Component, href: '/components', title: 'Komponenten', text: 'Alle Komponenten live, filterbar und mit eigener Detailseite.', meta: '131 Live-Previews' },
     { icon: Download, href: '/installation', title: 'Installation', text: 'GitHub-Installation, Styles und erste Komponente in wenigen nachvollziehbaren Schritten.', meta: 'Kein npm-Release nötig' },
     { icon: Scale, href: '/why-robingru', title: 'Warum RG Svelte UI?', text: 'Einordnung, Stärken und der passende Einsatzbereich statt pauschaler Vergleichsversprechen.', meta: 'Klare Positionierung' },
     { icon: Blocks, href: '/patterns', title: 'Patterns', text: 'Login, Einstellungen, Kommentare und weitere zusammengesetzte Oberflächen.', meta: 'Produktnahe Beispiele' },
@@ -48,7 +48,7 @@
 
 <svelte:head>
   <title>RobinGru Svelte UI · Dokumentation und Live-Demos</title>
-  <meta name="description" content="RobinGru Svelte UI: 129 live dokumentierte Svelte-Komponenten für Anwendungen, Dashboards, Datentabellen und Editorial Content." />
+  <meta name="description" content="RobinGru Svelte UI: 131 live dokumentierte Svelte-Komponenten für Anwendungen, Dashboards, Datentabellen und Editorial Content." />
 </svelte:head>
 
 <section class="docs-home-hero">

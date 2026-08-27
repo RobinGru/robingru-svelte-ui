@@ -1,7 +1,7 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import { Braces, CircleDot, Grid3X3, MoonStar, Ruler, SunMedium, Type } from '@lucide/svelte';
-  import { Badge, Callout, SegmentedControl } from '$lib';
+  import { Badge, Button, Callout, SegmentedControl } from '$lib';
   import CodePanel from '$docs/components/CodePanel.svelte';
   import SectionIntro from '$docs/components/SectionIntro.svelte';
 
@@ -12,7 +12,8 @@
     { value: 'dark', label: 'Robin Dark' }
   ];
 
-  const blueScale = [25, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950].map((step) => ({
+  const colorSteps = [25, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
+  const blueScale = colorSteps.map((step) => ({
     name: `Blue ${step}`,
     variable: `--rg-blue-${step}`,
     darkText: step >= 500
@@ -22,6 +23,20 @@
     name: `Slate ${step}`,
     variable: `--rg-slate-${step}`,
     darkText: step >= 500
+  }));
+
+  const statusScales = [
+    { name: 'Cyan', key: 'cyan', description: 'Information, sekundäre Datenreihe und unterstützende Hinweise.' },
+    { name: 'Green', key: 'green', description: 'Erfolg, bestätigte Zustände und positive Kennzahlen.' },
+    { name: 'Amber', key: 'amber', description: 'Warnungen, Aufmerksamkeit und begrenzte Risiken.' },
+    { name: 'Red', key: 'red', description: 'Fehler, destruktive Aktionen und kritische Zustände.' }
+  ].map((scale) => ({
+    ...scale,
+    tokens: colorSteps.map((step) => ({
+      name: `${scale.name} ${step}`,
+      variable: `--rg-${scale.key}-${step}`,
+      darkText: step >= 600
+    }))
   }));
 
   const semanticTokens = [
@@ -34,9 +49,21 @@
     { label: 'Primär', variable: '--rg-primary' },
     { label: 'Primär weich', variable: '--rg-primary-soft' },
     { label: 'Info', variable: '--rg-info' },
+    { label: 'Info weich', variable: '--rg-info-soft' },
     { label: 'Erfolg', variable: '--rg-success' },
+    { label: 'Erfolg weich', variable: '--rg-success-soft' },
     { label: 'Warnung', variable: '--rg-warning' },
-    { label: 'Gefahr', variable: '--rg-danger' }
+    { label: 'Warnung weich', variable: '--rg-warning-soft' },
+    { label: 'Gefahr', variable: '--rg-danger' },
+    { label: 'Gefahr weich', variable: '--rg-danger-soft' }
+  ];
+
+  const buttonTones = [
+    { label: 'Primary', tone: 'primary' as const },
+    { label: 'Cyan', tone: 'cyan' as const },
+    { label: 'Green', tone: 'green' as const },
+    { label: 'Amber', tone: 'amber' as const },
+    { label: 'Red', tone: 'red' as const }
   ];
 
   const radii = [
@@ -68,6 +95,8 @@
     label: `Space ${step}`,
     variable: `--rg-space-${step}`
   }));
+
+  const textOpacities = [100, 90, 75, 50, 25];
 
   const tokenCode = `@import '@robingru/svelte-ui/tokens.css';
 
@@ -129,6 +158,25 @@
     </div>
   </section>
 
+  <section class="docs-token-section" aria-labelledby="status-scales">
+    <h2 id="status-scales">Statuspaletten</h2>
+    <p>Jede Statusfarbe besitzt dieselben Helligkeitsstufen. Komponenten greifen in der Regel auf die semantischen Tokens darunter zu; die Skalen stehen für Charts, eigene Datenvisualisierungen und kontrollierte Erweiterungen bereit.</p>
+    <div class="docs-palette-grid">
+      {#each statusScales as scale}
+        <section class="docs-palette-group" aria-label={`${scale.name}-Skala`}>
+          <h3>{scale.name}</h3>
+          <div class="docs-color-scale">
+            {#each scale.tokens as token}
+              <div class="docs-color-token" style={`--token:var(${token.variable});--token-text:${token.darkText ? 'white' : 'var(--rg-slate-900)'}`}>
+                <strong>{token.name.replace(`${scale.name} `, '')}</strong><small>{token.variable}</small>
+              </div>
+            {/each}
+          </div>
+        </section>
+      {/each}
+    </div>
+  </section>
+
   <section class="docs-token-section" aria-labelledby="semantic-colors">
     <h2 id="semantic-colors">Semantische Farben</h2>
     <p>Komponenten verwenden Bedeutungen statt fester Palettenstufen. Dadurch wechseln Light und Dark Mode aus derselben API.</p>
@@ -138,6 +186,16 @@
           <i style={`--token:var(${token.variable})`} aria-hidden="true"></i>
           <div class="docs-token-caption"><strong>{token.label}</strong><code>{token.variable}</code></div>
         </div>
+      {/each}
+    </div>
+  </section>
+
+  <section class="docs-token-section" aria-labelledby="component-accents">
+    <h2 id="component-accents">Akzent-Töne in Komponenten</h2>
+    <p>Die Palette steht direkt über <code>tone</code> bereit – bei Buttons, IconButtons, SplitButtons, Badges, Chips, Tags, Hinweisen, Aktivitätsmarkierungen und Diagrammen. Verwende <code>primary</code> für die eine Hauptaktion; weitere Töne geben Status und Kontext, nicht beliebige Dekoration, wieder.</p>
+    <div class="rg-cluster">
+      {#each buttonTones as button}
+        <Button tone={button.tone}>{button.label}</Button>
       {/each}
     </div>
   </section>
@@ -187,6 +245,19 @@
         <div class="docs-type-token" style={`--token:var(${token.variable})`}>
           <span>{token.sample}</span>
           <div class="docs-token-caption"><strong>{token.label}</strong><code>{token.variable}</code></div>
+        </div>
+      {/each}
+    </div>
+  </section>
+
+  <section class="docs-token-section" aria-labelledby="text-opacity">
+    <h2 id="text-opacity">Text-Deckkraft</h2>
+    <p>Für abgestufte Metadaten oder unterstützende Beschriftungen stehen kleine Utilities bereit. Setze sie nur auf Text-Elemente, damit Icons und interaktive Inhalte ihre eigene Sichtbarkeit behalten.</p>
+    <div class="docs-semantic-grid">
+      {#each textOpacities as opacity}
+        <div class="docs-semantic-token">
+          <span class={`rg-text-opacity-${opacity}`}>Sekundäre Information</span>
+          <div class="docs-token-caption"><strong>{opacity} %</strong><code>.rg-text-opacity-{opacity}</code></div>
         </div>
       {/each}
     </div>

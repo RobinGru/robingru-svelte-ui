@@ -44,6 +44,6 @@ test('component catalog toolbar stays below the app header while scrolling', asy
   const topbar = await page.locator('.docs-topbar').boundingBox();
   expect(toolbar).not.toBeNull();
   expect(topbar).not.toBeNull();
-  expect(toolbar!.y).toBeGreaterThanOrEqual(topbar!.y + topbar!.height + 10);
-  expect(toolbar!.y).toBeLessThanOrEqual(topbar!.y + topbar!.height + 16);
+  expect(toolbar!.y).toBeGreaterThanOrEqual(topbar!.y + topbar!.height);
+  expect(toolbar!.y).toBeLessThanOrEqual(topbar!.y + topbar!.height + 2);
 });

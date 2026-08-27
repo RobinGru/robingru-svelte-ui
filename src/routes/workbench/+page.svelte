@@ -277,13 +277,13 @@
       <div class="rg-nav-section">
         <div class="rg-nav-label">System</div>
         <a class="rg-nav-item" href="#principles"><Palette size={17} />Designprinzipien</a>
-        <a class="rg-nav-item" href="#catalog"><Settings size={17} />Katalog <Badge tone="primary">129</Badge></a>
+        <a class="rg-nav-item" href="#catalog"><Settings size={17} />Katalog <Badge tone="primary">131</Badge></a>
       </div>
 
       {#snippet footer()}
         <div class="version-card">
           <span class="status-dot"></span>
-          <div><strong>v0.3.1</strong><small>129 Komponenten · ohne VirtualTable</small></div>
+          <div><strong>v0.3.1</strong><small>131 Komponenten · ohne VirtualTable</small></div>
         </div>
       {/snippet}
     </Sidebar>
@@ -312,7 +312,7 @@
     <PageHeader
       eyebrow="Release · v0.3.1"
       title="Eine Oberfläche für App, Daten und Inhalt"
-      description="129 aufeinander abgestimmte Svelte-Komponenten: ruhiges Robin Blue, klare Informationshierarchie und keine parallelen Komponentenbibliotheken."
+      description="131 aufeinander abgestimmte Svelte-Komponenten: ruhiges Robin Blue, klare Informationshierarchie und keine parallelen Komponentenbibliotheken."
     >
       {#snippet breadcrumbs()}
         <Breadcrumbs items={[{ label: 'Übersicht', href: '#top' }, { label: 'Workbench', current: true }]} />
@@ -324,7 +324,7 @@
     </PageHeader>
 
     <div class="release-strip" id="catalog">
-      <div><strong>129</strong><span>eindeutige Komponenten</span></div>
+      <div><strong>131</strong><span>eindeutige Komponenten</span></div>
       <div><strong>17</strong><span>Editorial-Bausteine</span></div>
       <div><strong>14</strong><span>Dashboard-Bausteine</span></div>
       <div><strong>1</strong><span>DataTable für normale Größen</span></div>

@@ -1,6 +1,6 @@
-Components: 129
-Unique names: 129
-Public component exports: 129
+Components: 131
+Unique names: 131
+Public component exports: 131
 Missing exports: 0
 Extra exports: 0
 Forbidden/redundant dependencies: 0
@@ -13,6 +13,7 @@ VirtualTable present: no
 - src\lib\components\content\Blockquote.svelte
 - src\lib\components\content\CodeBlock.svelte
 - src\lib\components\content\Figure.svelte
+- src\lib\components\content\InlineCta.svelte
 - src\lib\components\content\NewsletterCard.svelte
 - src\lib\components\content\PostCard.svelte
 - src\lib\components\content\PostGrid.svelte
@@ -116,6 +117,7 @@ VirtualTable present: no
 - src\lib\components\navigation\PageHeader.svelte
 - src\lib\components\navigation\Pagination.svelte
 - src\lib\components\navigation\ResizablePanels.svelte
+- src\lib\components\navigation\ScrollToTop.svelte
 - src\lib\components\navigation\Sidebar.svelte
 - src\lib\components\navigation\Stepper.svelte
 - src\lib\components\navigation\Tabs.svelte
