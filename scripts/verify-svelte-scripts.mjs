@@ -99,6 +99,7 @@ ${valueExports(external.get('bits-ui'))}
       strict: true,
       skipLibCheck: true,
       noEmit: true,
+      ignoreDeprecations: '6.0',
       lib: ['ES2022', 'DOM', 'DOM.Iterable'],
       baseUrl: '.',
       paths: {

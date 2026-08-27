@@ -74,24 +74,25 @@ const names: Record<ComponentCategoryId, string[]> = {
     'Alert', 'Avatar', 'AvatarGroup', 'Badge', 'Button', 'ButtonGroup', 'Callout', 'Card',
     'CardContent', 'CardFooter', 'CardHeader', 'Chip', 'ColorSwatch', 'CopyButton', 'Divider',
     'EmptyState', 'ErrorState', 'IconButton', 'InlineCode', 'Kbd', 'Link', 'LoadingState',
-    'Meter', 'Progress', 'Rating', 'Skeleton', 'Spinner', 'Stat', 'StatGroup', 'Tag'
+    'Meter', 'Progress', 'Rating', 'Skeleton', 'Spinner', 'SplitButton', 'Stat', 'StatGroup', 'Tag'
   ],
   forms: [
-    'Checkbox', 'DateInput', 'Dropzone', 'Fieldset', 'FileUpload', 'FormField', 'Input', 'Label',
-    'NumberInput', 'PasswordInput', 'PinInput', 'RadioGroup', 'RangeSlider', 'SearchInput',
-    'SegmentedControl', 'Select', 'Slider', 'Switch', 'Textarea', 'TimeInput', 'Toggle', 'ToggleGroup'
+    'Calendar', 'Checkbox', 'Combobox', 'DateInput', 'Dropzone', 'Fieldset', 'FileUpload', 'FormField',
+    'InlineEdit', 'Input', 'Label', 'MentionInput', 'MultiSelect', 'NumberInput', 'PasswordInput',
+    'PinInput', 'RadioGroup', 'RangeSlider', 'SearchInput', 'SegmentedControl', 'Select', 'Slider',
+    'Switch', 'Textarea', 'TimeInput', 'Toggle', 'ToggleGroup', 'TransferList'
   ],
   navigation: [
-    'AppShell', 'Breadcrumbs', 'MenuBar', 'Navbar', 'PageHeader', 'Pagination', 'Sidebar', 'Stepper',
-    'Tabs', 'ThemeToggle', 'Toolbar', 'UserMenu'
+    'AppShell', 'Breadcrumbs', 'FileTree', 'MenuBar', 'Navbar', 'PageHeader', 'Pagination',
+    'ResizablePanels', 'Sidebar', 'Stepper', 'Tabs', 'ThemeToggle', 'Toolbar', 'TreeView', 'UserMenu'
   ],
   overlay: [
     'Accordion', 'AlertDialog', 'Collapsible', 'CommandPalette', 'ContextMenu', 'Dialog', 'Drawer',
     'DropdownMenu', 'Popover', 'ToastViewport', 'Tooltip'
   ],
   data: [
-    'ActivityFeed', 'DataGrid', 'DataTable', 'DescriptionList', 'KpiCard', 'List',
-    'NotificationItem', 'PricingCard', 'Table', 'Timeline'
+    'ActivityFeed', 'AuditLog', 'ComparisonTable', 'DataGrid', 'DataTable', 'DescriptionList',
+    'KanbanBoard', 'KpiCard', 'List', 'NotificationItem', 'PricingCard', 'Table', 'Timeline'
   ],
   dashboard: [
     'ChartCard', 'ChartLegend', 'DashboardGrid', 'DashboardSection', 'DateRangePicker', 'DonutChart',
@@ -133,17 +134,23 @@ const descriptions: Record<string, string> = {
   Rating: 'Interaktive oder schreibgeschützte Sternebewertung.',
   Skeleton: 'Flexible Skeleton-Fläche für lokale Ladezustände.',
   Spinner: 'Kompakter Aktivitätsindikator mit Screenreader-Label.',
+  SplitButton: 'Primäraktion mit einem direkt angeschlossenen Menü für verwandte Alternativen.',
   Stat: 'Einzelne Kennzahl mit Label und ergänzendem Detail.',
   StatGroup: 'Responsives Raster zusammengehöriger Kennzahlen.',
   Tag: 'Schlagwort oder Klassifikation mit semantischem Ton.',
   Checkbox: 'Native Checkbox mit Label und optionaler Beschreibung.',
+  Calendar: 'Tastaturbedienbarer Monatskalender für einzelne Datumswerte und begrenzte Zeiträume.',
+  Combobox: 'Durchsuchbare Einzelauswahl mit Beschreibungen, Ladezustand und vollständiger Tastatursteuerung.',
   DateInput: 'Native Datumseingabe mit abgestimmten Fokus- und Fehlerzuständen.',
   Dropzone: 'Drag-and-drop-Fläche für Dateien mit verständlichem Hinweistext.',
   Fieldset: 'Semantische Gruppierung verwandter Formularfelder.',
   FileUpload: 'Dateiauswahl mit nativer Eingabe und kompaktem Upload-Trigger.',
   FormField: 'Label, Hilfe, Fehler, Metadaten und Control als konsistente Einheit.',
+  InlineEdit: 'Direkte Bearbeitung einzelner Werte mit Validierung, Speichern und Abbrechen.',
   Input: 'Universelle einzeilige Texteingabe mit Invalid-State.',
   Label: 'Eigenständiges Formularlabel mit Pflicht- oder Optionalhinweis.',
+  MentionInput: 'Mehrzeilige Eingabe mit gefilterten Erwähnungen und tastaturbedienbarer Vorschlagsliste.',
+  MultiSelect: 'Durchsuchbare Mehrfachauswahl mit Chips und kompakter Zusammenfassung.',
   NumberInput: 'Numerische Eingabe mit Schrittsteuerung und Grenzen.',
   PasswordInput: 'Passworteingabe mit Umschaltung der Sichtbarkeit.',
   PinInput: 'Mehrstellige PIN- oder OTP-Eingabe mit Auto-Fokus.',
@@ -158,17 +165,21 @@ const descriptions: Record<string, string> = {
   TimeInput: 'Native Zeiteingabe mit Fehlerzustand.',
   Toggle: 'Drückbare Einzelaktion für einen booleschen Zustand.',
   ToggleGroup: 'Mehrfachauswahl aus einer kompakten Toggle-Gruppe.',
+  TransferList: 'Zwei Listen zum gezielten Übernehmen und Entfernen mehrerer Einträge.',
   AppShell: 'Grundraster aus Sidebar, Header und Hauptinhalt.',
   Breadcrumbs: 'Hierarchische Orientierung innerhalb einer Anwendung.',
+  FileTree: 'Datei- und Ordnernavigation auf Basis der tastaturbedienbaren TreeView.',
   MenuBar: 'Kompakte, tastaturfreundliche Menüleiste für App-Aktionen.',
   Navbar: 'Flexibler Navigationskopf mit Start-, Mittel- und Endbereich.',
   PageHeader: 'Seitenkopf mit Eyebrow, Beschreibung, Breadcrumbs und Aktionen.',
   Pagination: 'Kompakte Seitennavigation mit Ellipsen und Randseiten.',
+  ResizablePanels: 'Zwei per Zeiger oder Tastatur skalierbare Arbeitsbereiche.',
   Sidebar: 'Vertikale Navigation mit Header, Inhalt, Footer und optionaler kompakter Rail.',
   Stepper: 'Fortschrittsanzeige für mehrstufige Abläufe.',
   Tabs: 'Tastaturbedienbare Ansichtsumschaltung mit Tabpanel.',
   ThemeToggle: 'Persistente Umschaltung zwischen Robin Light und Dark.',
   Toolbar: 'Semantische Gruppierung kontextbezogener Werkzeuge.',
+  TreeView: 'Hierarchische Auswahl mit Aufklappen, optionalen Checkboxen und Pfeiltastennavigation.',
   UserMenu: 'Benutzermenü mit Identität, Details und Dropdown-Aktionen.',
   Accordion: 'Aufklappbare Inhaltsbereiche für strukturierte Detailinformationen.',
   AlertDialog: 'Bestätigungsdialog für kritische oder irreversible Aktionen.',
@@ -182,9 +193,12 @@ const descriptions: Record<string, string> = {
   ToastViewport: 'Region für vorübergehende, nicht blockierende Benachrichtigungen.',
   Tooltip: 'Kurze ergänzende Erklärung für kompakte Controls.',
   ActivityFeed: 'Chronologische Aktivitätsliste mit Personen und Zeitangaben.',
+  AuditLog: 'Strukturiertes Änderungsprotokoll mit Akteur, Ziel, Zeitpunkt und aufklappbaren Details.',
+  ComparisonTable: 'Responsive Vergleichstabelle für Tarife, Produkte und Funktionsumfänge.',
   DataGrid: 'Responsives Raster für strukturierte Datenkarten.',
   DataTable: 'Suche, Sortierung, Filter, Auswahl, Spaltensteuerung und Pagination ohne Virtualisierung.',
   DescriptionList: 'Semantische Begriff-Wert-Liste für Metadaten.',
+  KanbanBoard: 'Horizontales Workflow-Board mit Drag-and-drop und zugänglichen Verschiebeaktionen.',
   KpiCard: 'Kennzahlenkarte mit Trend, Detail, Visual und Footer.',
   List: 'Generische semantische Liste mit eigenem Item-Snippet.',
   NotificationItem: 'Benachrichtigung mit Zeit, Ungelesen-Status und Aktionen.',
@@ -225,7 +239,7 @@ const descriptions: Record<string, string> = {
 };
 
 const featured = new Set([
-  'Button', 'Card', 'FormField', 'DataTable', 'Dialog', 'CommandPalette', 'KpiCard',
+  'Button', 'Card', 'Combobox', 'FormField', 'DataTable', 'Dialog', 'CommandPalette', 'KanbanBoard', 'KpiCard',
   'DashboardGrid', 'ChartCard', 'Article', 'Prose', 'PostCard'
 ]);
 

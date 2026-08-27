@@ -35,9 +35,12 @@ export { default as TrendIndicator } from './components/dashboard/TrendIndicator
 
 // Data and content display
 export { default as ActivityFeed } from './components/data/ActivityFeed.svelte';
+export { default as AuditLog } from './components/data/AuditLog.svelte';
+export { default as ComparisonTable } from './components/data/ComparisonTable.svelte';
 export { default as DataGrid } from './components/data/DataGrid.svelte';
 export { default as DataTable } from './components/data/DataTable.svelte';
 export { default as DescriptionList } from './components/data/DescriptionList.svelte';
+export { default as KanbanBoard } from './components/data/KanbanBoard.svelte';
 export { default as KpiCard } from './components/data/KpiCard.svelte';
 export { default as List } from './components/data/List.svelte';
 export { default as NotificationItem } from './components/data/NotificationItem.svelte';
@@ -47,13 +50,18 @@ export { default as Timeline } from './components/data/Timeline.svelte';
 
 // Forms
 export { default as Checkbox } from './components/forms/Checkbox.svelte';
+export { default as Calendar } from './components/forms/Calendar.svelte';
+export { default as Combobox } from './components/forms/Combobox.svelte';
 export { default as DateInput } from './components/forms/DateInput.svelte';
 export { default as Dropzone } from './components/forms/Dropzone.svelte';
 export { default as Fieldset } from './components/forms/Fieldset.svelte';
 export { default as FileUpload } from './components/forms/FileUpload.svelte';
 export { default as FormField } from './components/forms/FormField.svelte';
 export { default as Input } from './components/forms/Input.svelte';
+export { default as InlineEdit } from './components/forms/InlineEdit.svelte';
 export { default as Label } from './components/forms/Label.svelte';
+export { default as MentionInput } from './components/forms/MentionInput.svelte';
+export { default as MultiSelect } from './components/forms/MultiSelect.svelte';
 export { default as NumberInput } from './components/forms/NumberInput.svelte';
 export { default as PasswordInput } from './components/forms/PasswordInput.svelte';
 export { default as PinInput } from './components/forms/PinInput.svelte';
@@ -68,6 +76,7 @@ export { default as Textarea } from './components/forms/Textarea.svelte';
 export { default as TimeInput } from './components/forms/TimeInput.svelte';
 export { default as Toggle } from './components/forms/Toggle.svelte';
 export { default as ToggleGroup } from './components/forms/ToggleGroup.svelte';
+export { default as TransferList } from './components/forms/TransferList.svelte';
 
 // Foundation
 export { default as Alert } from './components/foundation/Alert.svelte';
@@ -99,20 +108,24 @@ export { default as Skeleton } from './components/foundation/Skeleton.svelte';
 export { default as Spinner } from './components/foundation/Spinner.svelte';
 export { default as Stat } from './components/foundation/Stat.svelte';
 export { default as StatGroup } from './components/foundation/StatGroup.svelte';
+export { default as SplitButton } from './components/foundation/SplitButton.svelte';
 export { default as Tag } from './components/foundation/Tag.svelte';
 
 // Navigation and shells
 export { default as AppShell } from './components/navigation/AppShell.svelte';
 export { default as Breadcrumbs } from './components/navigation/Breadcrumbs.svelte';
+export { default as FileTree } from './components/navigation/FileTree.svelte';
 export { default as MenuBar } from './components/navigation/MenuBar.svelte';
 export { default as Navbar } from './components/navigation/Navbar.svelte';
 export { default as PageHeader } from './components/navigation/PageHeader.svelte';
 export { default as Pagination } from './components/navigation/Pagination.svelte';
+export { default as ResizablePanels } from './components/navigation/ResizablePanels.svelte';
 export { default as Sidebar } from './components/navigation/Sidebar.svelte';
 export { default as Stepper } from './components/navigation/Stepper.svelte';
 export { default as Tabs } from './components/navigation/Tabs.svelte';
 export { default as ThemeToggle } from './components/navigation/ThemeToggle.svelte';
 export { default as Toolbar } from './components/navigation/Toolbar.svelte';
+export { default as TreeView } from './components/navigation/TreeView.svelte';
 export { default as UserMenu } from './components/navigation/UserMenu.svelte';
 
 // Overlay and feedback

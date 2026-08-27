@@ -202,7 +202,7 @@ body { overflow-x: hidden; }
 .docs-code-panel code { color: var(--rg-fg); font: .8rem/1.7 var(--rg-font-mono); white-space: pre; tab-size: 2; }
 
 .docs-component-detail-grid { display: grid; grid-template-columns: minmax(0, 1fr) 18rem; gap: 2rem; align-items: start; }
-.docs-component-detail-main { display: grid; gap: 1.25rem; min-width: 0; }
+.docs-component-detail-main { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.25rem; min-width: 0; }
 .docs-component-detail-aside { position: sticky; top: calc(var(--docs-topbar) + 1.5rem); display: grid; gap: 1rem; }
 .docs-detail-meta { padding: 1rem; border: 1px solid var(--rg-border); border-radius: var(--rg-radius-lg); background: var(--rg-surface); }
 .docs-detail-meta dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .65rem .85rem; margin: 0; font-size: var(--rg-text-xs); }

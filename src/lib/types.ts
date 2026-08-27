@@ -24,6 +24,83 @@ export type Option = {
   description?: string;
 };
 
+export type MentionOption = {
+  value: string;
+  label: string;
+  description?: string;
+  avatar?: string;
+  initials?: string;
+  disabled?: boolean;
+};
+
+export type TreeNode = {
+  id: string;
+  label: string;
+  description?: string;
+  disabled?: boolean;
+  children?: TreeNode[];
+};
+
+export type FileTreeNode = Omit<TreeNode, 'children'> & {
+  kind: 'file' | 'folder';
+  children?: FileTreeNode[];
+  modified?: string;
+};
+
+export type SplitButtonItem = {
+  label: string;
+  icon?: Snippet;
+  shortcut?: string;
+  disabled?: boolean;
+  separatorBefore?: boolean;
+  tone?: 'neutral' | 'danger';
+  action?: () => void;
+};
+
+export type ComparisonColumn = {
+  id: string;
+  label: string;
+  description?: string;
+  badge?: string;
+  highlighted?: boolean;
+};
+
+export type ComparisonFeature = {
+  label: string;
+  description?: string;
+  values: Record<string, string | number | boolean | null | undefined>;
+};
+
+export type AuditLogEntry = {
+  id: string;
+  actor: string;
+  action: string;
+  target?: string;
+  time: string;
+  datetime?: string;
+  detail?: string;
+  tone?: Tone;
+  avatar?: string;
+  initials?: string;
+};
+
+export type KanbanCard = {
+  id: string;
+  title: string;
+  description?: string;
+  meta?: string;
+  tags?: string[];
+  assignee?: string;
+};
+
+export type KanbanColumn = {
+  id: string;
+  title: string;
+  tone?: Tone;
+  limit?: number;
+  cards: KanbanCard[];
+};
+
 export type ContentTag = {
   label: string;
   href?: string;

@@ -97,10 +97,10 @@ if (/href=[\"']#[A-Za-z0-9_-]+/.test(preview) || /href:\s*[\"']#[A-Za-z0-9_-]+/.
   errors.push('Preview configuration contains a page-local fragment link. Use a real docs route or a guaranteed route anchor instead.');
 }
 
-if (catalogNames.length !== 116 || new Set(catalogNames).size !== 116) {
-  errors.push(`Expected 116 unique catalog names, found ${catalogNames.length}/${new Set(catalogNames).size}.`);
+if (catalogNames.length !== 129 || new Set(catalogNames).size !== 129) {
+  errors.push(`Expected 129 unique catalog names, found ${catalogNames.length}/${new Set(catalogNames).size}.`);
 }
-if (new Set(caseNames).size !== 112) errors.push(`Expected 112 regular preview cases, found ${new Set(caseNames).size}.`);
+if (new Set(caseNames).size !== 125) errors.push(`Expected 125 regular preview cases, found ${new Set(caseNames).size}.`);
 for (const name of specialNames) {
   if (!previewComponent.includes(`name === '${name}'`)) errors.push(`Missing special live preview for ${name}.`);
 }

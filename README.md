@@ -4,9 +4,9 @@ Ein ruhiges, hellblaues Design-System für **Svelte 5 und SvelteKit**. Die Bibl
 
 ## Release 0.3.1
 
-- **116 eindeutige Svelte-Komponenten** in sieben Bereichen
+- **129 eindeutige Svelte-Komponenten** in sieben Bereichen
 - integrierte **mehrseitige SvelteKit-Demo- und Dokumentationswebsite**
-- **116 echte Live-Previews** mit Detailseiten, Beispielcode und Theme-/Dichte-Test
+- **129 echte Live-Previews** mit Detailseiten, Beispielcode und Theme-/Dichte-Test
 - **17 Blog- und Editorial-Komponenten**
 - **14 Dashboard- und Visualisierungsbausteine**
 - eine erweiterte **DataTable** für typische Produkt-, CRM-, Admin- und Backoffice-Tabellen
@@ -36,7 +36,7 @@ Die Hauptbereiche sind:
 | Route | Inhalt |
 |---|---|
 | `/` | Übersicht, Designprinzipien und Einstieg |
-| `/components` | filterbarer Katalog mit 116 Live-Previews |
+| `/components` | filterbarer Katalog mit 129 Live-Previews |
 | `/components/[slug]` | Einzelansicht mit DemoFrame, Usage-Code und verwandten Komponenten |
 | `/patterns` | Login, Einstellungen, Kommentare und Empty-State als reale Kompositionen |
 | `/dashboard` | vollständiges operatives Dashboard |

@@ -41,7 +41,7 @@ const pages = {
 
 > Token-basiertes Svelte-5-Designsystem für Anwendungen, Dashboards, Datenansichten, Navigation und Editorial Content.
 
-RobinGru Svelte UI umfasst 116 öffentliche Komponenten. Es unterstützt die Themes \`robin\` und \`robin-dark\` sowie \`data-density="compact"\`.
+RobinGru Svelte UI umfasst 129 öffentliche Komponenten. Es unterstützt die Themes \`robin\` und \`robin-dark\` sowie \`data-density="compact"\`.
 
 ## Weiterführende Dokumentation
 
@@ -177,7 +177,7 @@ const catalogSections = categories.map(([id, label]) => {
 });
 await output('components/index.md', `# Komponenten
 
-> Vollständiger LLM-freundlicher Katalog der 116 öffentlichen RobinGru-Svelte-UI-Komponenten.
+> Vollständiger LLM-freundlicher Katalog der 129 öffentlichen RobinGru-Svelte-UI-Komponenten.
 
 Jede Komponente wird aus \`@robingru/svelte-ui\` importiert. Die eigenständigen Styles werden einmal über \`@robingru/svelte-ui/styles.css\` eingebunden.
 

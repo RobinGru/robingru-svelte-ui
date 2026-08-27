@@ -1,6 +1,6 @@
 # Komponenten-Katalog
 
-**116 eindeutige Svelte-Komponenten** in sieben klar getrennten Verantwortungsbereichen. Der Katalog wird aus dem Source-Verzeichnis erzeugt und gegen `src/lib/index.ts` geprüft.
+**129 eindeutige Svelte-Komponenten** in sieben klar getrennten Verantwortungsbereichen. Der Katalog wird aus dem Source-Verzeichnis erzeugt und gegen `src/lib/index.ts` geprüft.
 
 ## Grundlagen & Status (0)
 

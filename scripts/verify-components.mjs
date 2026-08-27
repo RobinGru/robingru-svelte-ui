@@ -59,7 +59,7 @@ const catalogSections = categories.map(([directory, label, description]) => {
 const catalog = `# Komponenten-Katalog\n\n**${files.length} eindeutige Svelte-Komponenten** in sieben klar getrennten Verantwortungsbereichen. Der Katalog wird aus dem Source-Verzeichnis erzeugt und gegen \`src/lib/index.ts\` geprüft.\n\n${catalogSections.join('\n\n')}\n\n## Umfangsentscheidung\n\nRobinGru enthält bewusst **keine \`VirtualTable\`**. Die erweiterte \`DataTable\` deckt typische Produkt-, CRM-, Admin- und Blog-Backoffice-Tabellen mit Suche, Sortierung, Filtern, Auswahl, Spaltensteuerung, Sticky Header und Pagination ab.\n`;
 await writeFile(join(root, 'docs/component-catalog.md'), catalog, 'utf8');
 
-if (files.length !== 116) throw new Error(`Expected 116 components, found ${files.length}`);
+if (files.length !== 129) throw new Error(`Expected 129 components, found ${files.length}`);
 if (duplicates.length) throw new Error(`Duplicate component names: ${[...new Set(duplicates)].join(', ')}`);
 if (missing.length) throw new Error(`Components missing from index.ts: ${missing.join(', ')}`);
 if (extra.length) throw new Error(`index.ts exports missing components: ${extra.join(', ')}`);

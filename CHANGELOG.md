@@ -14,7 +14,7 @@
 ### Neu
 
 - vollständige mehrseitige SvelteKit-Demo- und Dokumentationswebsite
-- filterbarer Komponenten-Katalog mit 116 echten Live-Previews
+- filterbarer Komponenten-Katalog mit 129 echten Live-Previews
 - statisch prerenderbare Detailseiten für jede öffentliche Komponente
 - gemeinsamer `DemoFrame` mit Robin Light/Dark, normaler/kompakter Dichte und Desktop-/Tablet-/Mobile-Vorschau
 - globale Such- und Command-Palette über `Cmd/Ctrl + K`
@@ -32,7 +32,7 @@
 
 ### Unverändert bewusst
 
-- 116 öffentliche Komponenten ohne künstliche Aufblähung
+- 129 öffentliche Komponenten ohne künstliche Aufblähung
 - keine `VirtualTable` und keine zusätzliche Tabellen-Engine
 - keine daisyUI- oder shadcn-svelte-Runtime
 

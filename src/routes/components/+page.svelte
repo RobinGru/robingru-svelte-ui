@@ -27,7 +27,7 @@
 
 <svelte:head>
   <title>Komponenten · RobinGru Svelte UI</title>
-  <meta name="description" content="Alle 116 Komponenten als filterbare Live-Vorschau." />
+  <meta name="description" content="Alle 129 Komponenten als filterbare Live-Vorschau." />
 </svelte:head>
 
 <SectionIntro

@@ -1,6 +1,6 @@
-Components: 116
-Unique names: 116
-Public component exports: 116
+Components: 129
+Unique names: 129
+Public component exports: 129
 Missing exports: 0
 Extra exports: 0
 Forbidden/redundant dependencies: 0
@@ -37,23 +37,31 @@ VirtualTable present: no
 - src\lib\components\dashboard\TableSkeleton.svelte
 - src\lib\components\dashboard\TrendIndicator.svelte
 - src\lib\components\data\ActivityFeed.svelte
+- src\lib\components\data\AuditLog.svelte
+- src\lib\components\data\ComparisonTable.svelte
 - src\lib\components\data\DataGrid.svelte
 - src\lib\components\data\DataTable.svelte
 - src\lib\components\data\DescriptionList.svelte
+- src\lib\components\data\KanbanBoard.svelte
 - src\lib\components\data\KpiCard.svelte
 - src\lib\components\data\List.svelte
 - src\lib\components\data\NotificationItem.svelte
 - src\lib\components\data\PricingCard.svelte
 - src\lib\components\data\Table.svelte
 - src\lib\components\data\Timeline.svelte
+- src\lib\components\forms\Calendar.svelte
 - src\lib\components\forms\Checkbox.svelte
+- src\lib\components\forms\Combobox.svelte
 - src\lib\components\forms\DateInput.svelte
 - src\lib\components\forms\Dropzone.svelte
 - src\lib\components\forms\Fieldset.svelte
 - src\lib\components\forms\FileUpload.svelte
 - src\lib\components\forms\FormField.svelte
+- src\lib\components\forms\InlineEdit.svelte
 - src\lib\components\forms\Input.svelte
 - src\lib\components\forms\Label.svelte
+- src\lib\components\forms\MentionInput.svelte
+- src\lib\components\forms\MultiSelect.svelte
 - src\lib\components\forms\NumberInput.svelte
 - src\lib\components\forms\PasswordInput.svelte
 - src\lib\components\forms\PinInput.svelte
@@ -68,6 +76,7 @@ VirtualTable present: no
 - src\lib\components\forms\TimeInput.svelte
 - src\lib\components\forms\Toggle.svelte
 - src\lib\components\forms\ToggleGroup.svelte
+- src\lib\components\forms\TransferList.svelte
 - src\lib\components\foundation\Alert.svelte
 - src\lib\components\foundation\Avatar.svelte
 - src\lib\components\foundation\AvatarGroup.svelte
@@ -95,20 +104,24 @@ VirtualTable present: no
 - src\lib\components\foundation\Rating.svelte
 - src\lib\components\foundation\Skeleton.svelte
 - src\lib\components\foundation\Spinner.svelte
+- src\lib\components\foundation\SplitButton.svelte
 - src\lib\components\foundation\Stat.svelte
 - src\lib\components\foundation\StatGroup.svelte
 - src\lib\components\foundation\Tag.svelte
 - src\lib\components\navigation\AppShell.svelte
 - src\lib\components\navigation\Breadcrumbs.svelte
+- src\lib\components\navigation\FileTree.svelte
 - src\lib\components\navigation\MenuBar.svelte
 - src\lib\components\navigation\Navbar.svelte
 - src\lib\components\navigation\PageHeader.svelte
 - src\lib\components\navigation\Pagination.svelte
+- src\lib\components\navigation\ResizablePanels.svelte
 - src\lib\components\navigation\Sidebar.svelte
 - src\lib\components\navigation\Stepper.svelte
 - src\lib\components\navigation\Tabs.svelte
 - src\lib\components\navigation\ThemeToggle.svelte
 - src\lib\components\navigation\Toolbar.svelte
+- src\lib\components\navigation\TreeView.svelte
 - src\lib\components\navigation\UserMenu.svelte
 - src\lib\components\overlay\Accordion.svelte
 - src\lib\components\overlay\AlertDialog.svelte

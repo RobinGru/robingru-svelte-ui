@@ -241,7 +241,7 @@ for (const name of indexComponentNames) {
   if (!componentNames.includes(name)) errors.push(`Index exports non-existent component ${name}`);
 }
 
-if (componentFiles.length !== 116) errors.push(`Expected 116 components, found ${componentFiles.length}.`);
+if (componentFiles.length !== 129) errors.push(`Expected 129 components, found ${componentFiles.length}.`);
 if (/VirtualTable/i.test(componentNames.join(' '))) errors.push('VirtualTable must not be part of this release.');
 
 const projectSource = (await Promise.all(allSourceFiles.map((file) => readFile(file, 'utf8')))).join('\n');

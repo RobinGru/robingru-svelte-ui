@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-08-26T11:29:44.772Z",
-  "components": 116,
+  "generatedAt": "2026-08-27T18:52:05.958Z",
+  "components": 129,
   "categories": {
     "content": 17,
     "dashboard": 14,
-    "data": 10,
-    "forms": 22,
-    "foundation": 30,
-    "navigation": 12,
+    "data": 13,
+    "forms": 28,
+    "foundation": 31,
+    "navigation": 15,
     "overlay": 11
   },
-  "uniqueComponentNames": 116,
-  "publicComponentExports": 116,
-  "sourceFilesChecked": 148,
-  "svelteFilesChecked": 134,
+  "uniqueComponentNames": 129,
+  "publicComponentExports": 129,
+  "sourceFilesChecked": 164,
+  "svelteFilesChecked": 150,
   "errors": [],
   "warnings": []
 }
