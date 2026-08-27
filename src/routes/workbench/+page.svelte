@@ -589,13 +589,13 @@
   .page-stack { display: grid; gap: 2.5rem; }
   .brand, .mobile-brand { display: flex; align-items: center; gap: .65rem; color: var(--rg-fg); text-decoration: none; }
   .brand > span:last-child { display: grid; line-height: 1.05; }
-  .brand small { margin-top: .2rem; color: var(--rg-fg-subtle); font-size: .7rem; }
+  .brand small { margin-top: .2rem; color: var(--rg-fg-subtle); font-size: var(--rg-text-2xs); }
   .brand-mark { display: grid; width: 2rem; height: 2rem; place-items: center; border-radius: .65rem; background: var(--rg-primary); color: var(--rg-primary-fg); font-weight: 820; box-shadow: var(--rg-shadow-xs); }
   .brand-mark.small { width: 1.7rem; height: 1.7rem; font-size: .75rem; }
   .mobile-brand { font-weight: 750; }
   .version-card { display: flex; align-items: center; gap: .6rem; padding: .65rem; border: 1px solid var(--rg-border); border-radius: var(--rg-radius-md); background: var(--rg-surface-sunken); }
   .version-card div { display: grid; line-height: 1.2; }
-  .version-card small { color: var(--rg-fg-subtle); font-size: .68rem; }
+  .version-card small { color: var(--rg-fg-subtle); font-size: var(--rg-text-2xs); }
   .status-dot { width: .5rem; height: .5rem; border-radius: 50%; background: var(--rg-success); box-shadow: 0 0 0 3px color-mix(in oklab, var(--rg-success) 14%, transparent); }
   .top-search { display: flex; align-items: center; gap: .55rem; width: min(25rem, 100%); height: 2.25rem; padding: 0 .65rem; border: 1px solid var(--rg-border); border-radius: var(--rg-radius-sm); background: var(--rg-surface-sunken); color: var(--rg-fg-subtle); font-size: var(--rg-text-sm); cursor: pointer; }
   .top-search span { flex: 1; text-align: left; }
@@ -603,7 +603,7 @@
   .release-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); overflow: hidden; border: 1px solid var(--rg-border); border-radius: var(--rg-radius-lg); background: var(--rg-surface); }
   .release-strip > div { display: grid; gap: .15rem; padding: 1rem 1.15rem; }
   .release-strip > div + div { border-left: 1px solid var(--rg-border); }
-  .release-strip strong { color: var(--rg-fg); font-size: 1.45rem; letter-spacing: -.03em; }
+  .release-strip strong { color: var(--rg-fg); font-size: var(--rg-text-2xl); letter-spacing: -.03em; }
   .release-strip span { color: var(--rg-fg-subtle); font-size: var(--rg-text-xs); }
 
   .workbench-section { display: grid; gap: 1.25rem; padding-top: .5rem; }

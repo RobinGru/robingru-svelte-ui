@@ -68,17 +68,23 @@
   --rg-text-lg: 1.0625rem;
   --rg-text-xl: 1.25rem;
   --rg-text-2xl: 1.5rem;
+  --rg-text-2xs: 0.6875rem;
+  --rg-text-micro: 0.625rem;
+  --rg-text-code: 0.82rem;
+  --rg-text-prose: 1rem;
+  --rg-text-kpi: 1.65rem;
+  --rg-text-price: 2rem;
   --rg-leading: 1.5;
 
   --rg-space-1: 0.25rem;
-  --rg-space-2: 0.5rem;
-  --rg-space-3: 0.75rem;
-  --rg-space-4: 1rem;
-  --rg-space-5: 1.25rem;
-  --rg-space-6: 1.5rem;
-  --rg-space-8: 2rem;
-  --rg-space-10: 2.5rem;
-  --rg-space-12: 3rem;
+  --rg-space-2: 0.45rem;
+  --rg-space-3: 0.7rem;
+  --rg-space-4: 0.9rem;
+  --rg-space-5: 1.15rem;
+  --rg-space-6: 1.35rem;
+  --rg-space-8: 1.8rem;
+  --rg-space-10: 2.25rem;
+  --rg-space-12: 2.75rem;
 
   --rg-radius-xs: 0.25rem;
   --rg-radius-sm: 0.375rem;
