@@ -20,12 +20,14 @@
 
   let { nodes, selected = $bindable(''), expanded = $bindable([]), checked = $bindable([]), label = 'Baumansicht', checkable = false, item, onselect, oncheck, onexpand, class: className, ...rest }: Props = $props();
   const uid = $props.id();
+  let active = $state('');
 
   function safe(id: string) { return id.replace(/[^a-zA-Z0-9_-]/g, '-'); }
   function flatten(items: TreeNode[], parent?: string, level = 1): Array<{ node: TreeNode; parent?: string; level: number }> {
     return items.flatMap((node) => [{ node, parent, level }, ...(node.children?.length && expanded.includes(node.id) ? flatten(node.children, node.id, level + 1) : [])]);
   }
   let visible = $derived(flatten(nodes));
+  let activeId = $derived(visible.some((entry) => entry.node.id === active) ? active : visible.some((entry) => entry.node.id === selected) ? selected : (visible[0]?.node.id ?? ''));
 
   function toggle(node: TreeNode) {
     if (!node.children?.length) return;
@@ -42,6 +44,7 @@
     oncheck?.(checked);
   }
   async function focus(id: string) {
+    active = id;
     await tick(); document.getElementById(`${uid}-tree-${safe(id)}`)?.focus();
   }
   function keydown(event: KeyboardEvent, node: TreeNode) {
@@ -75,8 +78,9 @@
         aria-selected={selected === node.id}
         aria-disabled={node.disabled || undefined}
         data-selected={selected === node.id}
-        tabindex={selected === node.id || (!selected && visible[0]?.node.id === node.id) ? 0 : -1}
-        onclick={() => select(node)}
+        tabindex={activeId === node.id ? 0 : -1}
+        onclick={() => { active = node.id; select(node); }}
+        onfocus={() => active = node.id}
         onkeydown={(event) => keydown(event, node)}
       >
         {#if node.children?.length}

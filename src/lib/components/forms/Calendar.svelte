@@ -29,6 +29,11 @@
   function addDays(date: Date, amount: number) {
     const next = new Date(date); next.setDate(next.getDate() + amount); return next;
   }
+  function addMonths(date: Date, amount: number) {
+    const target = new Date(date.getFullYear(), date.getMonth() + amount, 1);
+    const lastDay = new Date(target.getFullYear(), target.getMonth() + 1, 0).getDate();
+    return new Date(target.getFullYear(), target.getMonth(), Math.min(date.getDate(), lastDay));
+  }
 
   let month = $state(new Date(parse(value).getFullYear(), parse(value).getMonth(), 1));
   let focused = $state(value || iso(new Date()));
@@ -64,8 +69,8 @@
     if (event.key === 'ArrowDown') next = addDays(date, 7);
     if (event.key === 'Home') next = addDays(date, -((date.getDay() - weekStartsOn + 7) % 7));
     if (event.key === 'End') next = addDays(date, 6 - ((date.getDay() - weekStartsOn + 7) % 7));
-    if (event.key === 'PageUp') next = new Date(date.getFullYear(), date.getMonth() - 1, date.getDate());
-    if (event.key === 'PageDown') next = new Date(date.getFullYear(), date.getMonth() + 1, date.getDate());
+    if (event.key === 'PageUp') next = addMonths(date, -1);
+    if (event.key === 'PageDown') next = addMonths(date, 1);
     if (next) { event.preventDefault(); void focusDate(next); }
     if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); select(date); }
   }

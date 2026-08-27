@@ -603,12 +603,15 @@
   .rg-combobox-option strong, .rg-multiselect-option strong, .rg-mention-menu strong { font-size: var(--rg-text-sm); }
   .rg-combobox-option small, .rg-multiselect-option small, .rg-mention-menu small { color: var(--rg-fg-subtle); font-size: var(--rg-text-xs); }
   .rg-combobox-state { padding: .8rem; color: var(--rg-fg-muted); font-size: var(--rg-text-sm); text-align: center; }
-  .rg-multiselect-control { justify-content: space-between; padding: .32rem .65rem; text-align: left; cursor: pointer; }
-  .rg-multiselect-values { display: flex; min-width: 0; flex: 1; flex-wrap: wrap; gap: .3rem; }
+  .rg-multiselect-control { position: relative; justify-content: space-between; padding: .2rem .35rem .2rem .65rem; text-align: left; cursor: pointer; }
+  .rg-multiselect-control[data-disabled='true'] { opacity: .58; cursor: not-allowed; }
+  .rg-multiselect-values { position: relative; z-index: 1; display: flex; min-width: 0; flex: 1; flex-wrap: wrap; gap: .3rem; padding-inline-end: 2rem; pointer-events: none; }
   .rg-multiselect-placeholder { color: var(--rg-fg-subtle); }
   .rg-multiselect-chip, .rg-multiselect-more { display: inline-flex; min-height: 1.6rem; align-items: center; gap: .25rem; padding: .12rem .42rem; border-radius: var(--rg-radius-pill); background: var(--rg-primary-soft); color: var(--rg-primary-active); font-size: var(--rg-text-xs); font-weight: 650; }
-  .rg-multiselect-chip [role='button'] { display: grid; place-items: center; border-radius: 50%; }
-  .rg-multiselect-chip [role='button']:hover { background: color-mix(in oklab, var(--rg-primary) 16%, transparent); }
+  .rg-multiselect-chip button { position: relative; z-index: 2; display: grid; width: 1.5rem; height: 1.5rem; place-items: center; padding: 0; border: 0; border-radius: 50%; background: transparent; color: currentColor; pointer-events: auto; }
+  .rg-multiselect-chip button:hover { background: color-mix(in oklab, var(--rg-primary) 16%, transparent); }
+  .rg-multiselect-toggle { position: absolute; z-index: 0; inset: 0; display: flex; width: 100%; min-height: 100%; align-items: center; justify-content: flex-end; padding: 0 .45rem; border: 0; border-radius: var(--rg-radius-sm); background: transparent; color: var(--rg-fg-muted); }
+  .rg-multiselect-toggle:hover:not(:disabled) { background: var(--rg-surface-muted); color: var(--rg-fg); }
   .rg-multiselect-menu { max-height: 20rem; }
   .rg-multiselect-search, .rg-transfer-search { display: flex; align-items: center; gap: .45rem; margin: .4rem; padding: .4rem .5rem; border: 1px solid var(--rg-border); border-radius: var(--rg-radius-sm); background: var(--rg-surface-sunken); color: var(--rg-fg-muted); }
   .rg-multiselect-search input, .rg-transfer-search input { width: 100%; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--rg-fg); font-size: var(--rg-text-sm); }
@@ -722,7 +725,7 @@
   .rg-kanban-column[data-tone='primary'] .rg-kanban-dot { background: var(--rg-primary); }
   .rg-kanban-column[data-tone='success'] .rg-kanban-dot { background: var(--rg-success); }
   .rg-kanban-column[data-tone='warning'] .rg-kanban-dot { background: var(--rg-warning); }
-  .rg-kanban-list { display: grid; gap: .5rem; min-height: 7rem; padding: .55rem; }
+  .rg-kanban-list { display: grid; gap: .5rem; min-height: 7rem; margin: 0; padding: .55rem; list-style: none; }
   .rg-kanban-card { display: grid; gap: .5rem; padding: .65rem; border: 1px solid var(--rg-border); border-radius: var(--rg-radius-md); background: var(--rg-surface); box-shadow: var(--rg-shadow-xs); }
   .rg-kanban-card[draggable='true'] { cursor: grab; }
   .rg-kanban-card-head { display: flex; min-width: 0; align-items: flex-start; gap: .35rem; }

@@ -42,9 +42,9 @@
   {#each columns as column}
     <section class="rg-kanban-column" role="group" aria-label={column.title} data-tone={column.tone ?? 'neutral'} ondragover={(event) => event.preventDefault()} ondrop={(event) => drop(event, column.id)}>
       <header><div><span class="rg-kanban-dot"></span><strong>{column.title}</strong></div><span>{column.cards.length}{#if column.limit} / {column.limit}{/if}</span></header>
-      <div class="rg-kanban-list" role="list" aria-label={`${column.title}: ${column.cards.length} Karten`}>
+      <ul class="rg-kanban-list" aria-label={`${column.title}: ${column.cards.length} Karten`}>
         {#each column.cards as card}
-          <article class="rg-kanban-card" role="listitem" draggable={!readonly} ondragstart={() => dragged = { cardId: card.id, from: column.id }} ondragend={() => dragged = undefined}>
+          <li class="rg-kanban-card" draggable={!readonly} ondragstart={() => dragged = { cardId: card.id, from: column.id }} ondragend={() => dragged = undefined}>
             <div class="rg-kanban-card-head"><GripVertical size={15} aria-hidden="true" /><strong>{card.title}</strong></div>
             {#if card.description}<p>{card.description}</p>{/if}
             {#if card.tags?.length}<div class="rg-kanban-tags">{#each card.tags as tag}<span>{tag}</span>{/each}</div>{/if}
@@ -58,10 +58,10 @@
                 </span>
               {/if}
             </footer>
-          </article>
+          </li>
         {/each}
-        {#if !column.cards.length}<div class="rg-kanban-empty">{emptyLabel}</div>{/if}
-      </div>
+        {#if !column.cards.length}<li class="rg-kanban-empty">{emptyLabel}</li>{/if}
+      </ul>
     </section>
   {/each}
 </div>

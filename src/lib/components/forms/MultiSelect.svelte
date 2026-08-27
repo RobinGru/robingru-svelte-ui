@@ -64,26 +64,17 @@
 </script>
 
 <div {...rest} class={cn('rg-multiselect', className)} data-open={open} data-invalid={invalid} onfocusout={focusout}>
-  <button
-    type="button"
-    class="rg-multiselect-control"
-    aria-label={label}
-    aria-haspopup="listbox"
-    aria-expanded={open}
-    aria-controls={`${uid}-listbox`}
-    {disabled}
-    onclick={() => open = !open}
-  >
+  <div class="rg-multiselect-control" data-disabled={disabled}>
     <span class="rg-multiselect-values">
       {#if selected.length}
         {#each selected.slice(0, maxVisible) as option}
-          <span class="rg-multiselect-chip">{option.label}<span role="button" tabindex="0" aria-label={`${option.label} entfernen`} onclick={(event) => { event.stopPropagation(); remove(option.value); }} onkeydown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); event.stopPropagation(); remove(option.value); } }}><X size={12} /></span></span>
+          <span class="rg-multiselect-chip">{option.label}<button type="button" aria-label={`${option.label} entfernen`} disabled={disabled} onclick={(event) => { event.stopPropagation(); remove(option.value); }}><X size={12} /></button></span>
         {/each}
         {#if selected.length > maxVisible}<span class="rg-multiselect-more">+{selected.length - maxVisible}</span>{/if}
       {:else}<span class="rg-multiselect-placeholder">{placeholder}</span>{/if}
     </span>
-    <ChevronDown size={16} aria-hidden="true" />
-  </button>
+    <button type="button" class="rg-multiselect-toggle" aria-label={label} aria-haspopup="listbox" aria-expanded={open} aria-controls={`${uid}-listbox`} {disabled} onclick={(event) => { event.stopPropagation(); open = !open; }}><ChevronDown size={16} aria-hidden="true" /></button>
+  </div>
   {#if open}
     <div class="rg-multiselect-menu" id={`${uid}-listbox`} role="listbox" aria-label={label} aria-multiselectable="true" tabindex="-1" onkeydown={keydown}>
       {#if searchable}
