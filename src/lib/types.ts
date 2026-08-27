@@ -84,6 +84,21 @@ export type AuditLogEntry = {
   initials?: string;
 };
 
+export type ActivityFeedItem = {
+  id?: string;
+  name: string;
+  action?: string;
+  target?: string;
+  detail?: string;
+  time: string;
+  datetime?: string;
+  avatar?: string;
+  initials?: string;
+  tone?: Tone;
+  unread?: boolean;
+  tags?: Array<string | ContentTag>;
+};
+
 export type KanbanCard = {
   id: string;
   title: string;

@@ -92,6 +92,16 @@ test('multi-select keeps multiple choices in its bound preview state', async ({ 
   expect(removeBox?.height).toBeGreaterThanOrEqual(24);
 });
 
+test('activity feed presents structured team updates', async ({ page }, testInfo) => {
+  desktopOnly(testInfo);
+  await gotoPreview(page, '/components/activity-feed');
+  const feed = page.getByRole('list', { name: 'Aktivitäten' }).first();
+  await expect(feed).toContainText('Mara Klein');
+  await expect(feed).toContainText('Release-Übersicht');
+  await expect(feed.getByLabel('Kategorien')).toContainText('Dokumentation');
+  await expect(feed.getByLabel('Ungelesen')).toHaveCount(1);
+});
+
 test('tree, file and workspace components expose keyboard-operable structure', async ({ page }, testInfo) => {
   desktopOnly(testInfo);
   await gotoPreview(page, '/components/tree-view');

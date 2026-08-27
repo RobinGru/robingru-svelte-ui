@@ -142,7 +142,7 @@ body { overflow-x: hidden; }
 .docs-route-card p { margin: 0; color: var(--rg-fg-muted); font-size: var(--rg-text-sm); line-height: 1.55; }
 .docs-route-card footer { display: flex; align-items: center; justify-content: space-between; margin-top: 1.25rem; color: var(--rg-fg-subtle); font-size: var(--rg-text-xs); }
 
-.docs-catalog-toolbar { position: sticky; top: calc(var(--docs-topbar) + .75rem); z-index: 15; display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: 1.25rem; padding: .65rem; border: 1px solid var(--rg-border); border-radius: var(--rg-radius-lg); background: color-mix(in oklab, var(--rg-surface) 94%, transparent); }
+.docs-catalog-toolbar { position: sticky; top: var(--docs-topbar); z-index: 15; display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: 1.25rem; padding: .65rem; border: 1px solid var(--rg-border); border-radius: var(--rg-radius-lg); background: var(--rg-surface); box-shadow: 0 .45rem .8rem color-mix(in oklab, var(--rg-bg) 82%, transparent); }
 .docs-catalog-search { position: relative; flex: 1; max-width: 28rem; }
 .docs-catalog-search svg { position: absolute; top: 50%; left: .75rem; transform: translateY(-50%); color: var(--rg-fg-subtle); pointer-events: none; }
 .docs-catalog-search input { padding-left: 2.25rem; }
