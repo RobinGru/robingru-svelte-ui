@@ -98,6 +98,7 @@ export { default as EmptyState } from './components/foundation/EmptyState.svelte
 export { default as ErrorState } from './components/foundation/ErrorState.svelte';
 export { default as IconButton } from './components/foundation/IconButton.svelte';
 export { default as InlineCode } from './components/foundation/InlineCode.svelte';
+export { default as InlineCta } from './components/content/InlineCta.svelte';
 export { default as Kbd } from './components/foundation/Kbd.svelte';
 export { default as Link } from './components/foundation/Link.svelte';
 export { default as LoadingState } from './components/foundation/LoadingState.svelte';

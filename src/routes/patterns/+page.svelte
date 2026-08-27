@@ -13,7 +13,9 @@
     EmptyState,
     FormField,
     Input,
+    InlineCta,
     PasswordInput,
+    PageHeader,
     Stepper,
     Switch,
     Textarea
@@ -34,6 +36,10 @@
   const settingsCode = `<div class="settings-list">\n  <Switch bind:checked={productUpdates}>Produktupdates</Switch>\n  <Switch bind:checked={securityAlerts}>Sicherheitsmeldungen</Switch>\n  <Switch bind:checked={weeklySummary}>Wöchentliche Zusammenfassung</Switch>\n</div>`;
 </script>
 
+{#snippet workspaceCover()}<div style="background:linear-gradient(135deg, var(--rg-blue-100), var(--rg-primary-soft))"></div>{/snippet}
+{#snippet workspaceAvatar()}<span class="rg-avatar" data-size="lg">RG</span>{/snippet}
+{#snippet workspaceActions()}<Button size="sm" variant="outline" tone="neutral">Teilen</Button><Button size="sm">Projekt anlegen</Button>{/snippet}
+
 <svelte:head>
   <title>Patterns · RobinGru Svelte UI</title>
   <meta name="description" content="Zusammengesetzte UI-Patterns für Authentifizierung, Einstellungen, Kommentare und Onboarding." />
@@ -44,6 +50,21 @@
   title="Patterns statt Copy-paste-Blöcke."
   description="Patterns zeigen, wie Komponenten in echten Abläufen zusammenarbeiten. Sie sind bewusst nachvollziehbar aufgebaut und bleiben anpassbar – keine magischen, schwer wartbaren Mega-Komponenten."
 />
+
+<section class="docs-section" style="margin-top:0">
+  <div class="docs-section-heading"><div><h2>Workspace-Kopf mit Kontext</h2><p>Cover, Identität, Orientierung und klare Aktionen bilden einen ruhigen Einstieg in einen Arbeitsbereich.</p></div></div>
+  <PageHeader
+    eyebrow="Produktbereich"
+    title="Design-System Workspace"
+    description="Komponenten, Patterns und Entscheidungen für das nächste Release."
+    headingLevel={2}
+    cover={workspaceCover}
+    avatar={workspaceAvatar}
+    actions={workspaceActions}
+  >
+    {#snippet children()}<Badge tone="success" dot>Aktiv</Badge><span style="color:var(--rg-fg-subtle);font-size:var(--rg-text-sm)">12 Mitwirkende</span>{/snippet}
+  </PageHeader>
+</section>
 
 <div class="docs-pattern-grid">
   <article class="docs-pattern-card">
@@ -66,6 +87,13 @@
           <Button full>Anmelden</Button>
         </CardFooter>
       </Card>
+    </div>
+  </article>
+
+  <article class="docs-pattern-card">
+    <header><h2>Kontextuelle Produktaktion</h2><p>Eine relevante Änderung erhält eine klare Erklärung und genau eine nächste Aktion.</p></header>
+    <div class="docs-pattern-stage">
+      <InlineCta eyebrow="Neue Ansicht" title="Dashboard-Übersicht ist verfügbar" description="Die wichtigsten Kennzahlen und offenen Aufgaben stehen jetzt direkt im Workspace bereit." primaryLabel="Übersicht öffnen" secondaryLabel="Später erinnern" />
     </div>
   </article>
 

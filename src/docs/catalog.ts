@@ -101,7 +101,7 @@ const names: Record<ComponentCategoryId, string[]> = {
   ],
   content: [
     'Article', 'ArticleHeader', 'ArticleMeta', 'ArticleNavigation', 'AuthorCard', 'Blockquote',
-    'CodeBlock', 'Figure', 'NewsletterCard', 'PostCard', 'PostGrid', 'Prose', 'ReadingTime',
+    'CodeBlock', 'Figure', 'InlineCta', 'NewsletterCard', 'PostCard', 'PostGrid', 'Prose', 'ReadingTime',
     'RelatedPosts', 'ShareButtons', 'TableOfContents', 'TagList'
   ]
 };
@@ -126,6 +126,7 @@ const descriptions: Record<string, string> = {
   ErrorState: 'Fehlerzustand mit verständlicher Rückmeldung und Wiederholungsaktion.',
   IconButton: 'Quadratische Icon-Aktion mit verpflichtendem zugänglichem Label.',
   InlineCode: 'Inline-Codefragment im Typografiesystem.',
+  InlineCta: 'Kontextuelle Aktion mit optionalem Bild, E-Mail-Feld oder Dateidetail.',
   Kbd: 'Darstellung einzelner Tastaturbefehle oder Shortcuts.',
   Link: 'Textlink mit optionaler Kennzeichnung externer Ziele.',
   LoadingState: 'Vollständiger Ladezustand für Inhaltsbereiche.',

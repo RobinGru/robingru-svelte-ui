@@ -29,17 +29,17 @@
   --rg-slate-900: oklch(20.4% 0.019 247);
   --rg-slate-950: oklch(15.2% 0.017 247);
 
-  /* Neutral canvas: blue communicates interaction, not every background. */
-  --rg-bg: oklch(98.8% 0.001 95);
+  /* Neutral canvas: brand is reserved for action, focus and selection. */
+  --rg-bg: oklch(99.1% 0.001 285);
   --rg-surface: var(--rg-slate-0);
   --rg-surface-raised: var(--rg-slate-0);
-  --rg-surface-muted: oklch(97.3% 0.002 95);
-  --rg-surface-sunken: oklch(95.8% 0.003 95);
+  --rg-surface-muted: oklch(98% 0.002 285);
+  --rg-surface-sunken: oklch(96.5% 0.003 285);
   --rg-fg: var(--rg-slate-900);
   --rg-fg-muted: var(--rg-slate-600);
   --rg-fg-subtle: var(--rg-slate-500);
-  --rg-border: color-mix(in oklab, var(--rg-slate-200) 84%, var(--rg-blue-200));
-  --rg-border-strong: color-mix(in oklab, var(--rg-slate-300) 82%, var(--rg-blue-300));
+  --rg-border: oklch(90.8% 0.004 285);
+  --rg-border-strong: oklch(83.8% 0.008 285);
   --rg-primary: var(--rg-blue-600);
   --rg-primary-hover: var(--rg-blue-700);
   --rg-primary-active: var(--rg-blue-800);
@@ -93,10 +93,10 @@
   --rg-radius-xl: 1rem;
   --rg-radius-pill: 999px;
 
-  --rg-shadow-xs: 0 1px 2px oklch(25% 0.03 245 / 0.04);
-  --rg-shadow-sm: 0 5px 14px -10px oklch(25% 0.05 245 / 0.18), 0 1px 2px oklch(25% 0.03 245 / 0.05);
-  --rg-shadow-md: 0 14px 32px -22px oklch(25% 0.06 245 / 0.28), 0 3px 8px oklch(25% 0.03 245 / 0.07);
-  --rg-shadow-lg: 0 24px 52px -30px oklch(20% 0.07 245 / 0.38), 0 7px 16px oklch(20% 0.03 245 / 0.08);
+  --rg-shadow-xs: 0 1px 2px oklch(20% 0.01 285 / 0.05);
+  --rg-shadow-sm: 0 1px 3px oklch(20% 0.01 285 / 0.1), 0 1px 2px oklch(20% 0.01 285 / 0.06);
+  --rg-shadow-md: 0 8px 16px -6px oklch(20% 0.02 285 / 0.1), 0 2px 4px -2px oklch(20% 0.01 285 / 0.06);
+  --rg-shadow-lg: 0 18px 30px -12px oklch(20% 0.02 285 / 0.16), 0 6px 10px -4px oklch(20% 0.01 285 / 0.08);
 
   --rg-duration-fast: 120ms;
   --rg-duration: 180ms;
