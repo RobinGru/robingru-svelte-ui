@@ -19,6 +19,7 @@
     Palette,
     Scale,
     Search,
+    Sparkles,
     X
   } from '@lucide/svelte';
   import { Badge, CommandPalette, IconButton, Kbd, ThemeToggle } from '$lib';
@@ -40,7 +41,7 @@
   const markdownPath = $derived(
     routeId === '/' ? '/index.md'
       : routeId === '/components/[slug]' && componentSlug ? `/components/${componentSlug}/index.md`
-      : ['/start', '/installation', '/why-robingru', '/components', '/patterns', '/dashboard', '/blog', '/data', '/tokens', '/accessibility', '/workbench'].includes(routeId ?? '') ? `${routeId}/index.md`
+      : ['/start', '/installation', '/why-robingru', '/components', '/patterns', '/dashboard', '/blog', '/data', '/tokens', '/icons', '/accessibility', '/workbench'].includes(routeId ?? '') ? `${routeId}/index.md`
       : undefined
   );
 
@@ -59,6 +60,7 @@
   ];
   const systemLinks = [
     { href: '/tokens', label: 'Design Tokens', icon: Palette },
+    { href: '/icons', label: 'Icons', icon: Sparkles },
     { href: '/accessibility', label: 'Accessibility', icon: Accessibility },
     { href: '/workbench', label: 'Gesamt-Workbench', icon: Boxes }
   ];

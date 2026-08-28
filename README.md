@@ -47,6 +47,7 @@ Die Hauptbereiche sind:
 | `/blog` | Beitragsübersicht und kompletter Editorial-Artikel |
 | `/data` | DataTable mit 48 Datensätzen, Filtern, Auswahl und Detail-Drawer |
 | `/tokens` | vollständige Blue-, Slate-, Cyan-, Green-, Amber- und Red-Skalen sowie Spacing-, Radius-, Shadow-, Typografie- und Text-Deckkraft-Tokens |
+| `/icons` | Lucide-Integration mit Importbeispielen, Nutzungsregeln und 100 häufigen Icons |
 | `/accessibility` | Tastatur-, Fokus-, Formular-, Live-Region- und Motion-Labor |
 | `/workbench` | ursprüngliche Gesamtansicht aller großen Anwendungsbereiche |
 

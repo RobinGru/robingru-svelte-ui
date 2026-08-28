@@ -15,6 +15,7 @@ const requiredPages = [
   'blog/index.md',
   'data/index.md',
   'tokens/index.md',
+  'icons/index.md',
   'accessibility/index.md',
   'workbench/index.md'
 ];

@@ -49,7 +49,8 @@ RobinGru Svelte UI umfasst 132 öffentliche Komponenten. Es unterstützt die The
 - [Starte hier](./start/index.md): Der kürzeste Weg zur ersten Komponente.
 - [Warum RG Svelte UI?](./why-robingru/index.md): Stärken, Einsatzbereich und bewusste Grenzen.
 - [Komponentenkatalog](./components/index.md): Alle öffentlichen Komponenten nach Kategorie.
-- [Design Tokens](./tokens/index.md): Themes, Dichte, Farben, Abstände und weitere Tokens.`,
+- [Design Tokens](./tokens/index.md): Themes, Dichte, Farben, Abstände und weitere Tokens.
+- [Icons](./icons/index.md): Lucide-Integration, Import und häufige Icons.`,
   'installation/index.md': `# Installation aus GitHub
 
 > RobinGru Svelte UI wird derzeit direkt aus GitHub bezogen, nicht aus npm.
@@ -157,6 +158,26 @@ Wichtige Einstiege sind \`@robingru/svelte-ui/tokens.css\` für Tokens und \`@ro
 \`\`\`
 
 Die semantischen Custom Properties verwenden den Präfix \`--rg-\`. Öffentliche Tokens und Komponenten-Props sind gegenüber internen Selektoren zu bevorzugen.`,
+  'icons/index.md': `# Icons
+
+> RobinGru verwendet Lucide als einheitlichen Icon-Satz für Svelte.
+
+Icons stammen aus \`@lucide/svelte\` und werden explizit importiert. Für eigene Icons sollte das Paket direkt als Projektabhängigkeit ergänzt werden:
+
+\`\`\`sh
+bun add @lucide/svelte
+\`\`\`
+
+\`\`\`svelte
+<script lang="ts">
+  import { Search, Settings } from '@lucide/svelte';
+</script>
+
+<Search size={16} aria-hidden="true" />
+<button type="button" aria-label="Einstellungen"><Settings size={18} /></button>
+\`\`\`
+
+Die HTML-Dokumentation enthält eine durchsuchbare Galerie mit 100 häufigen Icons und konkrete Größen- sowie Accessibility-Regeln. Der vollständige Icon-Katalog ist bei [Lucide](https://lucide.dev/icons/) verfügbar.`,
   'accessibility/index.md': `# Accessibility
 
 > Praktische Beispiele für Tastatur, Fokus, Formulare, Live-Regionen und reduzierte Bewegung.

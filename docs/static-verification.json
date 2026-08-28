@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-28T08:09:40.317Z",
+  "generatedAt": "2026-08-28T09:09:29.217Z",
   "components": 132,
   "categories": {
     "content": 18,
@@ -13,8 +13,8 @@
   },
   "uniqueComponentNames": 132,
   "publicComponentExports": 132,
-  "sourceFilesChecked": 168,
-  "svelteFilesChecked": 154,
+  "sourceFilesChecked": 169,
+  "svelteFilesChecked": 155,
   "errors": [],
   "warnings": []
 }

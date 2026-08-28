@@ -1,6 +1,6 @@
 # RobinGru Svelte UI
 
-> A token-based design system for Svelte 5 and SvelteKit. It provides 116 public components for product applications, dashboards, data-heavy views, navigation, overlays and editorial content. Its documentation site contains a live example for every component.
+> A token-based design system for Svelte 5 and SvelteKit. It provides 132 public components for product applications, dashboards, data-heavy views, navigation, overlays and editorial content. Its documentation site contains a live example for every component.
 
 Important notes:
 
@@ -17,12 +17,13 @@ Important notes:
 - [Start here](./start/index.md): The shortest path to installation, styles and a first component.
 - [Installation](./installation/index.md): GitHub installation, styles and first component.
 - [Why RG Svelte UI?](./why-robingru/index.md): Positioning, strengths and intentional limits.
-- [Component catalog](./components/index.md): All 116 public components and their Markdown references.
+- [Component catalog](./components/index.md): All 132 public components and their Markdown references.
 - [Patterns](./patterns/index.md): Product-like compositions for login, settings, comments and empty states.
 - [Dashboard](./dashboard/index.md): KPIs, status, filters, charts and operational data views.
 - [Blog & Editorial](./blog/index.md): Article, prose and post components in an editorial showcase.
 - [DataTable](./data/index.md): Search, sorting, filters, selection, column controls, pagination and a detail drawer.
 - [Design tokens](./tokens/index.md): Colors, spacing, radii, shadows, typography and motion.
+- [Icons](./icons/index.md): Lucide integration, imports, accessibility guidance and 100 common icons.
 - [Accessibility](./accessibility/index.md): Keyboard, focus, form, live-region and reduced-motion examples.
 - [Workbench](./workbench/index.md): Integrated application-shell showcase.
 
