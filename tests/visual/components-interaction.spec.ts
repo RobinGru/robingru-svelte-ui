@@ -50,6 +50,13 @@ test('selection and editing components support their primary keyboard flows', as
   await mention.press('ArrowDown');
   await mention.press('Enter');
   await expect(mention).toHaveValue(/@mara/);
+
+  await gotoPreview(page, '/components/pin-input');
+  const pin = page.locator('.rg-pin input').first();
+  await pin.click();
+  await pin.press('Control+A');
+  await pin.pressSequentially('1');
+  await expect(pin).toHaveValue('1');
 });
 
 test('catalog suggestion lists escape their preview container', async ({ page }, testInfo) => {

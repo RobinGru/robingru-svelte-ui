@@ -374,7 +374,7 @@
 
 @layer components {
   /* Data table: one scalable component, intentionally without virtualization. */
-  .rg-data-table { min-width: 0; }
+  .rg-data-table { min-width: 0; container-type: inline-size; }
   .rg-data-toolbar-main, .rg-data-toolbar-actions, .rg-data-pagination, .rg-data-summary { display: flex; flex-wrap: wrap; align-items: center; gap: var(--rg-space-2); }
   .rg-data-toolbar-main { flex: 1 1 32rem; }
   .rg-data-toolbar-actions { justify-content: flex-end; }
@@ -397,6 +397,11 @@
   .rg-table[data-striped='true'] tbody tr:nth-child(even) { background: color-mix(in oklab, var(--rg-surface-sunken) 68%, transparent); }
   .rg-table th[data-align='center'], .rg-table td[data-align='center'] { text-align: center; }
   .rg-table th[data-align='end'], .rg-table td[data-align='end'] { text-align: right; }
+
+  @container (max-width: 28rem) {
+    .rg-data-toolbar-actions { width: 100%; justify-content: flex-start; }
+    .rg-column-picker-menu { right: auto; left: 0; }
+  }
   .rg-table tbody tr[data-selected='true'] { background: color-mix(in oklab, var(--rg-primary-soft) 62%, var(--rg-surface)); }
   .rg-table tbody tr[data-clickable='true'] { cursor: pointer; }
   .rg-table tbody tr[data-clickable='true']:focus-visible { outline: 2px solid var(--rg-focus); outline-offset: -2px; }
