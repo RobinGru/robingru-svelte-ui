@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-27T22:02:38.809Z",
-  "components": 131,
+  "generatedAt": "2026-08-28T08:09:40.317Z",
+  "components": 132,
   "categories": {
     "content": 18,
     "dashboard": 14,
@@ -9,12 +9,12 @@
     "foundation": 31,
     "internal": 0,
     "navigation": 16,
-    "overlay": 11
+    "overlay": 12
   },
-  "uniqueComponentNames": 131,
-  "publicComponentExports": 131,
-  "sourceFilesChecked": 167,
-  "svelteFilesChecked": 153,
+  "uniqueComponentNames": 132,
+  "publicComponentExports": 132,
+  "sourceFilesChecked": 168,
+  "svelteFilesChecked": 154,
   "errors": [],
   "warnings": []
 }

@@ -33,7 +33,7 @@ if (!(await exists(join(distRoot, 'index.d.ts')))) errors.push('dist/index.d.ts 
 
 const distFiles = await walk(distRoot);
 const componentFiles = distFiles.filter((file) => file.endsWith('.svelte') && !/[\\/]internal[\\/]/.test(file));
-if (componentFiles.length !== 131) errors.push(`Expected 131 packaged Svelte components, found ${componentFiles.length}.`);
+if (componentFiles.length !== 132) errors.push(`Expected 132 packaged Svelte components, found ${componentFiles.length}.`);
 if (componentFiles.some((file) => /VirtualTable/i.test(file))) errors.push('VirtualTable is present in dist.');
 
 for (const [subpath, target] of Object.entries(pkg.exports ?? {})) {
@@ -64,7 +64,7 @@ for (const file of distFiles.filter((file) => extname(file) === '.js')) {
 
 const index = await readFile(join(distRoot, 'index.js'), 'utf8');
 const componentExports = [...index.matchAll(/default as ([A-Za-z_$][\w$]*)/g)].map((match) => match[1]);
-if (componentExports.length !== 131) errors.push(`Expected 131 public component exports in dist/index.js, found ${componentExports.length}.`);
+if (componentExports.length !== 132) errors.push(`Expected 132 public component exports in dist/index.js, found ${componentExports.length}.`);
 if (new Set(componentExports).size !== componentExports.length) errors.push('Duplicate component exports found in dist/index.js.');
 
 const report = {

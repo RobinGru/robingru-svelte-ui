@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-27T22:02:42.637Z",
-  "catalogComponents": 131,
-  "uniqueCatalogNames": 131,
-  "livePreviews": 131,
-  "regularPreviewCases": 127,
+  "generatedAt": "2026-08-28T08:09:39.865Z",
+  "catalogComponents": 132,
+  "uniqueCatalogNames": 132,
+  "livePreviews": 132,
+  "regularPreviewCases": 128,
   "specialPreviewCases": 4,
-  "requiredPropsAudited": 127,
+  "requiredPropsAudited": 128,
   "routesChecked": 14,
   "docsOutsideLibraryPackage": true,
   "errors": []

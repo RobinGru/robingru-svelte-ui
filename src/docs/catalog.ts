@@ -88,7 +88,7 @@ const names: Record<ComponentCategoryId, string[]> = {
   ],
   overlay: [
     'Accordion', 'AlertDialog', 'Collapsible', 'CommandPalette', 'ContextMenu', 'Dialog', 'Drawer',
-    'DropdownMenu', 'Popover', 'ToastViewport', 'Tooltip'
+    'DropdownMenu', 'HoverCard', 'Popover', 'ToastViewport', 'Tooltip'
   ],
   data: [
     'ActivityFeed', 'AuditLog', 'ComparisonTable', 'DataGrid', 'DataTable', 'DescriptionList',
@@ -191,6 +191,7 @@ const descriptions: Record<string, string> = {
   Dialog: 'Modales Fenster mit Fokusmanagement, Beschreibung und Footer.',
   Drawer: 'Seitlich einfahrender Dialog für Details oder Einstellungen.',
   DropdownMenu: 'Aktionsmenü mit Icons, Shortcuts und Trennlinien.',
+  HoverCard: 'Interaktive Inhaltsvorschau beim Hover oder Tastaturfokus, etwa für Personen und Links.',
   Popover: 'Leichte schwebende Zusatzinformation mit frei wählbarer Position.',
   ToastViewport: 'Region für vorübergehende, nicht blockierende Benachrichtigungen.',
   Tooltip: 'Kurze ergänzende Erklärung für kompakte Controls.',

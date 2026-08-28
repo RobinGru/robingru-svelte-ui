@@ -79,6 +79,22 @@ test('catalog suggestion lists escape their preview container', async ({ page },
   }
 });
 
+test('hover card previews open on hover and keyboard focus without clipping', async ({ page }, testInfo) => {
+  desktopOnly(testInfo);
+  await gotoPreview(page, '/components/hover-card');
+  const trigger = page.getByRole('link', { name: '@mara-klein' }).first();
+  const card = page.locator('.rg-hover-card');
+
+  await trigger.hover();
+  await expect(card).toBeVisible();
+  expect(await card.evaluate((element) => !element.closest('.docs-component-preview'))).toBe(true);
+  await expect(card).toContainText('Produktdesignerin');
+
+  await trigger.focus();
+  await page.keyboard.press('Escape');
+  await expect(card).toHaveCount(0);
+});
+
 test('multi-select keeps multiple choices in its bound preview state', async ({ page }, testInfo) => {
   desktopOnly(testInfo);
   await gotoPreview(page, '/components/multi-select');

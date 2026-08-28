@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-27T22:03:40.773Z",
+  "generatedAt": "2026-08-28T08:08:33.322Z",
   "package": "@robingru/svelte-ui@0.3.1",
-  "packagedFiles": 275,
-  "packagedComponents": 131,
-  "publicComponentExports": 131,
+  "packagedFiles": 277,
+  "packagedComponents": 132,
+  "publicComponentExports": 132,
   "javascriptFilesChecked": 4,
   "errors": []
 }

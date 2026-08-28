@@ -139,6 +139,7 @@ export { default as ContextMenu } from './components/overlay/ContextMenu.svelte'
 export { default as Dialog } from './components/overlay/Dialog.svelte';
 export { default as Drawer } from './components/overlay/Drawer.svelte';
 export { default as DropdownMenu } from './components/overlay/DropdownMenu.svelte';
+export { default as HoverCard } from './components/overlay/HoverCard.svelte';
 export { default as Popover } from './components/overlay/Popover.svelte';
 export { default as ToastViewport } from './components/overlay/ToastViewport.svelte';
 export { default as Tooltip } from './components/overlay/Tooltip.svelte';

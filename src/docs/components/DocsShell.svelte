@@ -175,7 +175,7 @@
 
     <div class="docs-sidebar-footer">
       <div><span>Release</span><strong>0.3.1</strong></div>
-      <a href={href('/components')}>131 Komponenten <ChevronRight size={14} /></a>
+      <a href={href('/components')}>132 Komponenten <ChevronRight size={14} /></a>
     </div>
   </aside>
 

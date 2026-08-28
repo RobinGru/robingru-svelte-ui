@@ -30,7 +30,7 @@ for (const page of requiredPages) {
 
 const catalog = await readFile(join(staticRoot, 'components/index.md'), 'utf8');
 const componentLinks = [...catalog.matchAll(/\]\(\.\/[^/]+\/index\.md\)/g)];
-if (componentLinks.length !== 131) errors.push(`Expected 131 component Markdown references, found ${componentLinks.length}.`);
+if (componentLinks.length !== 132) errors.push(`Expected 132 component Markdown references, found ${componentLinks.length}.`);
 
 const llms = await readFile(join(staticRoot, 'llms.txt'), 'utf8');
 for (const page of requiredPages) {

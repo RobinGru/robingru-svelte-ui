@@ -1,6 +1,6 @@
-Components: 131
-Unique names: 131
-Public component exports: 131
+Components: 132
+Unique names: 132
+Public component exports: 132
 Missing exports: 0
 Extra exports: 0
 Forbidden/redundant dependencies: 0
@@ -133,6 +133,7 @@ VirtualTable present: no
 - src\lib\components\overlay\Dialog.svelte
 - src\lib\components\overlay\Drawer.svelte
 - src\lib\components\overlay\DropdownMenu.svelte
+- src\lib\components\overlay\HoverCard.svelte
 - src\lib\components\overlay\Popover.svelte
 - src\lib\components\overlay\ToastViewport.svelte
 - src\lib\components\overlay\Tooltip.svelte
